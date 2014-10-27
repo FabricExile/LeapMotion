@@ -7,8 +7,13 @@ object LeapTool {
   Data handle;
 };
 
+/// \internal
+function ~LeapTool() = "LeapTool_Destruct";
+
 /// returns true if this controller is valid
 function Boolean LeapTool.valid() {
   Data nullData;
   return this.handle == nullData;
 }
+
+// the LeapTool class is not implemented in the LeapMotion extension

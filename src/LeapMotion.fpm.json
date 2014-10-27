@@ -5,6 +5,7 @@
     "LeapConfig.kl",
     "LeapInteractionBox.kl",
     "LeapPointable.kl",
+    "LeapBone.kl",
     "LeapFinger.kl",
     "LeapTool.kl",
     "LeapArm.kl",
