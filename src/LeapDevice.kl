@@ -2,13 +2,161 @@
  *  Copyright 2010-2014 Fabric Software Inc. All rights reserved.
  */
 
+require Math;
+
+/**
+ * The Device class represents a physically connected device.
+ *
+ * REVIEW NEEDED
+ * The Device class contains information related to a particular connected
+ * device such as device id, field of view relative to the device,
+ * and the position and orientation of the device in relative coordinates.
+ *
+ * The position and orientation describe the alignment of the device relative to the user.
+ * The alignment relative to the user is only descriptive. Aligning devices to users
+ * provides consistency in the parameters that describe user interactions.
+ *
+ * Note that Device objects can be invalid, which means that they do not contain
+ * valid device information and do not correspond to a physical device.
+ * Test for validity with the Device::isValid() function.
+ * @since 1.0
+ */
 object LeapDevice {
   /// \internal
   Data handle;
 };
+
+/// \internal
+function ~LeapDevice() = "LeapDevice_Destruct";
 
 /// returns true if this controller is valid
 function Boolean LeapDevice.valid() {
   Data nullData;
   return this.handle == nullData;
 }
+
+/**
+ * A standalone USB peripheral. The original Leap Motion controller device.
+ * @since 1.2
+ */
+const UInt32 LEAP_DEVICETYPE_PERIPHERAL = 1;
+const UInt32 LEAP_DEVICETYPE_LAPTOP = 2;
+/**
+ * A controller embedded in a laptop computer.
+ * @since 1.2
+ */
+const UInt32 LEAP_DEVICETYPE_KEYBOARD = 3;
+
+/**
+ * The angle of view along the x axis of this device.
+ *
+ * \image html images/Leap_horizontalViewAngle.png
+ *
+ * The Leap Motion controller scans a region in the shape of an inverted pyramid
+ * centered at the device's center and extending upwards. The horizontalViewAngle
+ * reports the view angle along the long dimension of the device.
+ *
+ * \include Device_horizontalViewAngle.txt
+ *
+ * @returns The horizontal angle of view in radians.
+ * @since 1.0
+ */
+function Float32 LeapDevice.horizontalViewAngle() = "LeapDevice_horizontalViewAngle";
+
+/**
+ * The angle of view along the z axis of this device.
+ *
+ * \image html images/Leap_verticalViewAngle.png
+ *
+ * The Leap Motion controller scans a region in the shape of an inverted pyramid
+ * centered at the device's center and extending upwards. The verticalViewAngle
+ * reports the view angle along the short dimension of the device.
+ *
+ * \include Device_verticalViewAngle.txt
+ *
+ * @returns The vertical angle of view in radians.
+ * @since 1.0
+ */
+function Float32 LeapDevice.verticalViewAngle() = "LeapDevice_verticalViewAngle";
+
+/**
+ * The maximum reliable tracking range from the center of this device.
+ *
+ * The range reports the maximum recommended distance from the device center
+ * for which tracking is expected to be reliable. This distance is not a hard limit.
+ * Tracking may be still be functional above this distance or begin to degrade slightly
+ * before this distance depending on calibration and extreme environmental conditions.
+ *
+ * \include Device_range.txt
+ *
+ * @returns The recommended maximum range of the device in mm.
+ * @since 1.0
+ */
+function Float32 LeapDevice.range() = "LeapDevice_range";
+
+/**
+ * The distance to the nearest edge of the Leap Motion controller's view volume.
+ *
+ * The view volume is an axis-aligned, inverted pyramid centered on the device origin
+ * and extending upward to the range limit. The walls of the pyramid are described
+ * by the horizontalViewAngle and verticalViewAngle and the roof by the range.
+ * This function estimates the distance between the specified input position and the
+ * nearest wall or roof of the view volume.
+ *
+ * \include Device_distanceToBoundary.txt
+ *
+ * @param position The point to use for the distance calculation.
+ * @returns The distance in millimeters from the input position to the nearest boundary.
+ * @since 1.0
+ */
+function Float32 LeapDevice.distanceToBoundary(Vec3 position) = "LeapDevice_distanceToBoundary";
+
+/**
+ * Reports whether this device is embedded in another computer or computer
+ * peripheral.
+ *
+ * @returns True, if this device is embedded in a laptop, keyboard, or other computer
+ * component; false, if this device is a standalone controller.
+ * @since 1.2
+ */
+function Boolean LeapDevice.isEmbedded() = "LeapDevice_isEmbedded";
+
+/**
+ * Reports whether this device is streaming data to your application.
+ *
+ * Currently only one controller can provide data at a time.
+ * @since 1.2
+ */
+function Boolean LeapDevice.isStreaming() = "LeapDevice_isStreaming";
+
+// primarily for the image API
+/**
+ *  Reports whether the coordinate axes have been reversed.
+ *
+ * The Leap Motion controller can automatically flip the coordinate axes so
+ * that the z-axis is positive toward the user and the x-axis is more positive
+ * from left to right. The user can also manually flip the axes in the Leap
+ * Motion control panel.
+ *  
+ * Images from the camera are not flipped, however.
+ *
+ * @return True, if the axes are flipped, that is, if the positive z-axis
+ * extends from the long side of the device that does not have the green LED.
+ *
+ * @since 2.1
+ */
+function Boolean LeapDevice.isFlipped() = "LeapDevice_isFlipped";
+
+/**
+ * The device type.
+ *
+ * Use the device type value in the (rare) circumstances that you
+ * have an application feature which relies on a particular type of device.
+ * Current types of device include the original Leap Motion peripheral,
+ * keyboard-embedded controllers, and laptop-embedded controllers.
+ *
+ * @returns The physical device type as a member of the DeviceType enumeration.
+ * @since 1.2
+ */
+function UInt32 LeapDevice.deviceType() = "LeapDevice_deviceType";
+
