@@ -12,7 +12,6 @@
     "LeapHand.kl",
     "LeapGesture.kl",
     "LeapImage.kl",
-    "LeapScreen.kl",
     "LeapFrame.kl",
     "LeapDevice.kl",
     "LeapController.kl"

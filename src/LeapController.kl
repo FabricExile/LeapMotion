@@ -259,11 +259,6 @@ function LeapConfig LeapController.config() = "LeapController_config";
  */
 function LeapDevice[] LeapController.devices() = "LeapController_devices";
 
-/*
- * Deprecated as of version 1.2.
- */
-function LeapScreen[] LeapController.locatedScreens() = "LeapController_locatedScreens";
-
 /**
  * Enables or disables reporting of a specified gesture type.
  *

@@ -120,23 +120,6 @@ FABRIC_EXT_EXPORT void LeapController_devices(
   }  
 }
 
-// Defined at src\LeapController.kl:259:1
-FABRIC_EXT_EXPORT void LeapController_locatedScreens(
-  KL::Traits< KL::VariableArray< KL::LeapScreen > >::Result _result,
-  KL::Traits< KL::LeapController >::INParam this_
-) {
-  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
-  if(!controller)
-    return;
-  Leap::ScreenList list = controller->t.locatedScreens();
-  _result.resize(list.count());
-  for(unsigned int i=0;i<list.count();i++)
-  {
-    _result[i] = KL::LeapScreen::Create();
-    _result[i]->handle = new Handle<Leap::Screen>(list[i]);
-  }  
-}
-
 // Defined at src\LeapController.kl:280:1
 FABRIC_EXT_EXPORT void LeapController_enableGesture(
   KL::Traits< KL::LeapController >::INParam this_,
