@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "libs": "LeapMotion",
+  "code": [
+    "LeapConfig.kl",
+    "LeapDevice.kl",
+    "LeapScreen.kl",
+    "LeapFrame.kl",
+    "LeapController.kl"
+  ]
+}
