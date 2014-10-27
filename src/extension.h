@@ -5,12 +5,12 @@
 #ifndef __EXTENSION_H__
 #define __EXTENSION_H__
 
-#include <boost/thread/locks.hpp>
-#include <boost/thread/shared_mutex.hpp>
+template <typename K>
+struct Handle {
+  K t;
 
-typedef boost::shared_mutex Lock;
-typedef boost::unique_lock< Lock >  WriteLock;
-typedef boost::shared_lock< Lock >  ReadLock;
-Lock gLock;
+  Handle() {}
+  Handle(K other) { t = other; }
+};
 
 #endif

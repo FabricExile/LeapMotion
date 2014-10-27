@@ -109,7 +109,7 @@ function Boolean LeapController.hasFocus() = "LeapController_hasFocus";
  *
  * The supported policy flags are:
  *
- * **POLICY_BACKGROUND_FRAMES** -- requests that your application receives frames
+ * **LEAP_POLICY_BACKGROUND_FRAMES** -- requests that your application receives frames
  *   when it is not the foreground application for user input.
  *
  *   The background frames policy determines whether an application
@@ -119,7 +119,7 @@ function Boolean LeapController.hasFocus() = "LeapController_hasFocus";
  *   frames policy. The "Allow Background Apps" checkbox must be enabled in the
  *   Leap Motion Control Panel or this policy will be denied.
  *
- * **POLICY_IMAGES** -- request that your application receives images from the
+ * **LEAP_POLICY_IMAGES** -- request that your application receives images from the
  *   device cameras. The "Allow Images" checkbox must be enabled in the
  *   Leap Motion Control Panel or this policy will be denied.
  *
@@ -128,7 +128,7 @@ function Boolean LeapController.hasFocus() = "LeapController_hasFocus";
  *   not sent. Only applications that use the image data should request this policy.
  *
  *
- * **POLICY_OPTIMIZE_HMD** -- request that the tracking be optimized for head-mounted
+ * **LEAP_POLICY_OPTIMIZE_HMD** -- request that the tracking be optimized for head-mounted
  *   tracking.
  *   
  *   The optimize HMD policy improves tracking in situations where the Leap
@@ -146,24 +146,24 @@ function Boolean LeapController.hasFocus() = "LeapController_hasFocus";
  * The default policy.
  * @since 1.0
  */
-const UInt32 POLICY_DEFAULT = 0;
+const UInt32 LEAP_POLICY_DEFAULT = 0;
 /**
  * Receive background frames.
  * @since 1.0
  */
-const UInt32 POLICY_BACKGROUND_FRAMES = (1 << 0);
+const UInt32 LEAP_POLICY_BACKGROUND_FRAMES = (1 << 0);
 
 /**
  * Receive raw images from sensor cameras.
  * @since 2.1.0
  */
-const UInt32 POLICY_IMAGES = (1 << 1);
+const UInt32 LEAP_POLICY_IMAGES = (1 << 1);
 
 /**
  * Optimize the tracking for head-mounted device.
  * @since 2.1.2
  */
-const UInt32 POLICY_OPTIMIZE_HMD = (1 << 2);
+const UInt32 LEAP_POLICY_OPTIMIZE_HMD = (1 << 2);
 
 /**
  * Gets the active policy settings.

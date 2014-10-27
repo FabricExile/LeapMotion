@@ -2,7 +2,7 @@ LeapMotion
 ===========
 A KL extension for the Leap Motion controller
 
-LeapMotion allows you to read the input information, such as sticks and buttons, from the LeapMotion controller.
+LeapMotion allows you to gather the input information, such as tracked fingers and gestures, from the Leap Motion device.
 
 extension status
 ================
@@ -26,14 +26,11 @@ building
 ========
 
 A scons (http://www.scons.org/) build script is provided. LeapMotion depends on
-* A static build of boost (1.55.0 or higher)
 * The Leap Motion SDK (2.1.5 or higher)
 
 To inform scons where to find the Fabric Engine includes as well as the thirdparty libraries, you need to set the following environment variables:
 
 * FABRIC_DIR: Should point to Fabric Engine's installation folder.
-* BOOST_INCLUDE_DIR: Should point to Boost include folder.
-* BOOST_LIBRARY_DIR: Should point to Boost library folder.
 * LEAP_SDK_DIR: Should point to root of the Leap Motion SDK.
 
 The temporary files will be built into the *build* folder, while the structured output files will be placed in the *stage* folder. Optionally you can define the FABRIC_EXTS_INSTALL_DIR environment variable, to which the extension will be installed.

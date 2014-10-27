@@ -1,0 +1,7 @@
+require LeapMotion;
+
+operator entry() {
+  LeapController controller();
+  report(controller.isConnected());
+  report('completed!'); 
+}

@@ -3,6 +3,13 @@
   "libs": "LeapMotion",
   "code": [
     "LeapConfig.kl",
+    "LeapInteractionBox.kl",
+    "LeapFinger.kl",
+    "LeapGesture.kl",
+    "LeapPointable.kl",
+    "LeapHand.kl",
+    "LeapImage.kl",
+    "LeapTool.kl",
     "LeapDevice.kl",
     "LeapScreen.kl",
     "LeapFrame.kl",

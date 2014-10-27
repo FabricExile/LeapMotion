@@ -9,7 +9,6 @@ extName = 'LeapMotion'
 env = parentEnv.Clone()
 env.Append(CPPPATH = [env.Dir('.').abspath])
 env.Append(CPPPATH = [env.Dir('thirdparty').abspath])
-env.Append(LIBS = ['libboost_thread-vc100-mt-s-1_55'])
 env.Append(LIBS = ['Leap'])
 env.Append(CCFLAGS = ['/EHsc'])
 
@@ -20,6 +19,8 @@ sources += env.Glob('*.kl')
 
 cppFiles = [
   env.File('extension.cpp'),
+  env.File('LeapConfig_functions.cpp'),
+  env.File('LeapFrame_functions.cpp'),
   env.File('LeapController_functions.cpp')
 ]
 

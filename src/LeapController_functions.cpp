@@ -3,22 +3,23 @@
  */
 
 #include "LeapController_functions.h"
+#include "extension.h"
 #include <Leap.h>
 
 using namespace Fabric::EDK;
 
 // Defined at src\LeapController.kl:53:1
 FABRIC_EXT_EXPORT void LeapController_Construct(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::IOParam this_
+  KL::Traits< KL::LeapController >::IOParam this_
 ) {
-  this_->handle = new Leap::Controller();
+  this_->handle = new Handle<Leap::Controller>();
 }
 
 // Defined at src\LeapController.kl:56:1
 FABRIC_EXT_EXPORT void LeapController_Destruct(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::IOParam this_
+  KL::Traits< KL::LeapController >::IOParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(controller)
   {
     delete(controller);
@@ -27,120 +28,134 @@ FABRIC_EXT_EXPORT void LeapController_Destruct(
 }
 
 // Defined at src\LeapController.kl:75:1
-FABRIC_EXT_EXPORT Fabric::EDK::KL::Boolean LeapController_isConnected(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+FABRIC_EXT_EXPORT KL::Boolean LeapController_isConnected(
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return false;
-  return controller->isConnected();
+  return controller->t.isConnected();
 }
 
 // Defined at src\LeapController.kl:82:1
-FABRIC_EXT_EXPORT Fabric::EDK::KL::Boolean LeapController_isServiceConnected(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+FABRIC_EXT_EXPORT KL::Boolean LeapController_isServiceConnected(
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return false;
-  return controller->isServiceConnected();
+  return controller->t.isServiceConnected();
 }
 
 // Defined at src\LeapController.kl:99:1
-FABRIC_EXT_EXPORT Fabric::EDK::KL::Boolean LeapController_hasFocus(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+FABRIC_EXT_EXPORT KL::Boolean LeapController_hasFocus(
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return false;
-  return controller->hasFocus();
+  return controller->t.hasFocus();
 }
 
 // Defined at src\LeapController.kl:180:1
-FABRIC_EXT_EXPORT Fabric::EDK::KL::UInt32 LeapController_policyFlags(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+FABRIC_EXT_EXPORT KL::UInt32 LeapController_policyFlags(
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return 0;
-  return (Fabric::EDK::KL::UInt32)controller->policyFlags();
+  return (KL::UInt32)controller->t.policyFlags();
 }
 
 // Defined at src\LeapController.kl:199:1
 FABRIC_EXT_EXPORT void LeapController_setPolicyFlags(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::UInt32 >::INParam flags
+  KL::Traits< KL::LeapController >::INParam this_,
+  KL::Traits< KL::UInt32 >::INParam flags
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return;
-  controller->setPolicyFlags((Leap::Controller::PolicyFlag)flags);
+  controller->t.setPolicyFlags((Leap::Controller::PolicyFlag)flags);
 }
 
 // Defined at src\LeapController.kl:222:1
 FABRIC_EXT_EXPORT void LeapController_frame(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapFrame >::Result _result,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::SInt32 >::INParam history
+  KL::Traits< KL::LeapFrame >::Result _result,
+  KL::Traits< KL::LeapController >::INParam this_,
+  KL::Traits< KL::SInt32 >::INParam history
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return;
-  // todo
+  _result = KL::LeapFrame::Create();
+  _result->handle = new Handle<Leap::Frame>(controller->t.frame(history));
 }
 
 // Defined at src\LeapController.kl:237:1
 FABRIC_EXT_EXPORT void LeapController_config(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapConfig >::Result _result,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+  KL::Traits< KL::LeapConfig >::Result _result,
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return;
-  // todo
+  _result = KL::LeapConfig::Create();
+  _result->handle = new Handle<Leap::Config>(controller->t.config());
 }
 
 // Defined at src\LeapController.kl:254:1
 FABRIC_EXT_EXPORT void LeapController_devices(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::VariableArray< Fabric::EDK::KL::LeapDevice > >::Result _result,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+  KL::Traits< KL::VariableArray< KL::LeapDevice > >::Result _result,
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return;
-  // todo
+  Leap::DeviceList list = controller->t.devices();
+  _result.resize(list.count());
+  for(unsigned int i=0;i<list.count();i++)
+  {
+    _result[i] = KL::LeapDevice::Create();
+    _result[i]->handle = new Handle<Leap::Device>(list[i]);
+  }  
 }
 
 // Defined at src\LeapController.kl:259:1
 FABRIC_EXT_EXPORT void LeapController_locatedScreens(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::VariableArray< Fabric::EDK::KL::LeapScreen > >::Result _result,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_
+  KL::Traits< KL::VariableArray< KL::LeapScreen > >::Result _result,
+  KL::Traits< KL::LeapController >::INParam this_
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return;
-  // todo
+  Leap::ScreenList list = controller->t.locatedScreens();
+  _result.resize(list.count());
+  for(unsigned int i=0;i<list.count();i++)
+  {
+    _result[i] = KL::LeapScreen::Create();
+    _result[i]->handle = new Handle<Leap::Screen>(list[i]);
+  }  
 }
 
 // Defined at src\LeapController.kl:280:1
 FABRIC_EXT_EXPORT void LeapController_enableGesture(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::UInt32 >::INParam gesture,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::Boolean >::INParam enable
+  KL::Traits< KL::LeapController >::INParam this_,
+  KL::Traits< KL::UInt32 >::INParam gesture,
+  KL::Traits< KL::Boolean >::INParam enable
 ) {
-  Leap::Controller * controller = (  Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (  Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return;
-  controller->enableGesture((Leap::Gesture::Type)gesture, enable);
+  controller->t.enableGesture((Leap::Gesture::Type)gesture, enable);
 }
 
 // Defined at src\LeapController.kl:292:1
-FABRIC_EXT_EXPORT Fabric::EDK::KL::Boolean LeapController_isGestureEnabled(
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapController >::INParam this_,
-  Fabric::EDK::KL::Traits< Fabric::EDK::KL::UInt32 >::INParam gesture
+FABRIC_EXT_EXPORT KL::Boolean LeapController_isGestureEnabled(
+  KL::Traits< KL::LeapController >::INParam this_,
+  KL::Traits< KL::UInt32 >::INParam gesture
 ) {
-  Leap::Controller * controller = (Leap::Controller*)this_->handle;
+  Handle<Leap::Controller>* controller = (Handle<Leap::Controller>*)this_->handle;
   if(!controller)
     return false;
-  return controller->isGestureEnabled((Leap::Gesture::Type)gesture);
+  return controller->t.isGestureEnabled((Leap::Gesture::Type)gesture);
 }

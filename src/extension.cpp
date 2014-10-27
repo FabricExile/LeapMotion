@@ -5,7 +5,6 @@
 #include <FabricEDK.h>
 #include "LeapMotion.h"
 #include "extension.h"
-#include <boost/thread/shared_mutex.hpp>
 
 using namespace Fabric::EDK;
 

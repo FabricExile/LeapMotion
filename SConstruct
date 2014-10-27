@@ -9,8 +9,6 @@ if not platform.system().lower().startswith('win'):
 
 thirdpartyDirs = {
   'FABRIC_DIR': "Should point to Fabric Engine's installation folder.",
-  'BOOST_INCLUDE_DIR': "Should point to Boost include folder.",
-  'BOOST_LIBRARY_DIR': "Should point to Boost library folder.",
   'LEAP_SDK_DIR': "Should point to root of the Leap Motion SDK."
 }
 
@@ -70,8 +68,6 @@ def RunKL2EDK(
   return result
 
 # for windows for now use Visual Studio 2010. 
-# if you upgrade this you will also have to provide
-# boost libs for the corresponding VS version
 env = Environment(ENV = os.environ, MSVC_VERSION='10.0')
 env.AddMethod(RunKL2EDK)
 
@@ -82,9 +78,7 @@ for thirdpartyDir in thirdpartyDirs:
 
 LEAP_LIB_DIR = os.path.join(os.environ['LEAP_SDK_DIR'], 'lib', 'x64')
 env.Append(CPPPATH = [os.path.join(os.environ['FABRIC_DIR'], 'include')])
-env.Append(CPPPATH = [os.environ['BOOST_INCLUDE_DIR']])
 env.Append(CPPPATH = [os.path.join(os.environ['LEAP_SDK_DIR'], 'include')])
-env.Append(LIBPATH = [os.environ['BOOST_LIBRARY_DIR']])
 env.Append(LIBPATH = [LEAP_LIB_DIR])
 
 alias = SConscript('src/SConscript', variant_dir = 'build', exports = {'parentEnv': env, 'STAGE_DIR': env.Dir('stage'), 'LEAP_LIB_DIR': LEAP_LIB_DIR}, duplicate=0)
