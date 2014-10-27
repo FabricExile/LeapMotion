@@ -2,13 +2,579 @@
  *  Copyright 2010-2014 Fabric Software Inc. All rights reserved.
  */
 
+/**
+ * The Hand class reports the physical characteristics of a detected hand.
+ *
+ * Hand tracking data includes a palm position and velocity; vectors for
+ * the palm normal and direction to the fingers; properties of a sphere fit
+ * to the hand; and lists of the attached fingers.
+ *
+ * Get Hand objects from a Frame object:
+ *
+ * \include Hand_Get_First.txt
+ *
+ * Note that Hand objects can be invalid, which means that they do not contain
+ * valid tracking data and do not correspond to a physical entity. Invalid Hand
+ * objects can be the result of asking for a Hand object using an ID from an
+ * earlier frame when no Hand objects with that ID exist in the current frame.
+ * A Hand object created from the Hand constructor is also invalid.
+ * Test for validity with the Hand::isValid() function.
+ * @since 1.0
+ */
 object LeapHand {
   /// \internal
   Data handle;
 };
+
+/// \internal
+function ~LeapHand() = "LeapHand_Destruct";
 
 /// returns true if this controller is valid
 function Boolean LeapHand.valid() {
   Data nullData;
   return this.handle == nullData;
 }
+
+/**
+ * A unique ID assigned to this Hand object, whose value remains the same
+ * across consecutive frames while the tracked hand remains visible. If
+ * tracking is lost (for example, when a hand is occluded by another hand
+ * or when it is withdrawn from or reaches the edge of the Leap Motion Controller field of view),
+ * the Leap Motion software may assign a new ID when it detects the hand in a future frame.
+ *
+ * Use the ID value with the Frame::hand() function to find this Hand object
+ * in future frames:
+ *
+ * \include Hand_Get_ID.txt
+ *
+ * @returns The ID of this hand.
+ * @since 1.0
+ */
+function SInt32 LeapHand.id() = "LeapHand_id";
+
+/**
+ * The list of Pointable objects detected in this frame
+ * that are associated with this hand, given in arbitrary order. The list
+ * will always contain 5 fingers.
+ *
+ * Use PointableList::extended() to remove non-extended fingers from the list.
+ *
+ * \include Hand_Get_Fingers.txt
+ *
+ * @returns The PointableList containing all Pointable objects associated with this hand.
+ * @since 1.0
+ */
+function LeapPointable[] LeapHand.pointables() = "LeapHand_pointables";
+
+/**
+ * The Pointable object with the specified ID associated with this hand.
+ *
+ * Use the Hand::pointable() function to retrieve a Pointable object
+ * associated with this hand using an ID value obtained from a previous frame.
+ * This function always returns a Pointable object, but if no finger
+ * with the specified ID is present, an invalid Pointable object is returned.
+ *
+ * \include Hand_Get_Pointable_ByID.txt
+ *
+ * Note that the ID values assigned to fingers are based on the hand ID. 
+ * Hand IDs persist across frames, but only until
+ * tracking of that hand is lost. If tracking of the hand is lost and subsequently
+ * regained, the new Hand object and its child Finger objects will have a
+ * different ID than in an earlier frame.
+ *
+ * @param id The ID value of a Pointable object from a previous frame.
+ * @returns The Pointable object with the matching ID if one exists for this
+ * hand in this frame; otherwise, an invalid Pointable object is returned.
+ * @since 1.0
+ */
+function LeapPointable LeapHand.pointable(SInt32 id) = "LeapHand_pointable";
+
+/**
+ * The list of Finger objects detected in this frame that are attached to
+ * this hand, given in order from thumb to pinky.  The list cannot be empty.
+ *
+ * Use PointableList::extended() to remove non-extended fingers from the list.
+ *
+ * \include Hand_Get_Fingers.txt
+ *
+ * @returns The FingerList containing all Finger objects attached to this hand.
+ * @since 1.0
+ */
+function LeapFinger[] LeapHand.fingers() = "LeapHand_fingers";
+
+/**
+ * The Finger object with the specified ID attached to this hand.
+ *
+ * Use the Hand::finger() function to retrieve a Finger object attached to
+ * this hand using an ID value obtained from a previous frame.
+ * This function always returns a Finger object, but if no finger
+ * with the specified ID is present, an invalid Finger object is returned.
+ *
+ * \include Hand_finger.txt
+ *
+ * Note that ID values persist across frames, but only until tracking of a
+ * particular object is lost. If tracking of a finger is lost and subsequently
+ * regained, the new Finger object representing that finger may have a
+ * different ID than that representing the finger in an earlier frame.
+ *
+ * @param id The ID value of a Finger object from a previous frame.
+ * @returns The Finger object with the matching ID if one exists for this
+ * hand in this frame; otherwise, an invalid Finger object is returned.
+ * @since 1.0
+ */
+function LeapFinger LeapHand.finger(SInt32 id) = "LeapHand_finger";
+
+/*
+ * The list of Tool objects detected in this frame that are held by this
+ * hand, given in arbitrary order.
+ * The list can be empty if no tools held by this hand are detected.
+ *
+ * \include Hand_tools.txt
+ *
+ * @returns The ToolList containing all Tool objects held by this hand.
+ * @since 1.0
+ */
+ /**
+ * Tools are not associated with hands in version 2+. This list
+ * is always empty.
+ *
+ * @deprecated 2.0
+ */
+function LeapTool[] LeapHand.tools() = "LeapHand_tools";
+
+/*
+ * The Tool object with the specified ID held by this hand.
+ *
+ * Use the Hand::tool() function to retrieve a Tool object held by
+ * this hand using an ID value obtained from a previous frame.
+ * This function always returns a Tool object, but if no tool
+ * with the specified ID is present, an invalid Tool object is returned.
+ *
+ * \include Hand_tool.txt
+ *
+ * Note that ID values persist across frames, but only until tracking of a
+ * particular object is lost. If tracking of a tool is lost and subsequently
+ * regained, the new Tool object representing that tool may have a
+ * different ID than that representing the tool in an earlier frame.
+ *
+ * @param id The ID value of a Tool object from a previous frame.
+ * @returns The Tool object with the matching ID if one exists for this
+ * hand in this frame; otherwise, an invalid Tool object is returned.
+ * @since 1.0
+ */
+ /**
+ * Tools are not associated with hands in version 2+. This function
+ * always returns an invalid Tool object.
+ *
+ * @deprecated 2.0
+ */
+function LeapTool LeapHand.tool(SInt32 id) = "LeapHand_tool";
+
+/**
+ * The center position of the palm in millimeters from the Leap Motion Controller origin.
+ *
+ * \include Hand_palmPosition.txt
+ *
+ * @returns The Vector representing the coordinates of the palm position.
+ * @since 1.0
+ */
+function Vec3 LeapHand.palmPosition() = "LeapHand_palmPosition";
+
+/**
+ * The stabilized palm position of this Hand.
+ *
+ * Smoothing and stabilization is performed in order to make
+ * this value more suitable for interaction with 2D content. The stabilized
+ * position lags behind the palm position by a variable amount, depending
+ * primarily on the speed of movement.
+ *
+ * \include Hand_stabilizedPalmPosition.txt
+ *
+ * @returns A modified palm position of this Hand object
+ * with some additional smoothing and stabilization applied.
+ * @since 1.0
+ */
+function Vec3 LeapHand.stabilizedPalmPosition() = "LeapHand_stabilizedPalmPosition";
+
+/**
+ * The rate of change of the palm position in millimeters/second.
+ *
+ * \include Hand_palmVelocity.txt
+ *
+ * @returns The Vector representing the coordinates of the palm velocity.
+ * @since 1.0
+ */
+function Vec3 LeapHand.palmVelocity() = "LeapHand_palmVelocity";
+
+/**
+ * The normal vector to the palm. If your hand is flat, this vector will
+ * point downward, or "out" of the front surface of your palm.
+ *
+ * \image html images/Leap_Palm_Vectors.png
+ *
+ * The direction is expressed as a unit vector pointing in the same
+ * direction as the palm normal (that is, a vector orthogonal to the palm).
+ *
+ * You can use the palm normal vector to compute the roll angle of the palm with
+ * respect to the horizontal plane:
+ *
+ * \include Hand_Get_Angles.txt
+ *
+ * @returns The Vector normal to the plane formed by the palm.
+ * @since 1.0
+ */
+function Vec3 LeapHand.palmNormal() = "LeapHand_palmNormal";
+
+/**
+ * The estimated width of the palm when the hand is in a flat position.
+ *
+ * \include Hand_palmWidth.txt
+ *
+ * @returns The width of the palm in millimeters
+ * @since 2.0
+ */
+function Float32 LeapHand.palmWidth() = "LeapHand_palmWidth";
+
+/**
+ * The direction from the palm position toward the fingers.
+ *
+ * The direction is expressed as a unit vector pointing in the same
+ * direction as the directed line from the palm position to the fingers.
+ *
+ * You can use the palm direction vector to compute the pitch and yaw angles of the palm with
+ * respect to the horizontal plane:
+ *
+ * \include Hand_Get_Angles.txt
+ *
+ * @returns The Vector pointing from the palm position toward the fingers.
+ * @since 1.0
+ */
+function Vec3 LeapHand.direction() = "LeapHand_direction";
+
+/**
+ * The orientation of the hand as a basis matrix.
+ *
+ * The basis is defined as follows:
+ *
+ * **xAxis** Positive in the direction of the pinky
+ *
+ * **yAxis** Positive above the hand
+ *
+ * **zAxis** Positive in the direction of the wrist
+ *
+ * Note: Since the left hand is a mirror of the right hand, the
+ * basis matrix will be left-handed for left hands.
+ *
+ * \include Hand_basis.txt
+ *
+ * @returns The basis of the hand as a matrix.
+ * @since 2.0
+ */
+function Mat44 LeapHand.basis() = "LeapHand_basis";
+
+/**
+ * The arm to which this hand is attached.
+ *
+ * If the arm is not completely in view, Arm attributes are estimated based on
+ * the attributes of entities that are in view combined with typical human anatomy.
+ *
+ * \include Arm_get.txt
+ *
+ * @returns The Arm object for this hand.
+ * @since 2.0.3
+ */
+function LeapArm LeapHand.arm() = "LeapHand_arm";
+
+/**
+ * The position of the wrist of this hand.
+ *
+ * @returns A vector containing the coordinates of the wrist position in millimeters.
+ * @since 2.0.3
+ */
+function Vec3 LeapHand.wristPosition() = "LeapHand_wristPosition";
+
+
+/**
+ * The center of a sphere fit to the curvature of this hand.
+ *
+ * \include Hand_sphereCenter.txt
+ *
+ * This sphere is placed roughly as if the hand were holding a ball.
+ *
+ * \image html images/Leap_Hand_Ball.png
+ *
+ * @returns The Vector representing the center position of the sphere.
+ * @since 1.0
+ */
+function Vec3 LeapHand.sphereCenter() = "LeapHand_sphereCenter";
+
+/**
+ * The radius of a sphere fit to the curvature of this hand.
+ *
+ * This sphere is placed roughly as if the hand were holding a ball. Thus the
+ * size of the sphere decreases as the fingers are curled into a fist.
+ *
+ * \include Hand_sphereRadius.txt
+ *
+ * @returns The radius of the sphere in millimeters.
+ * @since 1.0
+ */
+function Float32 LeapHand.sphereRadius() = "LeapHand_sphereRadius";
+
+/**
+ * The holding strength of a pinch hand pose.
+ *
+ * The strength is zero for an open hand, and blends to 1.0 when a pinching
+ * hand pose is recognized. Pinching can be done between the thumb
+ * and any other finger of the same hand.
+ *
+ * \include Hand_pinchStrength.txt
+ *
+ * @returns A float value in the [0..1] range representing the holding strength
+ * of the pinch pose.
+ * @since 2.0
+ */
+function Float32 LeapHand.pinchStrength() = "LeapHand_pinchStrength";
+
+/**
+ * The strength of a grab hand pose.
+ *
+ * The strength is zero for an open hand, and blends to 1.0 when a grabbing hand
+ * pose is recognized.
+ *
+ * \include Hand_grabStrength.txt
+ *
+ * @returns A float value in the [0..1] range representing the holding strength
+ * of the pose.
+ * @since 2.0
+ */
+function Float32 LeapHand.grabStrength() = "LeapHand_grabStrength";
+
+/**
+ * The change of position of this hand between the current frame and
+ * the specified frame.
+ *
+ * The returned translation vector provides the magnitude and direction of
+ * the movement in millimeters.
+ *
+ * \include Hand_translation.txt
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns a zero vector.
+ *
+ * @param sinceFrame The starting frame for computing the translation.
+ * @returns A Vector representing the heuristically determined change in
+ * hand position between the current frame and that specified in the
+ * sinceFrame parameter.
+ * @since 1.0
+ */
+function Vec3 LeapHand.translation(LeapFrame sinceFrame) = "LeapHand_translation";
+
+/**
+ * The estimated probability that the hand motion between the current
+ * frame and the specified frame is intended to be a translating motion.
+ *
+ * \include Hand_translationProbability.txt
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns zero.
+ *
+ * @param sinceFrame The starting frame for computing the translation.
+ * @returns A value between 0 and 1 representing the estimated probability
+ * that the hand motion between the current frame and the specified frame
+ * is intended to be a translating motion.
+ * @since 1.0
+ */
+function Float32 LeapHand.translationProbability(LeapFrame sinceFrame) = "LeapHand_translationProbability";
+
+/**
+ * The axis of rotation derived from the change in orientation of this
+ * hand, and any associated fingers, between the current frame
+ * and the specified frame.
+ *
+ * \include Hand_rotationAxis.txt
+ *
+ * The returned direction vector is normalized.
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns a zero vector.
+ *
+ * @param sinceFrame The starting frame for computing the relative rotation.
+ * @returns A normalized direction Vector representing the heuristically
+ * determined axis of rotational change of the hand between the current
+ * frame and that specified in the sinceFrame parameter.
+ * @since 1.0
+ */
+function Vec3 LeapHand.rotationAxis(LeapFrame sinceFrame) = "LeapHand_rotationAxis";
+
+/**
+ * The angle of rotation around the rotation axis derived from the change
+ * in orientation of this hand, and any associated fingers,
+ * between the current frame and the specified frame.
+ *
+ * \include Hand_rotationAngle.txt
+ *
+ * The returned angle is expressed in radians measured clockwise around the
+ * rotation axis (using the right-hand rule) between the start and end frames.
+ * The value is always between 0 and pi radians (0 and 180 degrees).
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then the angle of
+ * rotation is zero.
+ *
+ * @param sinceFrame The starting frame for computing the relative rotation.
+ * @returns A positive value representing the heuristically determined
+ * rotational change of the hand between the current frame and that
+ * specified in the sinceFrame parameter.
+ * @since 1.0
+ */
+function Float32 LeapHand.rotationAngle(LeapFrame sinceFrame) = "LeapHand_rotationAngle";
+
+/**
+ * The angle of rotation around the specified axis derived from the change
+ * in orientation of this hand, and any associated fingers,
+ * between the current frame and the specified frame.
+ *
+ * \include Hand_rotationAngle_axis.txt
+ *
+ * The returned angle is expressed in radians measured clockwise around the
+ * rotation axis (using the right-hand rule) between the start and end frames.
+ * The value is always between -pi and pi radians (-180 and 180 degrees).
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then the angle of
+ * rotation is zero.
+ *
+ * @param sinceFrame The starting frame for computing the relative rotation.
+ * @param axis The axis to measure rotation around.
+ * @returns A value representing the heuristically determined rotational
+ * change of the hand between the current frame and that specified in the
+ * sinceFrame parameter around the specified axis.
+ * @since 1.0
+ */
+function Float32 LeapHand.rotationAngle(LeapFrame sinceFrame, Vec3 axis) = "LeapHand_rotationAngle";
+
+/**
+ * The transform matrix expressing the rotation derived from the change
+ * in orientation of this hand, and any associated fingers,
+ * between the current frame and the specified frame.
+ *
+ * \include Hand_rotationMatrix.txt
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns an identity matrix.
+ *
+ * @param sinceFrame The starting frame for computing the relative rotation.
+ * @returns A transformation Matrix representing the heuristically determined
+ * rotational change of the hand between the current frame and that specified
+ * in the sinceFrame parameter.
+ * @since 1.0
+ */
+function Mat44 LeapHand.rotationMatrix(LeapFrame sinceFrame) = "LeapHand_rotationMatrix";
+
+/**
+ * The estimated probability that the hand motion between the current
+ * frame and the specified frame is intended to be a rotating motion.
+ *
+ * \include Hand_rotationProbability.txt
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns zero.
+ *
+ * @param sinceFrame The starting frame for computing the relative rotation.
+ * @returns A value between 0 and 1 representing the estimated probability
+ * that the hand motion between the current frame and the specified frame
+ * is intended to be a rotating motion.
+ * @since 1.0
+ */
+function Float32 LeapHand.rotationProbability(LeapFrame sinceFrame) = "LeapHand_rotationProbability";
+
+/**
+ * The scale factor derived from this hand's motion between the current frame
+ * and the specified frame.
+ *
+ * The scale factor is always positive. A value of 1.0 indicates no
+ * scaling took place. Values between 0.0 and 1.0 indicate contraction
+ * and values greater than 1.0 indicate expansion.
+ *
+ * \include Hand_scaleFactor.txt
+ *
+ * The Leap Motion software derives scaling from the relative inward or outward motion of
+ * a hand and its associated fingers (independent of translation
+ * and rotation).
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns 1.0.
+ *
+ * @param sinceFrame The starting frame for computing the relative scaling.
+ * @returns A positive value representing the heuristically determined
+ * scaling change ratio of the hand between the current frame and that
+ * specified in the sinceFrame parameter.
+ * @since 1.0
+ */
+function Float32 LeapHand.scaleFactor(LeapFrame sinceFrame) = "LeapHand_scaleFactor";
+
+/**
+ * The estimated probability that the hand motion between the current
+ * frame and the specified frame is intended to be a scaling motion.
+ *
+ * \include Hand_scaleProbability.txt
+ *
+ * If a corresponding Hand object is not found in sinceFrame, or if either
+ * this frame or sinceFrame are invalid Frame objects, then this method
+ * returns zero.
+ *
+ * @param sinceFrame The starting frame for computing the relative scaling.
+ * @returns A value between 0 and 1 representing the estimated probability
+ * that the hand motion between the current frame and the specified frame
+ * is intended to be a scaling motion.
+ * @since 1.0
+ */
+function Float32 LeapHand.scaleProbability(LeapFrame sinceFrame) = "LeapHand_scaleProbability";
+
+/**
+ * The duration of time this Hand has been visible to the Leap Motion Controller.
+ *
+ * \include Hand_timeVisible.txt
+ *
+ * @returns The duration (in seconds) that this Hand has been tracked.
+ * @since 1.0
+ */
+function Float32 LeapHand.timeVisible() = "LeapHand_timeVisible";
+
+/**
+ * How confident we are with a given hand pose.
+ *
+ * The confidence level ranges between 0.0 and 1.0 inclusive.
+ *
+ * \include Hand_confidence.txt
+ *
+ * @since 2.0
+ */
+function Float32 LeapHand.confidence() = "LeapHand_confidence";
+
+/**
+ * Identifies whether this Hand is a left hand.
+ *
+ * \include Hand_isLeft.txt
+ *
+ * @returns True if the hand is identified as a left hand.
+ * @since 2.0
+ */
+function Boolean LeapHand.isLeft() = "LeapHand_isLeft";
+
+/**
+ * Identifies whether this Hand is a right hand.
+ *
+ * \include Hand_isRight.txt
+ *
+ * @returns True if the hand is identified as a right hand.
+ * @since 2.0
+ */
+function Boolean LeapHand.isRight() = "LeapHand_isRight";

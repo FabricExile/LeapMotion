@@ -2,18 +2,13 @@
  *  Copyright 2010-2014 Fabric Software Inc. All rights reserved.
  */
 
-object LeapImage {
+object LeapArm {
   /// \internal
   Data handle;
 };
 
-/// \internal
-function ~LeapImage() = "LeapImage_Destruct";
-
 /// returns true if this controller is valid
-function Boolean LeapImage.valid() {
+function Boolean LeapArm.valid() {
   Data nullData;
   return this.handle == nullData;
 }
-
-// this type is not implemented in the LeapMotion extension.

@@ -4,15 +4,16 @@
   "code": [
     "LeapConfig.kl",
     "LeapInteractionBox.kl",
-    "LeapFinger.kl",
-    "LeapGesture.kl",
     "LeapPointable.kl",
-    "LeapHand.kl",
-    "LeapImage.kl",
+    "LeapFinger.kl",
     "LeapTool.kl",
-    "LeapDevice.kl",
+    "LeapArm.kl",
+    "LeapHand.kl",
+    "LeapGesture.kl",
+    "LeapImage.kl",
     "LeapScreen.kl",
     "LeapFrame.kl",
+    "LeapDevice.kl",
     "LeapController.kl"
   ]
 }
