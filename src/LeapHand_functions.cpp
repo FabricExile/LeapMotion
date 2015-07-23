@@ -357,6 +357,25 @@ FABRIC_EXT_EXPORT Fabric::EDK::KL::Float32 LeapHand_rotationAngle(
   return hand->t.rotationAngle(sinceFrame_->t);
 }
 
+// Defined at src\LeapHand.kl:434:1
+FABRIC_EXT_EXPORT Fabric::EDK::KL::Float32 LeapHand_rotationAngle_withAxis(
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapHand >::INParam this_,
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapFrame >::INParam sinceFrame,
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::Vec3 >::INParam axis
+) {
+  Handle<Leap::Hand>* hand = (Handle<Leap::Hand>*)this_->handle;
+  if(!hand)
+    return 0.0f;
+  Handle<Leap::Frame>* sinceFrame_ = (Handle<Leap::Frame>*)sinceFrame->handle;
+  if(!sinceFrame)
+    return 0.0f;
+  Leap::Vector cAxis;
+  cAxis.x = axis.x;
+  cAxis.y = axis.y;
+  cAxis.z = axis.z; 
+  return hand->t.rotationAngle(sinceFrame_->t, cAxis);
+}
+
 // Defined at src\LeapHand.kl:477:1
 FABRIC_EXT_EXPORT void LeapHand_rotationMatrix(
   Fabric::EDK::KL::Traits< Fabric::EDK::KL::Mat44 >::Result _result,

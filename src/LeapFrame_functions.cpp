@@ -190,6 +190,27 @@ FABRIC_EXT_EXPORT void LeapFrame_gestures(
   }  
 }
 
+// Defined at src\LeapFrame.kl:229:1
+FABRIC_EXT_EXPORT void LeapFrame_gestures_sinceFrame(
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::VariableArray< Fabric::EDK::KL::LeapGesture > >::Result _result,
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapFrame >::INParam this_,
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapFrame >::INParam sinceFrame
+) {
+  Handle<Leap::Frame>* frame = (Handle<Leap::Frame>*)this_->handle;
+  if(!frame)
+    return;
+  Handle<Leap::Frame>* cSinceFrame = (Handle<Leap::Frame>*)sinceFrame->handle;
+  if(!cSinceFrame)
+    return;
+  Leap::GestureList list = frame->t.gestures(cSinceFrame->t);
+  _result.resize(list.count());
+  for(unsigned int i=0;i<list.count();i++)
+  {
+    _result[i] = KL::LeapGesture::Create();
+    _result[i]->handle = new Handle<Leap::Gesture>(list[i]);
+  }  
+}
+
 // Defined at src\LeapFrame.kl:252:1
 FABRIC_EXT_EXPORT void LeapFrame_images(
   Fabric::EDK::KL::Traits< Fabric::EDK::KL::VariableArray< Fabric::EDK::KL::LeapImage > >::Result _result,
@@ -269,6 +290,24 @@ FABRIC_EXT_EXPORT Fabric::EDK::KL::Float32 LeapFrame_rotationAngle(
   if(!sinceFrame)
     return 0.0f;
   return frame->t.rotationAngle(sinceFrame_->t);
+}
+
+FABRIC_EXT_EXPORT Fabric::EDK::KL::Float32 LeapFrame_rotationAngle_withAxis(
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapFrame >::INParam this_,
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::LeapFrame >::INParam sinceFrame,
+  Fabric::EDK::KL::Traits< Fabric::EDK::KL::Vec3 >::INParam axis
+) {
+  Handle<Leap::Frame>* frame = (Handle<Leap::Frame>*)this_->handle;
+  if(!frame)
+    return 0.0f;
+  Handle<Leap::Frame>* sinceFrame_ = (Handle<Leap::Frame>*)sinceFrame->handle;
+  if(!sinceFrame)
+    return 0.0f;
+  Leap::Vector cAxis;
+  cAxis.x = axis.x;
+  cAxis.y = axis.y;
+  cAxis.z = axis.z; 
+  return frame->t.rotationAngle(sinceFrame_->t, cAxis);
 }
 
 // Defined at src\LeapFrame.kl:383:1

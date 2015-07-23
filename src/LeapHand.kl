@@ -455,7 +455,7 @@ function Float32 LeapHand.rotationAngle(LeapFrame sinceFrame) = "LeapHand_rotati
  * sinceFrame parameter around the specified axis.
  * @since 1.0
  */
-function Float32 LeapHand.rotationAngle(LeapFrame sinceFrame, Vec3 axis) = "LeapHand_rotationAngle";
+function Float32 LeapHand.rotationAngle(LeapFrame sinceFrame, Vec3 axis) = "LeapHand_rotationAngle_withAxis";
 
 /**
  * The transform matrix expressing the rotation derived from the change

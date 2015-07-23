@@ -241,7 +241,7 @@ function LeapGesture[] LeapFrame.gestures() = "LeapFrame_gestures";
  * since the specified frame.
  * @since 1.0
  */
-function LeapGesture[] LeapFrame.gestures(LeapFrame sinceFrame) = "LeapFrame_gestures";
+function LeapGesture[] LeapFrame.gestures(LeapFrame sinceFrame) = "LeapFrame_gestures_sinceFrame";
 
 /**
  *  The list of images from the Leap Motion cameras.
@@ -360,7 +360,7 @@ function Float32 LeapFrame.rotationAngle(LeapFrame sinceFrame) = "LeapFrame_rota
  * parameter around the given axis.
  * @since 1.0
  */
-function Float32 LeapFrame.rotationAngle(LeapFrame sinceFrame, Vec3 axis) = "LeapFrame_rotationAngle";
+function Float32 LeapFrame.rotationAngle(LeapFrame sinceFrame, Vec3 axis) = "LeapFrame_rotationAngle_withAxis";
 
 /**
  * The transform matrix expressing the rotation derived from the overall
