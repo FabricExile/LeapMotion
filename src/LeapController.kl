@@ -49,7 +49,6 @@ object LeapController {
   Data handle;
 };
 
-/// \internal
 function LeapController() = "LeapController_Construct";
 
 /// \internal
