@@ -1,12 +1,13 @@
 {
   "objectType" : "Graph",
   "metadata" : {
-    "camera_mat44" : "{\n  \"row0\" : {\n    \"x\" : 0.9979833960533142,\n    \"y\" : -0.02989377826452255,\n    \"z\" : 0.05597678944468498,\n    \"t\" : 2.026770114898682\n    },\n  \"row1\" : {\n    \"x\" : -8.661290706868385e-08,\n    \"y\" : 0.8820935487747192,\n    \"z\" : 0.471073716878891,\n    \"t\" : 17.05783843994141\n    },\n  \"row2\" : {\n    \"x\" : -0.06345890462398529,\n    \"y\" : -0.4701242744922638,\n    \"z\" : 0.8803156614303589,\n    \"t\" : 31.87746810913086\n    },\n  \"row3\" : {\n    \"x\" : 0,\n    \"y\" : 0,\n    \"z\" : 0,\n    \"t\" : 1\n    }\n  }",
+    "camera_mat44" : "{\n  \"row0\" : {\n    \"x\" : 0.999647855758667,\n    \"y\" : 0.01707909815013409,\n    \"z\" : -0.0202559307217598,\n    \"t\" : 0.4964057207107544\n    },\n  \"row1\" : {\n    \"x\" : -8.568158449406838e-08,\n    \"y\" : 0.764514148235321,\n    \"z\" : 0.644606351852417,\n    \"t\" : 49.66536331176758\n    },\n  \"row2\" : {\n    \"x\" : 0.02649523876607418,\n    \"y\" : -0.6443806886672974,\n    \"z\" : 0.7642450332641602,\n    \"t\" : 48.56998443603516\n    },\n  \"row3\" : {\n    \"x\" : 0,\n    \"y\" : 0,\n    \"z\" : 0,\n    \"t\" : 1\n    }\n  }",
     "timeline_start" : "1",
-    "camera_focalDistance" : "36.21111679077148",
-    "timeline_current" : "40",
+    "uiGraphZoom" : "{\"value\": 0.919877}",
+    "camera_focalDistance" : "67.856689453125",
+    "timeline_current" : "9",
     "timeline_end" : "50",
-    "uiGraphPan" : "{\"x\": 65, \"y\": -42}"
+    "uiGraphPan" : "{\"x\": 301.925, \"y\": 50.3063}"
     },
   "title" : "",
   "ports" : [
@@ -23,6 +24,20 @@
       "name" : "timeline",
       "execPortType" : "In",
       "typeSpec" : "Float32"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "onlyFingerTips",
+      "execPortType" : "In",
+      "typeSpec" : "Boolean"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "scaleFactor",
+      "execPortType" : "In",
+      "typeSpec" : "Float32"
       }
     ],
   "extDeps" : {},
@@ -30,7 +45,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 39, \"y\": 101}"
+        "uiGraphPos" : "{\"x\": 45.524, \"y\": 98.8258}"
         },
       "name" : "LeapController",
       "ports" : [
@@ -45,7 +60,7 @@
     {
       "objectType" : "Var",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 205, \"y\": 104}"
+        "uiGraphPos" : "{\"x\": 211.523, \"y\": 101.826}"
         },
       "name" : "leap",
       "ports" : [
@@ -61,7 +76,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 352, \"y\": 98}"
+        "uiGraphPos" : "{\"x\": 358.525, \"y\": 95.8256}"
         },
       "name" : "Frame",
       "ports" : [
@@ -86,7 +101,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 1036, \"y\": 39}"
+        "uiGraphPos" : "{\"x\": 1085.36, \"y\": -9.15883}"
         },
       "name" : "EmptyDrawingHandle",
       "ports" : [
@@ -101,7 +116,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 694, \"y\": 283}"
+        "uiGraphPos" : "{\"x\": 689.184, \"y\": 369.688}"
         },
       "name" : "EmptyPolygonMesh",
       "ports" : [
@@ -116,55 +131,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 880, \"y\": 282}"
-        },
-      "name" : "AddSphere",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "this"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "xfo"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "defaultValues" : {
-            "Float32" : 0.25
-            },
-          "name" : "radius"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "loops"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "sides"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "setNormals"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "setUVs"
-          }
-        ],
-      "executable" : "Fabric.Exts.Geometry.PolygonMesh.AddSphere"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\": 1046, \"y\": 283}"
+        "uiGraphPos" : "{\"x\": 1057.2, \"y\": 356.688}"
         },
       "name" : "Cache",
       "ports" : [
@@ -179,7 +146,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 1247, \"y\": 63}"
+        "uiGraphPos" : "{\"x\": 1287.91, \"y\": 63}"
         },
       "name" : "DrawPolygonMeshInstances",
       "ports" : [
@@ -234,7 +201,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 559, \"y\": 121}"
+        "uiGraphPos" : "{\"x\": 573.741, \"y\": 50.8258}"
         },
       "name" : "FingerTipXfos",
       "ports" : [
@@ -247,7 +214,7 @@
           "objectType" : "InstPort",
           "nodePortType" : "In",
           "defaultValues" : {
-            "Float32" : 0.05000000074505806
+            "Float32" : 0.121799997985363
             },
           "name" : "scaleFactor"
           },
@@ -258,9 +225,124 @@
           }
         ],
       "executable" : "ThirdParty.LeapMotion.Func.FingerTipXfos"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 581, \"y\": 167}"
+        },
+      "name" : "FingerAllXfos",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "scaleFactor"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.Func.FingerAllXfos"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 829, \"y\": 99}"
+        },
+      "name" : "If",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "cond"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "if_true"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "if_false"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "Fabric.Core.Control.If"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 877.184, \"y\": 344.688}"
+        },
+      "name" : "AddCuboid",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "IO",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "xfo"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Float32" : 1
+            },
+          "name" : "x"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Float32" : 1
+            },
+          "name" : "y"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Float32" : 1
+            },
+          "name" : "z"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "setNormals"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "setUVs"
+          }
+        ],
+      "executable" : "Fabric.Exts.Geometry.PolygonMesh.AddCuboid"
       }
     ],
   "connections" : {
+    "onlyFingerTips" : [
+      "If.cond"
+      ],
+    "scaleFactor" : [
+      "FingerTipXfos.scaleFactor"
+      ],
     "LeapController.result" : [
       "leap.value"
       ],
@@ -268,16 +350,14 @@
       "Frame.this"
       ],
     "Frame.result" : [
-      "FingerTipXfos.this"
+      "FingerTipXfos.this",
+      "FingerAllXfos.this"
       ],
     "EmptyDrawingHandle.handle" : [
       "DrawPolygonMeshInstances.this"
       ],
     "EmptyPolygonMesh.mesh" : [
-      "AddSphere.this"
-      ],
-    "AddSphere.this" : [
-      "Cache.value"
+      "AddCuboid.this"
       ],
     "Cache.value" : [
       "DrawPolygonMeshInstances.mesh"
@@ -285,8 +365,20 @@
     "DrawPolygonMeshInstances.this" : [
       "this"
       ],
+    "FingerTipXfos.scaleFactor" : [
+      "FingerAllXfos.scaleFactor"
+      ],
     "FingerTipXfos.result" : [
+      "If.if_true"
+      ],
+    "FingerAllXfos.result" : [
+      "If.if_false"
+      ],
+    "If.result" : [
       "DrawPolygonMeshInstances.transforms"
+      ],
+    "AddCuboid.this" : [
+      "Cache.value"
       ]
     },
   "requiredPresets" : {
@@ -613,99 +705,6 @@
         },
       "code" : "require Geometry;\n\ndfgEntry {\n  this.clear();\n}\n"
       },
-    "Fabric.Exts.Geometry.PolygonMesh.AddSphere" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.0.0-beta/HTML/KLExtensionsGuide/Geometry/PolygonMesh.html",
-        "uiTooltip" : "Appends a transformed sphere to this mesh.\nBefore applying the transformation, it will be centered at the origin.\n\n\nbuild the topology\nbuild the fan at the first pole.\nbuild the fan at the second pole.\nset positions and normals\nset uvs\nset the uvs on the the fan at the first pole.\n\n Supported by PolygonMesh"
-        },
-      "title" : "AddSphere",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiColor" : "{\n  \"r\" : 51,\n  \"g\" : 1,\n  \"b\" : 106\n  }"
-            },
-          "nodePortType" : "IO",
-          "name" : "this",
-          "execPortType" : "IO",
-          "typeSpec" : "PolygonMesh"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
-            },
-          "nodePortType" : "Out",
-          "name" : "xfo",
-          "execPortType" : "In",
-          "typeSpec" : "Xfo"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiRange" : "(0.0, 8.0)"
-            },
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "Scalar" : 4
-            },
-          "name" : "radius",
-          "execPortType" : "In",
-          "typeSpec" : "Scalar"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiRange" : "(3, 24)"
-            },
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "UInt32" : 8
-            },
-          "name" : "loops",
-          "execPortType" : "In",
-          "typeSpec" : "UInt32"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiRange" : "(3, 24)"
-            },
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "UInt32" : 8
-            },
-          "name" : "sides",
-          "execPortType" : "In",
-          "typeSpec" : "UInt32"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "Boolean" : true
-            },
-          "name" : "setNormals",
-          "execPortType" : "In",
-          "typeSpec" : "Boolean"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "Boolean" : true
-            },
-          "name" : "setUVs",
-          "execPortType" : "In",
-          "typeSpec" : "Boolean"
-          }
-        ],
-      "extDeps" : {
-        "Geometry" : "*"
-        },
-      "code" : "require Geometry;\n\ndfgEntry {\n  this.addSphere(xfo, radius, loops, sides, setNormals, setUVs);\n}\n"
-      },
     "Fabric.Core.Data.Cache" : {
       "objectType" : "Func",
       "metadata" : {
@@ -841,6 +840,9 @@
         {
           "objectType" : "Port",
           "nodePortType" : "Out",
+          "defaultValues" : {
+            "Float32" : 0.1000000014901161
+            },
           "name" : "scaleFactor",
           "execPortType" : "In",
           "typeSpec" : "Float32"
@@ -860,6 +862,175 @@
         "LeapMotion" : "*"
         },
       "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerTipXfos(scaleFactor);\n}\n"
+      },
+    "ThirdParty.LeapMotion.Func.FingerAllXfos" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "overload to get all transforms of the available fingers\n\n Supported by LeapHand,LeapFrame"
+        },
+      "title" : "FingerAllXfos",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "$TYPE$"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Float32" : 0.1000000014901161
+            },
+          "name" : "scaleFactor",
+          "execPortType" : "In",
+          "typeSpec" : "Float32"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Xfo[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerAllXfos(scaleFactor);\n}\n"
+      },
+    "Fabric.Core.Control.If" : {
+      "objectType" : "Func",
+      "title" : "If",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "cond",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "if_true",
+          "execPortType" : "In",
+          "typeSpec" : "$TYPE$"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "if_false",
+          "execPortType" : "In",
+          "typeSpec" : "$TYPE$"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "$TYPE$"
+          }
+        ],
+      "extDeps" : {},
+      "code" : "\ndfgEntry {\n\tresult = cond ? if_true : if_false;\n}\n"
+      },
+    "Fabric.Exts.Geometry.PolygonMesh.AddCuboid" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.0.0-beta/HTML/KLExtensionsGuide/Geometry/PolygonMesh.html",
+        "uiTooltip" : "Appends a transformed cuboid (cube with specified size) to this mesh.\nBefore applying the transformation, the cuboid is centered at the origin,\nand has a range of [-x/2 .. x/2, -y/2 .. y/2, -z/2 .. z/2].\n\n\nSet Points Normals\nFace 0 (+Z)\nFace 1 (-Z)\nFace 2 (+Y)\nFace 3 (-Y)\nFace 4 (+X)\nFace 5 (-X)\nSet Uvs\nFace 0 (+Z)\nFace 1 (-Z)\nFace 2 (+Y)\nFace 3 (-Y)\nFace 4 (+X)\nFace 5 (-X)\n\n Supported by PolygonMesh"
+        },
+      "title" : "AddCuboid",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 51,\n  \"g\" : 1,\n  \"b\" : 106\n  }"
+            },
+          "nodePortType" : "IO",
+          "name" : "this",
+          "execPortType" : "IO",
+          "typeSpec" : "PolygonMesh"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "Out",
+          "name" : "xfo",
+          "execPortType" : "In",
+          "typeSpec" : "Xfo"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiRange" : "(0.0, 8.0)"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Scalar" : 2
+            },
+          "name" : "x",
+          "execPortType" : "In",
+          "typeSpec" : "Scalar"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiRange" : "(0.0, 8.0)"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Scalar" : 2
+            },
+          "name" : "y",
+          "execPortType" : "In",
+          "typeSpec" : "Scalar"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiRange" : "(0.0, 8.0)"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Scalar" : 2
+            },
+          "name" : "z",
+          "execPortType" : "In",
+          "typeSpec" : "Scalar"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Boolean" : true
+            },
+          "name" : "setNormals",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Boolean" : true
+            },
+          "name" : "setUVs",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          }
+        ],
+      "extDeps" : {
+        "Geometry" : "*"
+        },
+      "code" : "require Geometry;\n\ndfgEntry {\n  this.addCuboid(xfo, x, y, z, setNormals, setUVs);\n}\n"
       }
     },
   "args" : [
@@ -870,7 +1041,15 @@
       },
     {
       "type" : "Float32",
-      "value" : 40
+      "value" : 9
+      },
+    {
+      "type" : "Boolean",
+      "value" : false
+      },
+    {
+      "type" : "Float32",
+      "value" : 0.125
       }
     ]
   }

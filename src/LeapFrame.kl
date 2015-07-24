@@ -190,7 +190,7 @@ function Xfo[] LeapFrame.fingerAllXfos(Float32 scaleFactor) {
   Xfo result[];
   result.resize(p.size()*4);
   Size offset = 0;
-  for(Size i=0;i<result.size();i++) {
+  for(Size i=0;i<p.size();i++) {
     for(Size j=0;j<=LEAP_BONETYPE_DISTAL;j++) {
       LeapBone bone = p[i].bone(j);
       result[offset] = bone.basis();
