@@ -93,6 +93,14 @@ function LeapHand[] LeapFrame.hands() = "LeapFrame_hands";
  */
 function LeapHand LeapFrame.hand(SInt32 id) = "LeapFrame_hand";
 
+/// overload to get a hand by index
+function LeapPointable LeapFrame.handByIndex(SInt32 index) {
+  LeapHand results[] = this.hands();
+  if(index >= results.size() || index < 0)
+    return LeapHand();
+  return results[index];
+}
+
 /**
  * The list of Pointable objects (fingers and tools) detected in this frame,
  * given in arbitrary order. The list can be empty if no fingers or tools are detected.
@@ -105,6 +113,18 @@ function LeapHand LeapFrame.hand(SInt32 id) = "LeapFrame_hand";
  * @since 1.0
  */
 function LeapPointable[] LeapFrame.pointables() = "LeapFrame_pointables";
+
+/// overload to get all transforms of the available pointables
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapFrame.pointableXfos(Float32 scaleFactor) {
+  LeapPointable p[] = this.pointables();
+  Xfo result[];
+  result.resize(p.size());
+  for(Size i=0;i<result.size();i++) {
+    result[i].tr = p[i].tipPosition() * scaleFactor;
+  }
+  return result;
+}
 
 /**
  * The Pointable object with the specified ID in this frame.
@@ -128,6 +148,14 @@ function LeapPointable[] LeapFrame.pointables() = "LeapFrame_pointables";
  */
 function LeapPointable LeapFrame.pointable(SInt32 id) = "LeapFrame_pointable";
 
+/// overload to get a pointable by index
+function LeapPointable LeapFrame.pointableByIndex(SInt32 index) {
+  LeapPointable results[] = this.pointables();
+  if(index >= results.size() || index < 0)
+    return LeapPointable();
+  return results[index];
+}
+
 /**
  * The list of Finger objects detected in this frame, given in arbitrary order.
  * The list can be empty if no fingers are detected.
@@ -140,6 +168,38 @@ function LeapPointable LeapFrame.pointable(SInt32 id) = "LeapFrame_pointable";
  * @since 1.0
  */
 function LeapFinger[] LeapFrame.fingers() = "LeapFrame_fingers";
+
+/// overload to get the finger tip transforms of the available fingers
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapFrame.fingerTipXfos(Float32 scaleFactor) {
+  LeapFinger p[] = this.fingers();
+  Xfo result[];
+  result.resize(p.size());
+  for(Size i=0;i<result.size();i++) {
+    LeapBone bone = p[i].bone(LEAP_BONETYPE_DISTAL);
+    result[i] = bone.basis();
+    result[i].tr = bone.nextJoint() * scaleFactor;
+  }
+  return result;
+}
+
+/// overload to get all transforms of the available fingers
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapFrame.fingerAllXfos(Float32 scaleFactor) {
+  LeapFinger p[] = this.fingers();
+  Xfo result[];
+  result.resize(p.size()*4);
+  Size offset = 0;
+  for(Size i=0;i<p.size();i++) {
+    for(Size j=0;j<=LEAP_BONETYPE_DISTAL;j++) {
+      LeapBone bone = p[i].bone(j);
+      result[offset] = bone.basis();
+      result[offset].tr = bone.nextJoint() * scaleFactor;
+      offset++;
+    }
+  }
+  return result;
+}
 
 /**
  * The Finger object with the specified ID in this frame.
@@ -162,6 +222,14 @@ function LeapFinger[] LeapFrame.fingers() = "LeapFrame_fingers";
  * @since 1.0
  */
 function LeapFinger LeapFrame.finger(SInt32 id) = "LeapFrame_finger";
+
+/// overload to get a finger by index
+function LeapFinger LeapFrame.fingerByIndex(SInt32 index) {
+  LeapFinger results[] = this.fingers();
+  if(index >= results.size() || index < 0)
+    return LeapFinger();
+  return results[index];
+}
 
 /**
  * The list of Tool objects detected in this frame, given in arbitrary order.
@@ -196,6 +264,14 @@ function LeapTool[] LeapFrame.tools() = "LeapFrame_tools";
  */
 function LeapTool LeapFrame.tool(SInt32 id) = "LeapFrame_tool";
 
+/// overload to get a tool by index
+function LeapTool LeapFrame.toolByIndex(SInt32 index) {
+  LeapTool results[] = this.tools();
+  if(index >= results.size() || index < 0)
+    return LeapTool();
+  return results[index];
+}
+
 /**
  * The Gesture object with the specified ID in this frame.
  *
@@ -228,6 +304,14 @@ function LeapGesture LeapFrame.gesture(SInt32 id) = "LeapFrame_gesture";
  */
 function LeapGesture[] LeapFrame.gestures() = "LeapFrame_gestures";
 
+/// overload to get a gesture by index
+function LeapGesture LeapFrame.gestureByIndex(SInt32 index) {
+  LeapGesture results[] = this.gestures();
+  if(index >= results.size() || index < 0)
+    return LeapGesture();
+  return results[index];
+}
+
 /**
  * Returns a GestureList containing all gestures that have occurred since
  * the specified frame.
@@ -250,6 +334,14 @@ function LeapGesture[] LeapFrame.gestures(LeapFrame sinceFrame) = "LeapFrame_ges
  *  @since 2.1
  */
 function LeapImage[] LeapFrame.images() = "LeapFrame_images";
+
+/// overload to get a image by index
+function LeapImage LeapFrame.imageByIndex(SInt32 index) {
+  LeapImage results[] = this.images();
+  if(index >= results.size() || index < 0)
+    return LeapImage();
+  return results[index];
+}
 
 /**
  * The change of position derived from the overall linear motion between

@@ -66,6 +66,18 @@ function SInt32 LeapHand.id() = "LeapHand_id";
  */
 function LeapPointable[] LeapHand.pointables() = "LeapHand_pointables";
 
+/// overload to get all transforms of the available pointables
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapHand.pointableXfos(Float32 scaleFactor) {
+  LeapPointable p[] = this.pointables();
+  Xfo result[];
+  result.resize(p.size());
+  for(Size i=0;i<result.size();i++) {
+    result[i].tr = p[i].tipPosition() * scaleFactor;
+  }
+  return result;
+}
+
 /**
  * The Pointable object with the specified ID associated with this hand.
  *
@@ -89,6 +101,14 @@ function LeapPointable[] LeapHand.pointables() = "LeapHand_pointables";
  */
 function LeapPointable LeapHand.pointable(SInt32 id) = "LeapHand_pointable";
 
+/// overload to get a pointable by index
+function LeapPointable LeapHand.pointableByIndex(SInt32 index) {
+  LeapPointable results[] = this.pointables();
+  if(index >= results.size() || index < 0)
+    return LeapPointable();
+  return results[index];
+}
+
 /**
  * The list of Finger objects detected in this frame that are attached to
  * this hand, given in order from thumb to pinky.  The list cannot be empty.
@@ -101,6 +121,38 @@ function LeapPointable LeapHand.pointable(SInt32 id) = "LeapHand_pointable";
  * @since 1.0
  */
 function LeapFinger[] LeapHand.fingers() = "LeapHand_fingers";
+
+/// overload to get the finger tip transforms of the available fingers
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapHand.fingerTipXfos(Float32 scaleFactor) {
+  LeapFinger p[] = this.fingers();
+  Xfo result[];
+  result.resize(p.size());
+  for(Size i=0;i<result.size();i++) {
+    LeapBone bone = p[i].bone(LEAP_BONETYPE_DISTAL);
+    result[i] = bone.basis();
+    result[i].tr = bone.nextJoint() * scaleFactor;
+  }
+  return result;
+}
+
+/// overload to get all transforms of the available fingers
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapHand.fingerAllXfos(Float32 scaleFactor) {
+  LeapFinger p[] = this.fingers();
+  Xfo result[];
+  result.resize(p.size()*4);
+  Size offset = 0;
+  for(Size i=0;i<p.size();i++) {
+    for(Size j=0;j<=LEAP_BONETYPE_DISTAL;j++) {
+      LeapBone bone = p[i].bone(j);
+      result[offset] = bone.basis();
+      result[offset].tr = bone.nextJoint() * scaleFactor;
+      offset++;
+    }
+  }
+  return result;
+}
 
 /**
  * The Finger object with the specified ID attached to this hand.

@@ -213,6 +213,14 @@ function Float32 LeapGesture.durationSeconds() = "LeapGesture_durationSeconds";
  */
 function LeapHand[] LeapGesture.hands() = "LeapGesture_hands";
 
+/// overload to get a hand by index
+function LeapHand LeapGesture.handByIndex(SInt32 index) {
+  LeapHand results[] = this.hands();
+  if(index >= results.size() || index < 0)
+    return LeapHand();
+  return results[index];
+}
+
 /**
  * The list of fingers and tools associated with this Gesture, if any.
  *
@@ -224,3 +232,23 @@ function LeapHand[] LeapGesture.hands() = "LeapGesture_hands";
  * @since 1.0
  */
 function LeapPointable[] LeapGesture.pointables() = "LeapGesture_pointables";
+
+/// overload to get a pointable by index
+function LeapPointable LeapGesture.pointableByIndex(SInt32 index) {
+  LeapPointable results[] = this.pointables();
+  if(index >= results.size() || index < 0)
+    return LeapPointable();
+  return results[index];
+}
+
+/// overload to get all transforms of the available pointables
+/// \dfgPresetDefault scaleFactor 0.1
+function Xfo[] LeapGesture.pointableXfos(Float32 scaleFactor) {
+  LeapPointable p[] = this.pointables();
+  Xfo result[];
+  result.resize(p.size());
+  for(Size i=0;i<result.size();i++) {
+    result[i].tr = p[i].tipPosition() * scaleFactor;
+  }
+  return result;
+}
