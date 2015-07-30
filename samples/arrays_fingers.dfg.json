@@ -1,13 +1,13 @@
 {
   "objectType" : "Graph",
   "metadata" : {
-    "camera_mat44" : "{\n  \"row0\" : {\n    \"x\" : 0.9032538533210754,\n    \"y\" : -0.1868427097797394,\n    \"z\" : 0.3862922787666321,\n    \"t\" : 39.85196304321289\n    },\n  \"row1\" : {\n    \"x\" : -1.341104081120648e-07,\n    \"y\" : 0.9002254009246826,\n    \"z\" : 0.4354234933853149,\n    \"t\" : 44.9205322265625\n    },\n  \"row2\" : {\n    \"x\" : -0.4291059374809265,\n    \"y\" : -0.3932980298995972,\n    \"z\" : 0.8131324052810669,\n    \"t\" : 83.88745880126953\n    },\n  \"row3\" : {\n    \"x\" : 0,\n    \"y\" : 0,\n    \"z\" : 0,\n    \"t\" : 1\n    }\n  }",
+    "camera_mat44" : "{\n  \"row0\" : {\n    \"x\" : 0.9032537937164307,\n    \"y\" : -0.1868427246809006,\n    \"z\" : 0.3862922787666321,\n    \"t\" : 39.85196304321289\n    },\n  \"row1\" : {\n    \"x\" : -1.341104081120648e-07,\n    \"y\" : 0.9002254009246826,\n    \"z\" : 0.4354235231876373,\n    \"t\" : 44.9205322265625\n    },\n  \"row2\" : {\n    \"x\" : -0.4291059374809265,\n    \"y\" : -0.3932980597019196,\n    \"z\" : 0.8131324052810669,\n    \"t\" : 83.88745880126953\n    },\n  \"row3\" : {\n    \"x\" : 0,\n    \"y\" : 0,\n    \"z\" : 0,\n    \"t\" : 1\n    }\n  }",
     "timeline_start" : "1",
     "uiGraphZoom" : "{\"value\": 0.733904}",
     "camera_focalDistance" : "103.1655426025391",
-    "timeline_current" : "19",
+    "timeline_current" : "12",
     "timeline_end" : "50",
-    "uiGraphPan" : "{\"x\": 239.687, \"y\": 66.632}"
+    "uiGraphPan" : "{\"x\": 287.687, \"y\": 102.632}"
     },
   "title" : "",
   "ports" : [
@@ -38,7 +38,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": -120.543, \"y\": 225.678}"
+        "uiGraphPos" : "{\"x\": -188.673, \"y\": 218.863}"
         },
       "name" : "LeapController",
       "ports" : [
@@ -53,7 +53,7 @@
     {
       "objectType" : "Var",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 44.4081, \"y\": 237.679}"
+        "uiGraphPos" : "{\"x\": -23.7211, \"y\": 230.864}"
         },
       "name" : "leap",
       "ports" : [
@@ -69,7 +69,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 186.425, \"y\": 230.678}"
+        "uiGraphPos" : "{\"x\": 118.295, \"y\": 223.863}"
         },
       "name" : "Frame",
       "ports" : [
@@ -94,7 +94,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 344.389, \"y\": 244.678}"
+        "uiGraphPos" : "{\"x\": 276.259, \"y\": 237.863}"
         },
       "name" : "Fingers",
       "ports" : [
@@ -114,7 +114,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 726.258, \"y\": 148.233}"
+        "uiGraphPos" : "{\"x\": 718.079, \"y\": 89.635}"
         },
       "name" : "NextJoint",
       "ports" : [
@@ -134,7 +134,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 581.33, \"y\": -33.4163}"
+        "uiGraphPos" : "{\"x\": 293.825, \"y\": -96.0953}"
         },
       "name" : "Xfo",
       "ports" : [
@@ -164,7 +164,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 939.242, \"y\": 77.9535}"
+        "uiGraphPos" : "{\"x\": 922.889, \"y\": -16.0644}"
         },
       "name" : "TransformVector",
       "ports" : [
@@ -189,7 +189,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 401.33, \"y\": -29.4163}"
+        "uiGraphPos" : "{\"x\": 113.825, \"y\": -92.0953}"
         },
       "name" : "Vec3",
       "ports" : [
@@ -288,6 +288,16 @@
         {
           "objectType" : "InstPort",
           "nodePortType" : "In",
+          "name" : "specular"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "specFactor"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
           "name" : "transforms"
           },
         {
@@ -336,54 +346,6 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 928.451, \"y\": 375.1}"
-        },
-      "name" : "AddSphere",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "this"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "xfo"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "defaultValues" : {
-            "Float32" : 1
-            },
-          "name" : "radius"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "loops"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "sides"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "setNormals"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "setUVs"
-          }
-        ],
-      "executable" : "Fabric.Exts.Geometry.PolygonMesh.AddSphere"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
         "uiGraphPos" : "{\"x\": 1122.47, \"y\": 381.1}"
         },
       "name" : "Cache",
@@ -399,7 +361,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 752.322, \"y\": 50.2679}"
+        "uiGraphPos" : "{\"x\": 464.817, \"y\": -12.4108}"
         },
       "name" : "Cache_2",
       "ports" : [
@@ -414,7 +376,7 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\": 500.949, \"y\": 148.892}"
+        "uiGraphPos" : "{\"x\": 432.819, \"y\": 142.077}"
         },
       "name" : "GetBones",
       "ports" : [
@@ -836,6 +798,114 @@
           }
         },
       "title" : "Get Bones"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 926.975, \"y\": 376.572}"
+        },
+      "name" : "AddCuboid",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "IO",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "xfo"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "Float32" : 2
+            },
+          "name" : "x"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "y"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "z"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "setNormals"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "setUVs"
+          }
+        ],
+      "executable" : "Fabric.Exts.Geometry.PolygonMesh.AddCuboid"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 634.029, \"y\": 238.953}"
+        },
+      "name" : "Basis",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapBone.BasisArray"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 807.064, \"y\": 234.858}"
+        },
+      "name" : "UpperLeft",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "Fabric.Exts.Math.Mat44.UpperLeftArray"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\": 971.934, \"y\": 203.523}"
+        },
+      "name" : "SetFromMat33",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "mat"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "Fabric.Exts.Math.Quat.SetFromMat33Array"
       }
     ],
   "connections" : {
@@ -876,10 +946,7 @@
       "this"
       ],
     "EmptyPolygonMesh.mesh" : [
-      "AddSphere.this"
-      ],
-    "AddSphere.this" : [
-      "Cache.value"
+      "AddCuboid.this"
       ],
     "Cache.value" : [
       "DrawPolygonMeshInstances.mesh"
@@ -888,7 +955,20 @@
       "TransformVector.this"
       ],
     "GetBones.result_2" : [
-      "NextJoint.this"
+      "NextJoint.this",
+      "Basis.this"
+      ],
+    "AddCuboid.this" : [
+      "Cache.value"
+      ],
+    "Basis.result" : [
+      "UpperLeft.this"
+      ],
+    "UpperLeft.result" : [
+      "SetFromMat33.mat"
+      ],
+    "SetFromMat33.result" : [
+      "Xfo_2.ori"
       ]
     },
   "requiredPresets" : {
@@ -1001,7 +1081,7 @@
       "extDeps" : {
         "LeapMotion" : "*"
         },
-      "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_nextJoint_task<<<index>>>(\n  io Vec3[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : 0].nextJoint();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_nextJoint_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_nextJoint_task<<<task_size>>>(result, this);\n  }\n}\n"
+      "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_nextJoint_task<<<index>>>(\n  io Vec3[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].nextJoint();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_nextJoint_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_nextJoint_task<<<task_size>>>(result, this);\n  }\n}\n"
       },
     "Fabric.Exts.Math.Xfo.ComposeXfoArray" : {
       "objectType" : "Func",
@@ -1085,7 +1165,7 @@
       "extDeps" : {
         "Math" : "*"
         },
-      "code" : "require Math;\n\noperator Math_Xfo_compose_task<<<index>>>(io Xfo[] result, in Quat[] ori, in Vec3[] tr, in Vec3[] sc) {\n  result[index].ori = ori[index < ori.size() ? index : 0];\n  result[index].tr = tr[index < tr.size() ? index : 0];\n  result[index].sc = sc[index < sc.size() ? index : 0];\n}\n\ndfgEntry {\n  if(ori.size() == 0) return;\n  if(tr.size() == 0) return;\n  if(sc.size() == 0) return;\n  Size task_size = 0;\n  if(task_size < ori.size()) task_size = ori.size();\n  if(task_size < tr.size()) task_size = tr.size();\n  if(task_size < sc.size()) task_size = sc.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size i = 0; i < task_size; i++) {\n      Math_Xfo_compose_task(i, result, ori, tr, sc);\n    }\n  } else {\n    Math_Xfo_compose_task<<<task_size>>>(result, ori, tr, sc);\n  }\n}\n"
+      "code" : "require Math;\n\noperator Math_Xfo_compose_task<<<index>>>(io Xfo[] result, in Quat[] ori, in Vec3[] tr, in Vec3[] sc) {\n  result[index].ori = ori[index < ori.size() ? index : ori.size() - 1];\n  result[index].tr = tr[index < tr.size() ? index : tr.size() - 1];\n  result[index].sc = sc[index < sc.size() ? index : sc.size() - 1];\n}\n\ndfgEntry {\n  if(ori.size() == 0) return;\n  if(tr.size() == 0) return;\n  if(sc.size() == 0) return;\n  Size task_size = 0;\n  if(task_size < ori.size()) task_size = ori.size();\n  if(task_size < tr.size()) task_size = tr.size();\n  if(task_size < sc.size()) task_size = sc.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size i = 0; i < task_size; i++) {\n      Math_Xfo_compose_task(i, result, ori, tr, sc);\n    }\n  } else {\n    Math_Xfo_compose_task<<<task_size>>>(result, ori, tr, sc);\n  }\n}\n"
       },
     "Fabric.Exts.Math.Xfo.TransformVectorArray" : {
       "objectType" : "Func",
@@ -1163,7 +1243,7 @@
       "extDeps" : {
         "Math" : "*"
         },
-      "code" : "require Math;\n\noperator Math_Xfo_transformVector_task<<<index>>>(\n  io Vec3[] result\n, in Xfo[] this\n, in Vec3[] v\n) {\n  result[index] = this[index < this.size() ? index : 0].transformVector(v[index < v.size() ? index : 0]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( v.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < v.size()) task_size = v.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      Math_Xfo_transformVector_task(index, result, this, v);\n    }\n  } else {\n    Math_Xfo_transformVector_task<<<task_size>>>(result, this, v);\n  }\n}\n"
+      "code" : "require Math;\n\noperator Math_Xfo_transformVector_task<<<index>>>(\n  io Vec3[] result\n, in Xfo[] this\n, in Vec3[] v\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].transformVector(v[index < v.size() ? index : v.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( v.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < v.size()) task_size = v.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      Math_Xfo_transformVector_task(index, result, this, v);\n    }\n  } else {\n    Math_Xfo_transformVector_task<<<task_size>>>(result, this, v);\n  }\n}\n"
       },
     "Fabric.Exts.Math.Constants.Vec3Array" : {
       "objectType" : "Func",
@@ -1384,6 +1464,34 @@
         {
           "objectType" : "Port",
           "metadata" : {
+            "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 0,\n  \"b\" : 0\n  }"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Color" : {
+              "r" : 0.2000000029802322,
+              "g" : 0.2000000029802322,
+              "b" : 0.2000000029802322,
+              "a" : 1
+              }
+            },
+          "name" : "specular",
+          "execPortType" : "In",
+          "typeSpec" : "Color"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Float32" : 16
+            },
+          "name" : "specFactor",
+          "execPortType" : "In",
+          "typeSpec" : "Float32"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
             "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
             },
           "nodePortType" : "Out",
@@ -1436,7 +1544,7 @@
       "extDeps" : {
         "InlineDrawing" : "*"
         },
-      "code" : "require InlineDrawing;\n\ndfgEntry {\n  this.drawPolygonMeshInstances(name, color, transforms, mesh, wireFrame, doubleSided, dummyResult, instance);\n}\n"
+      "code" : "require InlineDrawing;\n\ndfgEntry {\n  this.drawPolygonMeshInstances(name, color, specular, specFactor, transforms, mesh, wireFrame, doubleSided, dummyResult, instance);\n}\n"
       },
     "Fabric.Exts.Geometry.PolygonMesh.EmptyPolygonMesh" : {
       "objectType" : "Graph",
@@ -1581,99 +1689,6 @@
         },
       "code" : "require Geometry;\n\ndfgEntry {\n  this.clear();\n}\n"
       },
-    "Fabric.Exts.Geometry.PolygonMesh.AddSphere" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.0.0-beta/HTML/KLExtensionsGuide/Geometry/PolygonMesh.html",
-        "uiTooltip" : "Appends a transformed sphere to this mesh.\nBefore applying the transformation, it will be centered at the origin.\n\n\nbuild the topology\nbuild the fan at the first pole.\nbuild the fan at the second pole.\nset positions and normals\nset uvs\nset the uvs on the the fan at the first pole.\n\n Supported by PolygonMesh"
-        },
-      "title" : "AddSphere",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiColor" : "{\n  \"r\" : 51,\n  \"g\" : 1,\n  \"b\" : 106\n  }"
-            },
-          "nodePortType" : "IO",
-          "name" : "this",
-          "execPortType" : "IO",
-          "typeSpec" : "PolygonMesh"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
-            },
-          "nodePortType" : "Out",
-          "name" : "xfo",
-          "execPortType" : "In",
-          "typeSpec" : "Xfo"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiRange" : "(0.0, 8.0)"
-            },
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "Scalar" : 4
-            },
-          "name" : "radius",
-          "execPortType" : "In",
-          "typeSpec" : "Scalar"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiRange" : "(3, 24)"
-            },
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "UInt32" : 8
-            },
-          "name" : "loops",
-          "execPortType" : "In",
-          "typeSpec" : "UInt32"
-          },
-        {
-          "objectType" : "Port",
-          "metadata" : {
-            "uiRange" : "(3, 24)"
-            },
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "UInt32" : 8
-            },
-          "name" : "sides",
-          "execPortType" : "In",
-          "typeSpec" : "UInt32"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "Boolean" : true
-            },
-          "name" : "setNormals",
-          "execPortType" : "In",
-          "typeSpec" : "Boolean"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "defaultValues" : {
-            "Boolean" : true
-            },
-          "name" : "setUVs",
-          "execPortType" : "In",
-          "typeSpec" : "Boolean"
-          }
-        ],
-      "extDeps" : {
-        "Geometry" : "*"
-        },
-      "code" : "require Geometry;\n\ndfgEntry {\n  this.addSphere(xfo, radius, loops, sides, setNormals, setUVs);\n}\n"
-      },
     "Fabric.Core.Data.Cache" : {
       "objectType" : "Func",
       "metadata" : {
@@ -1732,7 +1747,7 @@
       "extDeps" : {
         "LeapMotion" : "*"
         },
-      "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFinger_bone_task<<<index>>>(\n  io LeapBone[] result\n, in LeapFinger[] this\n, in UInt32[] boneIx\n) {\n  result[index] = this[index < this.size() ? index : 0].bone(boneIx[index < boneIx.size() ? index : 0]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( boneIx.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < boneIx.size()) task_size = boneIx.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFinger_bone_task(index, result, this, boneIx);\n    }\n  } else {\n    LeapMotion_LeapFinger_bone_task<<<task_size>>>(result, this, boneIx);\n  }\n}\n"
+      "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFinger_bone_task<<<index>>>(\n  io LeapBone[] result\n, in LeapFinger[] this\n, in UInt32[] boneIx\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].bone(boneIx[index < boneIx.size() ? index : boneIx.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( boneIx.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < boneIx.size()) task_size = boneIx.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFinger_bone_task(index, result, this, boneIx);\n    }\n  } else {\n    LeapMotion_LeapFinger_bone_task<<<task_size>>>(result, this, boneIx);\n  }\n}\n"
       },
     "Fabric.Core.Constants.UInt32Array" : {
       "objectType" : "Func",
@@ -1830,6 +1845,250 @@
         ],
       "extDeps" : {},
       "code" : "\ndfgEntry {\n\tresult = lhs + rhs;\n}\n"
+      },
+    "Fabric.Exts.Geometry.PolygonMesh.AddCuboid" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.0.0-beta/HTML/KLExtensionsGuide/Geometry/PolygonMesh.html",
+        "uiTooltip" : "Appends a transformed cuboid (cube with specified size) to this mesh.\nBefore applying the transformation, the cuboid is centered at the origin,\nand has a range of [-x/2 .. x/2, -y/2 .. y/2, -z/2 .. z/2].\n\n\nSet Points Normals\nFace 0 (+Z)\nFace 1 (-Z)\nFace 2 (+Y)\nFace 3 (-Y)\nFace 4 (+X)\nFace 5 (-X)\nSet Uvs\nFace 0 (+Z)\nFace 1 (-Z)\nFace 2 (+Y)\nFace 3 (-Y)\nFace 4 (+X)\nFace 5 (-X)\n\n Supported by PolygonMesh"
+        },
+      "title" : "AddCuboid",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 51,\n  \"g\" : 1,\n  \"b\" : 106\n  }"
+            },
+          "nodePortType" : "IO",
+          "name" : "this",
+          "execPortType" : "IO",
+          "typeSpec" : "PolygonMesh"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "Out",
+          "name" : "xfo",
+          "execPortType" : "In",
+          "typeSpec" : "Xfo"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiRange" : "(0.0, 8.0)"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Scalar" : 2
+            },
+          "name" : "x",
+          "execPortType" : "In",
+          "typeSpec" : "Scalar"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiRange" : "(0.0, 8.0)"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Scalar" : 2
+            },
+          "name" : "y",
+          "execPortType" : "In",
+          "typeSpec" : "Scalar"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiRange" : "(0.0, 8.0)"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Scalar" : 2
+            },
+          "name" : "z",
+          "execPortType" : "In",
+          "typeSpec" : "Scalar"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Boolean" : true
+            },
+          "name" : "setNormals",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Boolean" : true
+            },
+          "name" : "setUVs",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          }
+        ],
+      "extDeps" : {
+        "Geometry" : "*"
+        },
+      "code" : "require Geometry;\n\ndfgEntry {\n  this.addCuboid(xfo, x, y, z, setNormals, setUVs);\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapBone.BasisArray" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "* The orthonormal basis vectors for this Bone as a Matrix.\n\n* Basis vectors specify the orientation of a bone.\n\n* **xBasis** Perpendicular to the longitudinal axis of the\n*   bone; exits the sides of the finger.\n\n* **yBasis or up vector** Perpendicular to the longitudinal\n*   axis of the bone; exits the top and bottom of the finger. More positive\n*   in the upward direction.\n\n* **zBasis** Aligned with the longitudinal axis of the bone.\n*   More positive toward the base of the finger.\n\n* The bases provided for the right hand use the right-hand rule; those for\n* the left hand use the left-hand rule. Thus, the positive direction of the\n* x-basis is to the right for the right hand and to the left for the left\n* hand. You can change from right-hand to left-hand rule by multiplying the\n* z basis vector by -1.\n\n* You can use the basis vectors for such purposes as measuring complex\n* finger poses and skeletal animation.\n\n* Note that converting the basis vectors directly into a quaternion\n* representation is not mathematically valid. If you use quaternions,\n* create them from the derived rotation matrix not directly from the bases.\n\n* \\include Bone_basis.txt\n\n* @returns The basis of the bone as a matrix.\n* @since 2.0\n\n\n Supported by LeapBone"
+        },
+      "title" : "Basis[]",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapBone[]"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Mat44[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_basis_task<<<index>>>(\n  io Mat44[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].basis();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_basis_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_basis_task<<<task_size>>>(result, this);\n  }\n}\n"
+      },
+    "Fabric.Exts.Math.Mat44.UpperLeftArray" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiNodeColor" : "{\n  \"r\" : 99,\n  \"g\" : 129,\n  \"b\" : 92\n  }",
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.0.0-beta/HTML/KLExtensionsGuide/Math/Mat44.html",
+        "uiTooltip" : "Returns the upper left 3 x 3 components\nof this matrix as a Mat33\n\n Supported by Mat44"
+        },
+      "title" : "UpperLeft[]",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Mat44[]" : [
+              {
+                "row0" : {
+                  "x" : 1,
+                  "y" : 0,
+                  "z" : 0,
+                  "t" : 0
+                  },
+                "row1" : {
+                  "x" : 0,
+                  "y" : 1,
+                  "z" : 0,
+                  "t" : 0
+                  },
+                "row2" : {
+                  "x" : 0,
+                  "y" : 0,
+                  "z" : 1,
+                  "t" : 0
+                  },
+                "row3" : {
+                  "x" : 0,
+                  "y" : 0,
+                  "z" : 0,
+                  "t" : 1
+                  }
+                }
+              ]
+            },
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "Mat44[]"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Mat33[]"
+          }
+        ],
+      "extDeps" : {
+        "Math" : "*"
+        },
+      "code" : "require Math;\n\noperator Math_Mat44_upperLeft_task<<<index>>>(\n  io Mat33[] result\n, in Mat44[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].upperLeft();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      Math_Mat44_upperLeft_task(index, result, this);\n    }\n  } else {\n    Math_Mat44_upperLeft_task<<<task_size>>>(result, this);\n  }\n}\n"
+      },
+    "Fabric.Exts.Math.Quat.SetFromMat33Array" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiNodeColor" : "{\n  \"r\" : 99,\n  \"g\" : 129,\n  \"b\" : 92\n  }",
+        "uiDocUrl" : "http://docs.fabric-engine.com/FabricEngine/2.0.0-beta/HTML/KLExtensionsGuide/Math/Quat.html",
+        "uiTooltip" : "Set this quat to the rotation described by a\n3x3 rotation matrix\n\n Supported by Quat"
+        },
+      "title" : "SetFromMat33[]",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Mat33[]" : [
+              {
+                "row0" : {
+                  "x" : 1,
+                  "y" : 0,
+                  "z" : 0
+                  },
+                "row1" : {
+                  "x" : 0,
+                  "y" : 1,
+                  "z" : 0
+                  },
+                "row2" : {
+                  "x" : 0,
+                  "y" : 0,
+                  "z" : 1
+                  }
+                }
+              ]
+            },
+          "name" : "mat",
+          "execPortType" : "In",
+          "typeSpec" : "Mat33[]"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 0,\n  \"g\" : 191,\n  \"b\" : 232\n  }"
+            },
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Quat[]"
+          }
+        ],
+      "extDeps" : {
+        "Math" : "*"
+        },
+      "code" : "require Math;\n\noperator Math_Quat_setFromMat33_task<<<index>>>(\n  io Quat[] result\n, in Mat33[] mat\n) {\n  result[index].setFromMat33(mat[index < mat.size() ? index : mat.size() - 1]);\n}\n\ndfgEntry {\n  if( mat.size() == 0) return;\n  Size task_size = 0;\n  if(task_size < mat.size()) task_size = mat.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      Math_Quat_setFromMat33_task(index, result, mat);\n    }\n  } else {\n    Math_Quat_setFromMat33_task<<<task_size>>>(result, mat);\n  }\n}\n"
       }
     },
   "args" : [
@@ -1840,7 +2099,7 @@
       },
     {
       "type" : "Float32",
-      "value" : 19
+      "value" : 12
       },
     {
       "type" : "Boolean",
