@@ -48,6 +48,9 @@ kl2dfgLogFile = presetStageDir.File('kl2dfg.log')
 kl2edkResults = env.RunKL2EDK(headers, sources)
 kl2dfgResults = env.RunKL2DFG([kl2dfgLogFile], extensionFiles)
 
+compounds = env.Glob(os.path.join(env.Dir('#').Dir('Presets').abspath, '*.canvas'))
+installedCompounds = env.Install(presetStageDir.Dir('Compounds'), compounds)
+
 extLibFileName = env.File(extName + '-' + extSuffix)
 libraryFiles = Flatten([env.SharedLibrary(extLibFileName, cppFiles)])
 env.Depends(cppFiles, kl2edkResults)
@@ -56,6 +59,7 @@ env.Depends(kl2dfgResults, libraryFiles)
 extensionFiles += env.Install(extStageDir, libraryFiles[0])
 extensionFiles += kl2edkResults
 extensionFiles += kl2dfgResults
+extensionFiles += installedCompounds
 
 thirdPartyLibs = []
 if platform.system().lower().startswith('win'):
@@ -64,18 +68,6 @@ if platform.system().lower().startswith('win'):
 
 extensionFiles += thirdPartyLibs
 env.Depends(libraryFiles, thirdPartyLibs)
-
-if os.environ.has_key('FABRIC_EXTS_INSTALL_DIR'):
-  INSTALL_DIR = os.environ['FABRIC_EXTS_INSTALL_DIR']
-  INSTALL_DIR = os.path.normpath(os.path.join(INSTALL_DIR, extName, extVersion))
-
-  newExtensionFiles = []
-  for sourceFile in extensionFiles:
-    relPath = os.path.relpath(sourceFile.abspath, extStageDir.abspath)
-    targetPath = os.path.join(INSTALL_DIR, relPath)
-    targetFile = env.File(targetPath)
-    newExtensionFiles += env.Install(targetFile.dir, sourceFile)
-  extensionFiles += Flatten(newExtensionFiles)
 
 env.AlwaysBuild(extensionFiles)
 alias = env.Alias(extName, extensionFiles)

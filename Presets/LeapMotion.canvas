@@ -1,0 +1,526 @@
+{
+  "objectType" : "Graph",
+  "metadata" : {
+    "uiGraphPan" : "{\n  \"x\" : 183.0,\n  \"y\" : -206.0\n  }"
+    },
+  "title" : "LeapMotion",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiPersistValue" : "true"
+        },
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Float32" : 0.1000000014901161
+        },
+      "name" : "scaleFactor",
+      "execPortType" : "In",
+      "typeSpec" : "Float32"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "fingerTips",
+      "execPortType" : "Out",
+      "typeSpec" : "Xfo[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "fingerAllXfos",
+      "execPortType" : "Out",
+      "typeSpec" : "Xfo[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "hands",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "gestures",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapGesture[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "tools",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapTool[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "nodes" : [
+    {
+      "objectType" : "Var",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":391.0,\"y\":127.0}"
+        },
+      "name" : "controller",
+      "ports" : [
+        {
+          "objectType" : "VarPort",
+          "nodePortType" : "IO",
+          "name" : "value"
+          }
+        ],
+      "dataType" : "LeapController"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":192.0,\"y\":128.0}"
+        },
+      "name" : "LeapController",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapController.LeapController",
+      "presetGUID" : "16F5CBD199B1955DCE8411C1A875B79D"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":586.0,\"y\":144.0}"
+        },
+      "name" : "Frame",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "history"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapController.Frame",
+      "presetGUID" : "628FBF375B89AF019EB141C54A2CD8D5"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":788.0,\"y\":200.0}"
+        },
+      "name" : "FingerTipXfos",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "scaleFactor"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapFrame.FingerTipXfos",
+      "presetGUID" : "6824FF91291538C63B78473ED63E0863"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":789.0,\"y\":313.0}"
+        },
+      "name" : "FingerAllXfos",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "scaleFactor"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapFrame.FingerAllXfos",
+      "presetGUID" : "A33333399B88F4022DF21F986DDD54C5"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":795.0,\"y\":422.0}"
+        },
+      "name" : "Hands",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapFrame.Hands",
+      "presetGUID" : "CA51271341C611A816B5551F166965E1"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":793.0,\"y\":654.0}"
+        },
+      "name" : "Tools",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapFrame.Tools",
+      "presetGUID" : "F3BB0216E22E024B41368A9CD338E079"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":787.0,\"y\":520.0}"
+        },
+      "name" : "Gestures",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "sinceFrame"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "ThirdParty.LeapMotion.LeapFrame.Gestures",
+      "presetGUID" : "A898949282F2D36C9A5B831AA80FD23C"
+      }
+    ],
+  "connections" : {
+    "scaleFactor" : [
+      "FingerTipXfos.scaleFactor"
+      ],
+    "controller.value" : [
+      "Frame.this"
+      ],
+    "LeapController.result" : [
+      "controller.value"
+      ],
+    "Frame.result" : [
+      "FingerTipXfos.this",
+      "Gestures.sinceFrame"
+      ],
+    "FingerTipXfos.this" : [
+      "FingerAllXfos.this"
+      ],
+    "FingerTipXfos.scaleFactor" : [
+      "FingerAllXfos.scaleFactor"
+      ],
+    "FingerTipXfos.result" : [
+      "fingerTips"
+      ],
+    "FingerAllXfos.this" : [
+      "Hands.this"
+      ],
+    "FingerAllXfos.result" : [
+      "fingerAllXfos"
+      ],
+    "Hands.this" : [
+      "Gestures.this"
+      ],
+    "Hands.result" : [
+      "hands"
+      ],
+    "Tools.result" : [
+      "tools"
+      ],
+    "Gestures.this" : [
+      "Tools.this"
+      ],
+    "Gestures.result" : [
+      "gestures"
+      ]
+    },
+  "requiredPresets" : {
+    "ThirdParty.LeapMotion.LeapController.LeapController" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "\n\n Supported by LeapController"
+        },
+      "title" : "LeapController",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "LeapController"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "16F5CBD199B1955DCE8411C1A875B79D",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = LeapController();\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapController.Frame" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "* Returns a frame of tracking data from the Leap Motion software. Use the optional\n* history parameter to specify which frame to retrieve. Call frame() or\n* frame(0) to access the most recent frame; call frame(1) to access the\n* previous frame, and so on. If you use a history value greater than the\n* number of stored frames, then the controller returns an invalid frame.\n\n* \\include Controller_Frame_1.txt\n\n* You can call this function in your Listener implementation to get frames at the\n* Leap Motion frame rate:\n\n* \\include Controller_Listener_onFrame.txt\n\n* @param history The age of the frame to return, counting backwards from\n* the most recent frame (0) into the past and up to the maximum age (59).\n* @returns The specified frame; or, if no history parameter is specified,\n* the newest frame. If a frame is not available at the specified history\n* position, an invalid Frame is returned.\n* @since 1.0\n\n\n Supported by LeapController"
+        },
+      "title" : "Frame",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapController"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "history",
+          "execPortType" : "In",
+          "typeSpec" : "SInt32"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "LeapFrame"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "628FBF375B89AF019EB141C54A2CD8D5",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.frame(history);\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapFrame.FingerTipXfos" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "overload to get the finger tip transforms of the available fingers\n\n Supported by LeapFrame"
+        },
+      "title" : "FingerTipXfos",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapFrame"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Float32" : 0.1000000014901161
+            },
+          "name" : "scaleFactor",
+          "execPortType" : "In",
+          "typeSpec" : "Float32"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Xfo[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "6824FF91291538C63B78473ED63E0863",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerTipXfos(scaleFactor);\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapFrame.FingerAllXfos" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "overload to get all transforms of the available fingers\n\n Supported by LeapFrame"
+        },
+      "title" : "FingerAllXfos",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapFrame"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "defaultValues" : {
+            "Float32" : 0.1000000014901161
+            },
+          "name" : "scaleFactor",
+          "execPortType" : "In",
+          "typeSpec" : "Float32"
+          },
+        {
+          "objectType" : "Port",
+          "metadata" : {
+            "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+            },
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Xfo[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "A33333399B88F4022DF21F986DDD54C5",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerAllXfos(scaleFactor);\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapFrame.Hands" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "* The list of Hand objects detected in this frame, given in arbitrary order.\n* The list can be empty if no hands are detected.\n\n* \\include Frame_hands.txt\n\n* @returns The HandList containing all Hand objects detected in this frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+        },
+      "title" : "Hands",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapFrame"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "LeapHand[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "CA51271341C611A816B5551F166965E1",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.hands();\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapFrame.Tools" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "* The list of Tool objects detected in this frame, given in arbitrary order.\n* The list can be empty if no tools are detected.\n\n* \\include Frame_tools.txt\n\n* @returns The ToolList containing all Tool objects detected in this frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+        },
+      "title" : "Tools",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapFrame"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "LeapTool[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "F3BB0216E22E024B41368A9CD338E079",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.tools();\n}\n"
+      },
+    "ThirdParty.LeapMotion.LeapFrame.Gestures" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "* Returns a GestureList containing all gestures that have occurred since\n* the specified frame.\n\n* \\include Frame_gestures_since.txt\n\n* @param sinceFrame An earlier Frame object. The starting frame must\n* still be in the frame history cache, which has a default length of\n* 60 frames.\n* @return GestureList The list of the Gesture objects that have occurred\n* since the specified frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+        },
+      "title" : "Gestures",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "LeapFrame"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "sinceFrame",
+          "execPortType" : "In",
+          "typeSpec" : "LeapFrame"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "LeapGesture[]"
+          }
+        ],
+      "extDeps" : {
+        "LeapMotion" : "*"
+        },
+      "presetGUID" : "A898949282F2D36C9A5B831AA80FD23C",
+      "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.gestures(sinceFrame);\n}\n"
+      }
+    },
+  "args" : [
+    {
+      "type" : "Float32",
+      "value" : 0.1000000014901161
+      },
+    null,
+    null,
+    null,
+    null,
+    null
+    ]
+  }
