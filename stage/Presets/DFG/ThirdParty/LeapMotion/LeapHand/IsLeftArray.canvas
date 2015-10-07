@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Identifies whether this Hand is a left hand.\n\n* \\include Hand_isLeft.txt\n\n* @returns True if the hand is identified as a left hand.\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "IsLeft[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "5D7D21759FADBCF9AC7DA9F6A9D12A7B",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_isLeft_task<<<index>>>(\n  io Boolean[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isLeft();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_isLeft_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_isLeft_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

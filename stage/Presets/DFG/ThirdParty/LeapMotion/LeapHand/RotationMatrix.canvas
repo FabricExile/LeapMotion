@@ -1,0 +1,39 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The transform matrix expressing the rotation derived from the change\n* in orientation of this hand, and any associated fingers,\n* between the current frame and the specified frame.\n\n* \\include Hand_rotationMatrix.txt\n\n* If a corresponding Hand object is not found in sinceFrame, or if either\n* this frame or sinceFrame are invalid Frame objects, then this method\n* returns an identity matrix.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @returns A transformation Matrix representing the heuristically determined\n* rotational change of the hand between the current frame and that specified\n* in the sinceFrame parameter.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "RotationMatrix",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Mat44"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "32DF72E560019C29D6E8DBB59188E32C",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationMatrix(sinceFrame);\n}\n"
+  }

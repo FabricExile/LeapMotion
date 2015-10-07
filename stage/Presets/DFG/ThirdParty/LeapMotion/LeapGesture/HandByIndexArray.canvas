@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "overload to get a hand by index\n\n Supported by LeapGesture"
+    },
+  "title" : "HandByIndex[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "index",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapHand[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "FECE7E708CA9E28C6BAF519D2A912CA5",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapGesture_handByIndex_task<<<index>>>(\n  io LeapHand[] result\n, in LeapGesture[] this\n, in SInt32[] index\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].handByIndex(index[index < index.size() ? index : index.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( index.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < index.size()) task_size = index.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapGesture_handByIndex_task(index, result, this, index);\n    }\n  } else {\n    LeapMotion_LeapGesture_handByIndex_task<<<task_size>>>(result, this, index);\n  }\n}\n"
+  }

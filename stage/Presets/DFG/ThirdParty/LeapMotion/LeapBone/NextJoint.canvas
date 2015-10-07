@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The end of the bone, closest to the finger tip.\n\n* In anatomical terms, this is the distal end of the bone.\n\n* \\include Bone_nextJoint.txt\n\n* @returns The Vector containing the coordinates of the next joint position.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "NextJoint",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6A2CD2183C93F23C18404CA7C064A893",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.nextJoint();\n}\n"
+  }

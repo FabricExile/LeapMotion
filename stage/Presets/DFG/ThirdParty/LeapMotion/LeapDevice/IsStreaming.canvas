@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether this device is streaming data to your application.\n\n* Currently only one controller can provide data at a time.\n* @since 1.2\n\n\n Supported by LeapDevice"
+    },
+  "title" : "IsStreaming",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "222B20087E03C8CC61644ADDF32000E4",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isStreaming();\n}\n"
+  }

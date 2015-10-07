@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_FINGERTYPE_INDEX",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "277DDA53AFE4F5B1992F265A1C910407",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_FINGERTYPE_INDEX;\n}\n"
+  }

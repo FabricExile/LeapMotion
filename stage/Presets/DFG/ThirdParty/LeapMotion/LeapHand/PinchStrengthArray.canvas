@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The holding strength of a pinch hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a pinching\n* hand pose is recognized. Pinching can be done between the thumb\n* and any other finger of the same hand.\n\n* \\include Hand_pinchStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pinch pose.\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "PinchStrength[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "273BB974B51205D3F8CD6000478DCF40",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_pinchStrength_task<<<index>>>(\n  io Float32[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].pinchStrength();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_pinchStrength_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_pinchStrength_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

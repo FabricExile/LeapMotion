@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The estimated probability that the overall motion between the current\n* frame and the specified frame is intended to be a translating motion.\n\n* \\include Frame_translationProbability.txt\n\n* If either this frame or sinceFrame is an invalid Frame object, then this\n* method returns zero.\n\n* @param sinceFrame The starting frame for computing the translation.\n* @returns A value between 0 and 1 representing the estimated probability\n* that the overall motion between the current frame and the specified frame\n* is intended to be a translating motion.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "TranslationProbability",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A999868CC5C4867CC3EE47008363D897",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.translationProbability(sinceFrame);\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The name of this bone.\n\n* \\include Bone_type.txt\n\n* @returns The anatomical type of this bone as a member of the Bone::Type\n* enumeration.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "BoneType",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2FABC89CC7430A2DFEA26A5C8CF02077",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.boneType();\n}\n"
+  }

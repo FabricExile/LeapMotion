@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "returns true if this controller is valid\n\n Supported by LeapHand"
+    },
+  "title" : "Valid[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "B09FD9D5E85F44E0797EC08EFAB93D37",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_valid_task<<<index>>>(\n  io Boolean[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].valid();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_valid_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_valid_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

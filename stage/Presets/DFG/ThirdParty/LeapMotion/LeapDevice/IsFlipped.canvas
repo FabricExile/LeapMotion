@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "*  Reports whether the coordinate axes have been reversed.\n\n* The Leap Motion controller can automatically flip the coordinate axes so\n* that the z-axis is positive toward the user and the x-axis is more positive\n* from left to right. The user can also manually flip the axes in the Leap\n* Motion control panel.\n*\n* Images from the camera are not flipped, however.\n\n* @return True, if the axes are flipped, that is, if the positive z-axis\n* extends from the long side of the device that does not have the green LED.\n\n* @since 2.1\n\n\n Supported by LeapDevice"
+    },
+  "title" : "IsFlipped",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "591E559A281D12A6A00BBA5D69938227",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isFlipped();\n}\n"
+  }

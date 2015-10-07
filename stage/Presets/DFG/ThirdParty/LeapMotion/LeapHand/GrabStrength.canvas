@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The strength of a grab hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a grabbing hand\n* pose is recognized.\n\n* \\include Hand_grabStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pose.\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "GrabStrength",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A99316D319703030D0E65F18FF61F644",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.grabStrength();\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Identifies whether this Hand is a left hand.\n\n* \\include Hand_isLeft.txt\n\n* @returns True if the hand is identified as a left hand.\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "IsLeft",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "5D7D21759FADBCF9AC7DA9F6A9D12A7B",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isLeft();\n}\n"
+  }

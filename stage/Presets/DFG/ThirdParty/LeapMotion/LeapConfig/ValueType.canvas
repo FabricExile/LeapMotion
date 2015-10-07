@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports the natural data type for the value related to the specified key.\n\n* \\include Config_type.txt\n\n* @param key The key for the looking up the value in the configuration dictionary.\n* @returns The native data type of the value, that is, the type that does not\n* require a data conversion.\n* @since 1.0\n\n\n Supported by LeapConfig"
+    },
+  "title" : "ValueType",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapConfig"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "key",
+      "execPortType" : "In",
+      "typeSpec" : "String"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "732BB91B5D641897D97CFDDBAA86155F",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.valueType(key);\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The average width of the flesh around the bone in millimeters.\n\n* \\include Bone_width.txt\n\n* @returns The width of the flesh around the bone in millimeters.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "Width",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "49830DD2006A4115817C0C28F9B453A8",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.width();\n}\n"
+  }

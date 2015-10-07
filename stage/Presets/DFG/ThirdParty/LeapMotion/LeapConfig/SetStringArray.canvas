@@ -1,0 +1,53 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "Sets the string representation for the specified key.\n\n* \\include Config_setString.txt\n\n* @returns true on success, false on failure.\n* @since 1.0\n\n\n Supported by LeapConfig"
+    },
+  "title" : "SetString[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapConfig[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "String[]" : [
+          ""
+          ]
+        },
+      "name" : "key",
+      "execPortType" : "In",
+      "typeSpec" : "String[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "String[]" : [
+          ""
+          ]
+        },
+      "name" : "value",
+      "execPortType" : "In",
+      "typeSpec" : "String[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "D6B38E48C69C6A3618BBEF07084F7CF8",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapConfig_setString_task<<<index>>>(\n  io Boolean[] result\n, in LeapConfig[] this\n, in String[] key\n, in String[] value\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].setString(key[index < key.size() ? index : key.size() - 1], value[index < value.size() ? index : value.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( key.size() == 0) return;\n  if( value.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < key.size()) task_size = key.size();\n  if(task_size < value.size()) task_size = value.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapConfig_setString_task(index, result, this, key, value);\n    }\n  } else {\n    LeapMotion_LeapConfig_setString_task<<<task_size>>>(result, this, key, value);\n  }\n}\n"
+  }

@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The Pointable object with the specified ID in this frame.\n\n* Use the Frame::pointable() function to retrieve the Pointable object from\n* this frame using an ID value obtained from a previous frame.\n* This function always returns a Pointable object, but if no finger or tool\n* with the specified ID is present, an invalid Pointable object is returned.\n\n* \\include Frame_pointable.txt\n\n* Note that ID values persist across frames, but only until tracking of a\n* particular object is lost. If tracking of a finger or tool is lost and subsequently\n* regained, the new Pointable object representing that finger or tool may have\n* a different ID than that representing the finger or tool in an earlier frame.\n\n* @param id The ID value of a Pointable object from a previous frame.\n* @returns The Pointable object with the matching ID if one exists in this frame;\n* otherwise, an invalid Pointable object is returned.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Pointable",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "id",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapPointable"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "9D54615903ECAD15C9FAD9139E94ED5D",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.pointable(id);\n}\n"
+  }

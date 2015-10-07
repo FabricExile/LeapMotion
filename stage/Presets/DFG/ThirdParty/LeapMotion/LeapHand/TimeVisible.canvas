@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The duration of time this Hand has been visible to the Leap Motion Controller.\n\n* \\include Hand_timeVisible.txt\n\n* @returns The duration (in seconds) that this Hand has been tracked.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "TimeVisible",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "DBA6130B6DDAB743B43CD1A23AD8F233",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.timeVisible();\n}\n"
+  }

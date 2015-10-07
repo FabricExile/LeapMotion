@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_FINGERTYPE_MIDDLE",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2EC26ABE9405F152F722B5264338CF82",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_FINGERTYPE_MIDDLE;\n}\n"
+  }

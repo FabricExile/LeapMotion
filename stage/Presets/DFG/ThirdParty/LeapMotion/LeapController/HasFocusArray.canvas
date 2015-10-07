@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether this application is the focused, foreground application.\n\n* By default, your application only receives tracking information from\n* the Leap Motion controller when it has the operating system input focus.\n* To receive tracking data when your application is in the background,\n* the background frames policy flag must be set.\n\n* \\include Controller_hasFocus.txt\n\n* @returns True, if application has focus; false otherwise.\n\n* @see Controller::setPolicyFlags()\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "HasFocus[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "997EBB4F15A3C06F561BECCD76EB736D",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_hasFocus_task<<<index>>>(\n  io Boolean[] result\n, in LeapController[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].hasFocus();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_hasFocus_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapController_hasFocus_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The strength of a grab hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a grabbing hand\n* pose is recognized.\n\n* \\include Hand_grabStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pose.\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "GrabStrength[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A99316D319703030D0E65F18FF61F644",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_grabStrength_task<<<index>>>(\n  io Float32[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].grabStrength();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_grabStrength_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_grabStrength_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

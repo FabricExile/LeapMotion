@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_DEVICETYPE_KEYBOARD",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "8E1C6FDC1F542863ADA61B0E1BF11DDC",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_DEVICETYPE_KEYBOARD;\n}\n"
+  }

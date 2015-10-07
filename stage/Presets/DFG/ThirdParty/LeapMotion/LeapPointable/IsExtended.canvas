@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Whether or not this Pointable is in an extended posture.\n\n* A finger is considered extended if it is extended straight from the hand as if\n* pointing. A finger is not extended when it is bent down and curled towards the\n* palm.  Tools are always extended.\n\n* \\include Finger_isExtended.txt\n\n* @returns True, if the pointable is extended.\n* @since 2.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "IsExtended",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "67883175FDEECF55073C696B65C5157D",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isExtended();\n}\n"
+  }

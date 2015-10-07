@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Returns a GestureList containing all gestures that have occurred since\n* the specified frame.\n\n* \\include Frame_gestures_since.txt\n\n* @param sinceFrame An earlier Frame object. The starting frame must\n* still be in the frame history cache, which has a default length of\n* 60 frames.\n* @return GestureList The list of the Gesture objects that have occurred\n* since the specified frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Gestures",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapGesture[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A898949282F2D36C9A5B831AA80FD23C",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.gestures(sinceFrame);\n}\n"
+  }

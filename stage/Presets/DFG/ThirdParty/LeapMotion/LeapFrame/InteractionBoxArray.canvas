@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The current InteractionBox for the frame. See the InteractionBox class\n* documentation for more details on how this class should be used.\n\n* \\include Frame_interactionBox.txt\n\n* @returns The current InteractionBox object.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "InteractionBox[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapInteractionBox[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "725ABEF0C2E02835089855E5DA2A586E",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_interactionBox_task<<<index>>>(\n  io LeapInteractionBox[] result\n, in LeapFrame[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].interactionBox();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_interactionBox_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapFrame_interactionBox_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

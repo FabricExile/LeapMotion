@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Encodes this Frame object as a byte string.\n\n* \\include Frame_serialize.txt\n\n* @returns The serialized string encoding the data for this frame.\n* @since 2.1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Serialize[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "String[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C0F09BE8DFAFE6BFA8D7FE23BA86279E",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_serialize_task<<<index>>>(\n  io String[] result\n, in LeapFrame[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].serialize();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_serialize_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapFrame_serialize_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The name of this finger.\n\n* \\include Finger_type.txt\n\n* @returns The anatomical type of this finger as a member of the Finger::Type\n* enumeration.\n* @since 2.0\n\n\n Supported by LeapFinger"
+    },
+  "title" : "FingerType",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFinger"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "1CE04AF5CE77F0F100DD2BFBA9F75821",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerType();\n}\n"
+  }

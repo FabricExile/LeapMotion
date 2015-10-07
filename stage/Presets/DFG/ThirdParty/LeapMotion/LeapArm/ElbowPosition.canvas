@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "The position of the elbow.\n\n\nIf not in view, the elbow position is estimated based on typical human\nanatomical proportions.\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    },
+  "title" : "ElbowPosition",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapArm"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6BD11AF412068986C6CE733C8F502E97",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.elbowPosition();\n}\n"
+  }

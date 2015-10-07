@@ -1,0 +1,48 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The distance to the nearest edge of the Leap Motion controller's view volume.\n\n* The view volume is an axis-aligned, inverted pyramid centered on the device origin\n* and extending upward to the range limit. The walls of the pyramid are described\n* by the horizontalViewAngle and verticalViewAngle and the roof by the range.\n* This function estimates the distance between the specified input position and the\n* nearest wall or roof of the view volume.\n\n* \\include Device_distanceToBoundary.txt\n\n* @param position The point to use for the distance calculation.\n* @returns The distance in millimeters from the input position to the nearest boundary.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    },
+  "title" : "DistanceToBoundary[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Vec3[]" : [
+          {
+            "x" : 0,
+            "y" : 0,
+            "z" : 0
+            }
+          ]
+        },
+      "name" : "position",
+      "execPortType" : "In",
+      "typeSpec" : "Vec3[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2C606F1D4D1DE4BB4393919E4B21E5C1",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapDevice_distanceToBoundary_task<<<index>>>(\n  io Float32[] result\n, in LeapDevice[] this\n, in Vec3[] position\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].distanceToBoundary(position[index < position.size() ? index : position.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( position.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < position.size()) task_size = position.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapDevice_distanceToBoundary_task(index, result, this, position);\n    }\n  } else {\n    LeapMotion_LeapDevice_distanceToBoundary_task<<<task_size>>>(result, this, position);\n  }\n}\n"
+  }

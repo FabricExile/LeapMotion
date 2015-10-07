@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The Gesture object with the specified ID in this frame.\n\n* Use the Frame::gesture() function to return a Gesture object in this\n* frame using an ID obtained in an earlier frame. The function always\n* returns a Gesture object, but if there was no update for the gesture in\n* this frame, then an invalid Gesture object is returned.\n\n* \\include Frame_gesture.txt\n\n* All Gesture objects representing the same recognized movement share the\n* same ID.\n* @param id The ID of an Gesture object from a previous frame.\n* @returns The Gesture object in the frame with the specified ID if one\n* exists; Otherwise, an Invalid Gesture object.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Gesture[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "id",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapGesture[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "36D244916111D59B8C766A80ECDE168B",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_gesture_task<<<index>>>(\n  io LeapGesture[] result\n, in LeapFrame[] this\n, in SInt32[] id\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].gesture(id[index < id.size() ? index : id.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( id.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < id.size()) task_size = id.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_gesture_task(index, result, this, id);\n    }\n  } else {\n    LeapMotion_LeapFrame_gesture_task<<<task_size>>>(result, this, id);\n  }\n}\n"
+  }

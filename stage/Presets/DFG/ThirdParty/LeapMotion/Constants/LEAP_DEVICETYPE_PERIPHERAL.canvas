@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_DEVICETYPE_PERIPHERAL",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F96DFEAE2A06444DAEA1ACEB68C0B709",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_DEVICETYPE_PERIPHERAL;\n}\n"
+  }

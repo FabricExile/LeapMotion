@@ -1,0 +1,34 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Requests a change in policy.\n\n* A request to change a policy is subject to user approval and a policy\n* can be changed by the user at any time (using the Leap Motion settings dialog).\n* The desired policy flags must be set every time an application runs.\n\n* Policy changes are completed asynchronously and, because they are subject\n* to user approval or system compatibility checks, may not complete successfully. Call\n* Controller::policyFlags() after a suitable interval to test whether\n* the change was accepted.\n\n* \\include Controller_setPolicyFlags.txt\n\n* @param flags A PolicyFlag value indicating the policies to request.\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "SetPolicyFlags[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "UInt32[]" : [
+          0
+          ]
+        },
+      "name" : "flags",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4CC0841E30F97296E4354700C49F4AB7",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_setPolicyFlags_task<<<index>>>(\n  in LeapController[] this\n, in UInt32[] flags\n) {\n  this[index < this.size() ? index : this.size() - 1].setPolicyFlags(flags[index < flags.size() ? index : flags.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( flags.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < flags.size()) task_size = flags.size();\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_setPolicyFlags_task(index, this, flags);\n    }\n  } else {\n    LeapMotion_LeapController_setPolicyFlags_task<<<task_size>>>(this, flags);\n  }\n}\n"
+  }

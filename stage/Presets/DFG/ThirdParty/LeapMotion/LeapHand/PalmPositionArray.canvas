@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The center position of the palm in millimeters from the Leap Motion Controller origin.\n\n* \\include Hand_palmPosition.txt\n\n* @returns The Vector representing the coordinates of the palm position.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "PalmPosition[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4F71D7FC921C5AB2EEA8F75BCB83E375",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_palmPosition_task<<<index>>>(\n  io Vec3[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].palmPosition();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_palmPosition_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_palmPosition_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

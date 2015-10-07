@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Tools are not associated with hands in version 2+. This function\n* always returns an invalid Tool object.\n\n* @deprecated 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Tool[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "id",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapTool[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "DA2BD1C6088EC53629C7E9756AE7F651",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_tool_task<<<index>>>(\n  io LeapTool[] result\n, in LeapHand[] this\n, in SInt32[] id\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].tool(id[index < id.size() ? index : id.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( id.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < id.size()) task_size = id.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_tool_task(index, result, this, id);\n    }\n  } else {\n    LeapMotion_LeapHand_tool_task<<<task_size>>>(result, this, id);\n  }\n}\n"
+  }

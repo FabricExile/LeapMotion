@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* A unique ID for this Frame.\n\n* Consecutive frames processed by the Leap Motion software have consecutive\n* increasing values. You can use the frame ID to avoid processing the same\n* Frame object twice:\n\n* \\include Frame_Duplicate.txt\n\n* As well as to make sure that your application processes every frame:\n\n* \\include Frame_Skipped.txt\n\n* @returns The frame ID.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Id",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt64"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "049BC50CA3D6212C75FDF6422524B45F",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.id();\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether your application has a connection to the Leap Motion\n* daemon/service. Can be true even if the Leap Motion hardware is not available.\n* @since 1.2\n\n\n Supported by LeapController"
+    },
+  "title" : "IsServiceConnected[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "03311806D5F4FACD00102FCBBF5D8682",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_isServiceConnected_task<<<index>>>(\n  io Boolean[] result\n, in LeapController[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isServiceConnected();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_isServiceConnected_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapController_isServiceConnected_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The Hand object with the specified ID in this frame.\n\n* Use the Frame::hand() function to retrieve the Hand object from\n* this frame using an ID value obtained from a previous frame.\n* This function always returns a Hand object, but if no hand\n* with the specified ID is present, an invalid Hand object is returned.\n\n* \\include Frame_hand.txt\n\n* Note that ID values persist across frames, but only until tracking of a\n* particular object is lost. If tracking of a hand is lost and subsequently\n* regained, the new Hand object representing that physical hand may have\n* a different ID than that representing the physical hand in an earlier frame.\n\n* @param id The ID value of a Hand object from a previous frame.\n* @returns The Hand object with the matching ID if one exists in this frame;\n* otherwise, an invalid Hand object is returned.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Hand[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "id",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapHand[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6143EF06E6E8ADE1A659496E3A88DBD6",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_hand_task<<<index>>>(\n  io LeapHand[] result\n, in LeapFrame[] this\n, in SInt32[] id\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].hand(id[index < id.size() ? index : id.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( id.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < id.size()) task_size = id.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_hand_task(index, result, this, id);\n    }\n  } else {\n    LeapMotion_LeapFrame_hand_task<<<task_size>>>(result, this, id);\n  }\n}\n"
+  }

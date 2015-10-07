@@ -1,0 +1,46 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The angle of rotation around the specified axis derived from the overall\n* rotational motion between the current frame and the specified frame.\n\n* The returned angle is expressed in radians measured clockwise around the\n* rotation axis (using the right-hand rule) between the start and end frames.\n* The value is always between -pi and pi radians (-180 and 180 degrees).\n\n* \\include Frame_rotationAngle_axis.txt\n\n* The Leap Motion software derives frame rotation from the relative change in position and\n* orientation of all objects detected in the field of view.\n\n* If either this frame or sinceFrame is an invalid Frame object, then the\n* angle of rotation is zero.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @param axis The axis to measure rotation around.\n* @returns A value containing the heuristically determined rotational\n* change between the current frame and that specified in the sinceFrame\n* parameter around the given axis.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "RotationAngle",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "Out",
+      "name" : "axis",
+      "execPortType" : "In",
+      "typeSpec" : "Vec3"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "24DD66C62C1AD0E6CB6B9E649D97595B",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationAngle(sinceFrame, axis);\n}\n"
+  }

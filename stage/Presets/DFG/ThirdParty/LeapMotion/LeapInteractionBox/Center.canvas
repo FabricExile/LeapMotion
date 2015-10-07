@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The center of the InteractionBox in device coordinates (millimeters). This point\n* is equidistant from all sides of the box.\n\n* \\include InteractionBox_center.txt\n\n* @returns The InteractionBox center in device coordinates.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "Center",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F4BE5DDD4189D1A11F600B1D0CA78352",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.center();\n}\n"
+  }

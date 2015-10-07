@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_VALUETYPE_INT32",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "3C831C9FF0D3045B91D08CDA6AF913EB",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_VALUETYPE_INT32;\n}\n"
+  }

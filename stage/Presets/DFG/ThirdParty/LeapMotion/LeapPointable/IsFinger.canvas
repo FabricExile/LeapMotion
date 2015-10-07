@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Whether or not this Pointable is classified as a finger.\n\n* \\include Pointable_Conversion.txt\n\n* @returns True, if this Pointable is classified as a finger.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "IsFinger",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "3E9874DDB3908FDCA850F89FF8D154F9",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isFinger();\n}\n"
+  }

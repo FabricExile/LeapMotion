@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Returns a Config object, which you can use to query the Leap Motion system for\n* configuration information.\n\n* \\include Controller_config.txt\n\n* @returns The Controller's Config object.\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "Config",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapConfig"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "9F272711A778A46914A904EC4D7B2ACE",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.config();\n}\n"
+  }

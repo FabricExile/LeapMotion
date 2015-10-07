@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "The position of the wrist.\n\n\nNote that the wrist position is not collocated with the end of any bone in\nthe hand. There is a gap of a few centimeters since the carpal bones are\nnot included in the skeleton model.\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    },
+  "title" : "WristPosition[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapArm[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "E9D91D7F34CE8C533415FED5FCA4B17D",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapArm_wristPosition_task<<<index>>>(\n  io Vec3[] result\n, in LeapArm[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].wristPosition();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapArm_wristPosition_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapArm_wristPosition_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

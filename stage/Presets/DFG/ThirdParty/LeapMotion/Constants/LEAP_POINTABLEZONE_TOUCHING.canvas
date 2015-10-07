@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_POINTABLEZONE_TOUCHING",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F86DFF595F7D03DD7594245C9C144992",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_POINTABLEZONE_TOUCHING;\n}\n"
+  }

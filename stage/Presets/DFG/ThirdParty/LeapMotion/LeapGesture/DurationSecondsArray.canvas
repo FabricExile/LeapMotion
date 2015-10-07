@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The elapsed duration in seconds.\n\n* \\include Gesture_durationSeconds.txt\n\n* @see duration()\n* @return float the elapsed duration in seconds.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "DurationSeconds[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A508E18855F8FBB61F2B30531C1260AB",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapGesture_durationSeconds_task<<<index>>>(\n  io Float32[] result\n, in LeapGesture[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].durationSeconds();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapGesture_durationSeconds_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapGesture_durationSeconds_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

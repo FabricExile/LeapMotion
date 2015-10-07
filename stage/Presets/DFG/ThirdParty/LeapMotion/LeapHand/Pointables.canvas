@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The list of Pointable objects detected in this frame\n* that are associated with this hand, given in arbitrary order. The list\n* will always contain 5 fingers.\n\n* Use PointableList::extended() to remove non-extended fingers from the list.\n\n* \\include Hand_Get_Fingers.txt\n\n* @returns The PointableList containing all Pointable objects associated with this hand.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Pointables",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapPointable[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F670EE7ABB71CC7F807461A4B5BF2F33",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.pointables();\n}\n"
+  }

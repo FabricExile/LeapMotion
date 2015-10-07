@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The elapsed duration in seconds.\n\n* \\include Gesture_durationSeconds.txt\n\n* @see duration()\n* @return float the elapsed duration in seconds.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "DurationSeconds",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A508E18855F8FBB61F2B30531C1260AB",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.durationSeconds();\n}\n"
+  }

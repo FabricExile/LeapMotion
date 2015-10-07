@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The list of hands associated with this Gesture, if any.\n\n* \\include Gesture_hands.txt\n\n* If no hands are related to this gesture, the list is empty.\n\n* @return HandList the list of related Hand objects.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "Hands",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapHand[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "1062BA14EF312BF1DF4E939AB67E337F",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.hands();\n}\n"
+  }

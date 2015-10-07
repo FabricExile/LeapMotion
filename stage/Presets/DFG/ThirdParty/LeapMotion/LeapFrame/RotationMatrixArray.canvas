@@ -1,0 +1,39 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The transform matrix expressing the rotation derived from the overall\n* rotational motion between the current frame and the specified frame.\n\n* \\include Frame_rotationMatrix.txt\n\n* The Leap Motion software derives frame rotation from the relative change in position and\n* orientation of all objects detected in the field of view.\n\n* If either this frame or sinceFrame is an invalid Frame object, then this\n* method returns an identity matrix.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @returns A transformation Matrix containing the heuristically determined\n* rotational change between the current frame and that specified in the\n* sinceFrame parameter.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "RotationMatrix[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Mat44[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C537ED326A3D5B72FA80BB2DC8E25DDB",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_rotationMatrix_task<<<index>>>(\n  io Mat44[] result\n, in LeapFrame[] this\n, in LeapFrame[] sinceFrame\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].rotationMatrix(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( sinceFrame.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_rotationMatrix_task(index, result, this, sinceFrame);\n    }\n  } else {\n    LeapMotion_LeapFrame_rotationMatrix_task<<<task_size>>>(result, this, sinceFrame);\n  }\n}\n"
+  }

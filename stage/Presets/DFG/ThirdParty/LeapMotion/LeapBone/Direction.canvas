@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The normalized direction of the bone from base to tip.\n\n* \\include Bone_direction.txt\n\n* @returns The normalized direction of the bone from base to tip.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "Direction",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A9F8DED446904C529EA6FD059B3A78A1",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.direction();\n}\n"
+  }

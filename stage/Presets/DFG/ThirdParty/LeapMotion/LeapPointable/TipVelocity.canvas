@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The rate of change of the tip position in millimeters/second.\n\n* \\include Pointable_tipVelocity.txt\n\n* @returns The Vector containing the coordinates of the tip velocity.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "TipVelocity",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C3FCC97B58FE14FC4BF632780542EA08",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.tipVelocity();\n}\n"
+  }

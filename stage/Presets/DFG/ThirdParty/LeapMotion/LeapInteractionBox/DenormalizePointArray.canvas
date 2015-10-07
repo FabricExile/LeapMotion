@@ -1,0 +1,51 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Converts a position defined by normalized InteractionBox coordinates into device\n* coordinates in millimeters.\n\n* \\include InteractionBox_denormalizePoint.txt\n\n* This function performs the inverse of normalizePoint().\n\n* @param normalizedPosition The input position in InteractionBox coordinates.\n* @returns The corresponding denormalized position in device coordinates.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "DenormalizePoint[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "Vec3[]" : [
+          {
+            "x" : 0,
+            "y" : 0,
+            "z" : 0
+            }
+          ]
+        },
+      "name" : "normalizedPosition",
+      "execPortType" : "In",
+      "typeSpec" : "Vec3[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "5F488E535112CC6531F383134858C587",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapInteractionBox_denormalizePoint_task<<<index>>>(\n  io Vec3[] result\n, in LeapInteractionBox[] this\n, in Vec3[] normalizedPosition\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].denormalizePoint(normalizedPosition[index < normalizedPosition.size() ? index : normalizedPosition.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( normalizedPosition.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < normalizedPosition.size()) task_size = normalizedPosition.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapInteractionBox_denormalizePoint_task(index, result, this, normalizedPosition);\n    }\n  } else {\n    LeapMotion_LeapInteractionBox_denormalizePoint_task<<<task_size>>>(result, this, normalizedPosition);\n  }\n}\n"
+  }

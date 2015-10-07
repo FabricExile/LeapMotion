@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_BONETYPE_INTERMEDIATE",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "AB984E6905A5CF07828FFAD86A804A9E",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_BONETYPE_INTERMEDIATE;\n}\n"
+  }

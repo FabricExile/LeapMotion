@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The list of Finger objects detected in this frame that are attached to\n* this hand, given in order from thumb to pinky.  The list cannot be empty.\n\n* Use PointableList::extended() to remove non-extended fingers from the list.\n\n* \\include Hand_Get_Fingers.txt\n\n* @returns The FingerList containing all Finger objects attached to this hand.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Fingers",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapFinger[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "69EB4B495CE5975E68835800476EF6BA",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingers();\n}\n"
+  }

@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "The center of the forearm.\n\nThis location represents the midpoint of the arm between the wrist position\nand the elbow position.\n\n@since 2.1.0\n\n\n Supported by LeapArm"
+    },
+  "title" : "Center[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapArm[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F68C2DC412E8532E05B5E9209C2B98F5",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapArm_center_task<<<index>>>(\n  io Vec3[] result\n, in LeapArm[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].center();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapArm_center_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapArm_center_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

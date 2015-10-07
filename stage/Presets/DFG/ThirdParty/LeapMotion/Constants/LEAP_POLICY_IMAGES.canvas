@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_POLICY_IMAGES",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A7EC456DAE93DFB8325C99DAECADAB6F",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_POLICY_IMAGES;\n}\n"
+  }

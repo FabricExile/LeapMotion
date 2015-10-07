@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The elapsed duration of the recognized movement up to the\n* frame containing this Gesture object, in microseconds.\n\n* \\include Gesture_duration.txt\n\n* The duration reported for the first Gesture in the sequence (with the\n* STATE_START state) will typically be a small positive number since\n* the movement must progress far enough for the Leap Motion software to recognize it as\n* an intentional gesture.\n\n* @return int64_t the elapsed duration in microseconds.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "Duration[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt64[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "EB7EDBB9EC5B88F342A357AB79033557",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapGesture_duration_task<<<index>>>(\n  io SInt64[] result\n, in LeapGesture[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].duration();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapGesture_duration_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapGesture_duration_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

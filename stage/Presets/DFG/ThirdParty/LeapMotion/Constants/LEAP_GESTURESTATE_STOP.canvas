@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_GESTURESTATE_STOP",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "A9FAAA36763714F095D207F36DAE7396",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_GESTURESTATE_STOP;\n}\n"
+  }

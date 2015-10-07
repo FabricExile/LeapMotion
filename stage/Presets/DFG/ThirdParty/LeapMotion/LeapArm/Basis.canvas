@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The orthonormal basis vectors for the Arm bone as a Matrix.\n\n* Basis vectors specify the orientation of a bone.\n\n* **xBasis** Perpendicular to the longitudinal axis of the\n*   bone; exits the arm laterally through the sides of the wrist.\n\n* **yBasis or up vector** Perpendicular to the longitudinal\n*   axis of the bone; exits the top and bottom of the arm. More positive\n*   in the upward direction.\n\n* **zBasis** Aligned with the longitudinal axis of the arm bone.\n*   More positive toward the wrist.\n\n* \\include Arm_basis.txt\n\n* The bases provided for the right arm use the right-hand rule; those for\n* the left arm use the left-hand rule. Thus, the positive direction of the\n* x-basis is to the right for the right arm and to the left for the left\n* arm. You can change from right-hand to left-hand rule by multiplying the\n* z basis vector by -1.\n\n* Note that converting the basis vectors directly into a quaternion\n* representation is not mathematically valid. If you use quaternions,\n* create them from the derived rotation matrix not directly from the bases.\n\n* @returns The basis of the arm bone as a matrix.\n* @since 2.0.3\n\n\n Supported by LeapArm"
+    },
+  "title" : "Basis",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapArm"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Mat44"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C38DDED819F9AD189AA621C80E0B395D",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.basis();\n}\n"
+  }

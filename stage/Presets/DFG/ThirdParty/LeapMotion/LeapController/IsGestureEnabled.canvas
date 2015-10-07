@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether the specified gesture type is enabled.\n\n* \\include Controller_isGestureEnabled.txt\n\n* @param type The type of gesture to check; a member of the UInt32 enumeration.\n* @returns True, if the specified type is enabled; false, otherwise.\n* @see Controller::enableGesture()\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "IsGestureEnabled",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "gesture",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6AC4B47B1D3804A259F02F26975A7CFE",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isGestureEnabled(gesture);\n}\n"
+  }

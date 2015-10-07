@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The name of this bone.\n\n* \\include Bone_type.txt\n\n* @returns The anatomical type of this bone as a member of the Bone::Type\n* enumeration.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "BoneType[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2FABC89CC7430A2DFEA26A5C8CF02077",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_boneType_task<<<index>>>(\n  io UInt32[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].boneType();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_boneType_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_boneType_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

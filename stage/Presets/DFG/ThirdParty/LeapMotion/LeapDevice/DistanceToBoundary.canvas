@@ -1,0 +1,39 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The distance to the nearest edge of the Leap Motion controller's view volume.\n\n* The view volume is an axis-aligned, inverted pyramid centered on the device origin\n* and extending upward to the range limit. The walls of the pyramid are described\n* by the horizontalViewAngle and verticalViewAngle and the roof by the range.\n* This function estimates the distance between the specified input position and the\n* nearest wall or roof of the view volume.\n\n* \\include Device_distanceToBoundary.txt\n\n* @param position The point to use for the distance calculation.\n* @returns The distance in millimeters from the input position to the nearest boundary.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    },
+  "title" : "DistanceToBoundary",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "Out",
+      "name" : "position",
+      "execPortType" : "In",
+      "typeSpec" : "Vec3"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2C606F1D4D1DE4BB4393919E4B21E5C1",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.distanceToBoundary(position);\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The maximum reliable tracking range from the center of this device.\n\n* The range reports the maximum recommended distance from the device center\n* for which tracking is expected to be reliable. This distance is not a hard limit.\n* Tracking may be still be functional above this distance or begin to degrade slightly\n* before this distance depending on calibration and extreme environmental conditions.\n\n* \\include Device_range.txt\n\n* @returns The recommended maximum range of the device in mm.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    },
+  "title" : "Range[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "5035EDF74F3E99D696124A259F309C36",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapDevice_range_task<<<index>>>(\n  io Float32[] result\n, in LeapDevice[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].range();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapDevice_range_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapDevice_range_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

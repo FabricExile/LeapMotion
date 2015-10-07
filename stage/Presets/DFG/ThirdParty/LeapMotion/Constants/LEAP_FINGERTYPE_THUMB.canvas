@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_FINGERTYPE_THUMB",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F7E25E9587741734352D78F5B7B1AE0E",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_FINGERTYPE_THUMB;\n}\n"
+  }

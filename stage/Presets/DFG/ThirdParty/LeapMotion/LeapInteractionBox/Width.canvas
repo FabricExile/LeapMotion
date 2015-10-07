@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The width of the InteractionBox in millimeters, measured along the x-axis.\n\n* \\include InteractionBox_width.txt\n\n* @returns The InteractionBox width in millimeters.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "Width",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "585C352E1DDA22F373414236A5AE6CCC",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.width();\n}\n"
+  }

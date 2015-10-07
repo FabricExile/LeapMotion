@@ -1,0 +1,39 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The change of position of this hand between the current frame and\n* the specified frame.\n\n* The returned translation vector provides the magnitude and direction of\n* the movement in millimeters.\n\n* \\include Hand_translation.txt\n\n* If a corresponding Hand object is not found in sinceFrame, or if either\n* this frame or sinceFrame are invalid Frame objects, then this method\n* returns a zero vector.\n\n* @param sinceFrame The starting frame for computing the translation.\n* @returns A Vector representing the heuristically determined change in\n* hand position between the current frame and that specified in the\n* sinceFrame parameter.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Translation",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "7B0FBE41A4B6C23C3E56D5D0E494BBFB",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.translation(sinceFrame);\n}\n"
+  }

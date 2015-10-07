@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "libs": "LeapMotion",
+  "code": [
+    "LeapConfig.kl",
+    "LeapInteractionBox.kl",
+    "LeapPointable.kl",
+    "LeapBone.kl",
+    "LeapFinger.kl",
+    "LeapTool.kl",
+    "LeapArm.kl",
+    "LeapHand.kl",
+    "LeapGesture.kl",
+    "LeapImage.kl",
+    "LeapFrame.kl",
+    "LeapDevice.kl",
+    "LeapController.kl"
+  ]
+}

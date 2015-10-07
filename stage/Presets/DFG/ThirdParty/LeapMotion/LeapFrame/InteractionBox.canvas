@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The current InteractionBox for the frame. See the InteractionBox class\n* documentation for more details on how this class should be used.\n\n* \\include Frame_interactionBox.txt\n\n* @returns The current InteractionBox object.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "InteractionBox",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapInteractionBox"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "725ABEF0C2E02835089855E5DA2A586E",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.interactionBox();\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* A unique ID assigned to this Pointable object, whose value remains the\n* same across consecutive frames while the tracked finger or tool remains\n* visible. If tracking is lost (for example, when a finger is occluded by\n* another finger or when it is withdrawn from the Leap Motion Controller field of view), the\n* Leap Motion software may assign a new ID when it detects the entity in a future frame.\n\n* \\include Pointable_id.txt\n\n* Use the ID value with the Frame::pointable() function to find this\n* Pointable object in future frames.\n\n* IDs should be from 1 to 100 (inclusive). If more than 100 objects are tracked\n* an IDs of -1 will be used until an ID in the defined range is available.\n\n* @returns The ID assigned to this Pointable object.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "Id[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "FBA2C3A5198385DDFC808AD5335E526F",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapPointable_id_task<<<index>>>(\n  io SInt32[] result\n, in LeapPointable[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].id();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapPointable_id_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapPointable_id_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

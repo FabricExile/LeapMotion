@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The center of a sphere fit to the curvature of this hand.\n\n* \\include Hand_sphereCenter.txt\n\n* This sphere is placed roughly as if the hand were holding a ball.\n\n* \\image html images/Leap_Hand_Ball.png\n\n* @returns The Vector representing the center position of the sphere.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "SphereCenter[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "D9605E7DDF0876ED88AA233BBCEA579B",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_sphereCenter_task<<<index>>>(\n  io Vec3[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].sphereCenter();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_sphereCenter_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_sphereCenter_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

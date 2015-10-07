@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_BONETYPE_DISTAL",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "3337D00CE60A016501380A00380DEB52",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_BONETYPE_DISTAL;\n}\n"
+  }

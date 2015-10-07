@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether this device is embedded in another computer or computer\n* peripheral.\n\n* @returns True, if this device is embedded in a laptop, keyboard, or other computer\n* component; false, if this device is a standalone controller.\n* @since 1.2\n\n\n Supported by LeapDevice"
+    },
+  "title" : "IsEmbedded[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "E48E4AF41782A0A7693C27E2534D3861",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapDevice_isEmbedded_task<<<index>>>(\n  io Boolean[] result\n, in LeapDevice[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isEmbedded();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapDevice_isEmbedded_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapDevice_isEmbedded_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

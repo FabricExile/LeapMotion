@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The arm to which this hand is attached.\n\n* If the arm is not completely in view, Arm attributes are estimated based on\n* the attributes of entities that are in view combined with typical human anatomy.\n\n* \\include Arm_get.txt\n\n* @returns The Arm object for this hand.\n* @since 2.0.3\n\n\n Supported by LeapHand"
+    },
+  "title" : "Arm",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapArm"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "9D5B88FF2AB84B7BF4EEC493CE998914",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.arm();\n}\n"
+  }

@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The orientation of the hand as a basis matrix.\n\n* The basis is defined as follows:\n\n* **xAxis** Positive in the direction of the pinky\n\n* **yAxis** Positive above the hand\n\n* **zAxis** Positive in the direction of the wrist\n\n* Note: Since the left hand is a mirror of the right hand, the\n* basis matrix will be left-handed for left hands.\n\n* \\include Hand_basis.txt\n\n* @returns The basis of the hand as a matrix.\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Basis",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 249,\n  \"g\" : 157,\n  \"b\" : 28\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Mat44"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "69B027D6D0316870E86002254203AC58",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.basis();\n}\n"
+  }

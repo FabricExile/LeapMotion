@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_POLICY_OPTIMIZE_HMD",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "FFDC3A0DBB6A7656CA428C091F641203",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_POLICY_OPTIMIZE_HMD;\n}\n"
+  }

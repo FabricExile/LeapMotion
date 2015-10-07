@@ -1,0 +1,49 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Normalizes the coordinates of a point using the interaction box.\n\n* \\include InteractionBox_normalizePoint.txt\n\n* Coordinates from the Leap Motion frame of reference (millimeters) are converted\n* to a range of [0..1] such that the minimum value of the InteractionBox maps to 0\n* and the maximum value of the InteractionBox maps to 1.\n\n* @param position The input position in device coordinates.\n* @param clamp Whether or not to limit the output value to the range [0,1] when the\n* input position is outside the InteractionBox. Defaults to true.\n* @returns The normalized position.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "NormalizePoint",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "Out",
+      "name" : "position",
+      "execPortType" : "In",
+      "typeSpec" : "Vec3"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "clamp",
+      "execPortType" : "In",
+      "typeSpec" : "Boolean"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "BCFEAAD3EA5EEB48409A6F7E32AA4E99",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.normalizePoint(position, clamp);\n}\n"
+  }

@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The stabilized tip position of this Pointable.\n\n* Smoothing and stabilization is performed in order to make\n* this value more suitable for interaction with 2D content. The stabilized\n* position lags behind the tip position by a variable amount, depending\n* primarily on the speed of movement.\n\n* \\include Pointable_stabilizedTipPosition.txt\n\n* @returns A modified tip position of this Pointable object\n* with some additional smoothing and stabilization applied.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "StabilizedTipPosition[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6616BAF59CE4A659DC009D03626E199E",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapPointable_stabilizedTipPosition_task<<<index>>>(\n  io Vec3[] result\n, in LeapPointable[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].stabilizedTipPosition();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapPointable_stabilizedTipPosition_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapPointable_stabilizedTipPosition_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

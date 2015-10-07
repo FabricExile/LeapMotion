@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_FINGERTYPE_RING",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4D153EADFD973CEC611E3A848C5A5231",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_FINGERTYPE_RING;\n}\n"
+  }

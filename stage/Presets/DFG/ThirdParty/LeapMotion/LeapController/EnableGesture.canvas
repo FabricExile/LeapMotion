@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Enables or disables reporting of a specified gesture type.\n\n* By default, all gesture types are disabled. When disabled, gestures of the\n* disabled type are never reported and will not appear in the frame\n* gesture list.\n\n* \\include Controller_enableGesture.txt\n\n* As a performance optimization, only enable recognition for the types\n* of movements that you use in your application.\n\n* @param type The type of gesture to enable or disable. Must be a\n* member of the Gesture::Type enumeration.\n* @param enable True, to enable the specified gesture type; False,\n* to disable.\n* @see Controller::isGestureEnabled()\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "EnableGesture",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "gesture",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "enable",
+      "execPortType" : "In",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "549404099032D8D40D3FCC33F7B9801E",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  this.enableGesture(gesture, enable);\n}\n"
+  }

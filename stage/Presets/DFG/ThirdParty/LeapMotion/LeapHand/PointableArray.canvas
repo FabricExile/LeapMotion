@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The Pointable object with the specified ID associated with this hand.\n\n* Use the Hand::pointable() function to retrieve a Pointable object\n* associated with this hand using an ID value obtained from a previous frame.\n* This function always returns a Pointable object, but if no finger\n* with the specified ID is present, an invalid Pointable object is returned.\n\n* \\include Hand_Get_Pointable_ByID.txt\n\n* Note that the ID values assigned to fingers are based on the hand ID.\n* Hand IDs persist across frames, but only until\n* tracking of that hand is lost. If tracking of the hand is lost and subsequently\n* regained, the new Hand object and its child Finger objects will have a\n* different ID than in an earlier frame.\n\n* @param id The ID value of a Pointable object from a previous frame.\n* @returns The Pointable object with the matching ID if one exists for this\n* hand in this frame; otherwise, an invalid Pointable object is returned.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Pointable[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "id",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapPointable[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "FA195BB75E9C747B8C1581FFFB8B2FF8",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_pointable_task<<<index>>>(\n  io LeapPointable[] result\n, in LeapHand[] this\n, in SInt32[] id\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].pointable(id[index < id.size() ? index : id.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( id.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < id.size()) task_size = id.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_pointable_task(index, result, this, id);\n    }\n  } else {\n    LeapMotion_LeapHand_pointable_task<<<task_size>>>(result, this, id);\n  }\n}\n"
+  }

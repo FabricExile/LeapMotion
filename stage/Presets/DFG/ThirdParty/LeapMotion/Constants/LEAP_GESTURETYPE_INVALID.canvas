@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_GESTURETYPE_INVALID",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "B6C3CC987225F0B874497B1910151236",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_GESTURETYPE_INVALID;\n}\n"
+  }

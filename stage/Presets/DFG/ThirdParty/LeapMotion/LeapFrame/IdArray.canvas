@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* A unique ID for this Frame.\n\n* Consecutive frames processed by the Leap Motion software have consecutive\n* increasing values. You can use the frame ID to avoid processing the same\n* Frame object twice:\n\n* \\include Frame_Duplicate.txt\n\n* As well as to make sure that your application processes every frame:\n\n* \\include Frame_Skipped.txt\n\n* @returns The frame ID.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Id[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt64[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "049BC50CA3D6212C75FDF6422524B45F",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_id_task<<<index>>>(\n  io UInt64[] result\n, in LeapFrame[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].id();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_id_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapFrame_id_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

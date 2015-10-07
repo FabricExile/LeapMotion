@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "*  The list of images from the Leap Motion cameras.\n*\n*  @return An ImageList object containing the camera images analyzed to create this Frame.\n*  @since 2.1\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Images",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapImage[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "0F24F34C00C7EB77794741EA65642753",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.images();\n}\n"
+  }

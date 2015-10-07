@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The depth of the InteractionBox in millimeters, measured along the z-axis.\n\n* \\include InteractionBox_depth.txt\n\n* @returns The InteractionBox depth in millimeters.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "Depth",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F32F6F8D715B5F1A1EA96FF421E566B6",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.depth();\n}\n"
+  }

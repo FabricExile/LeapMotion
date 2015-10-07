@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The angle of view along the x axis of this device.\n\n* \\image html images/Leap_horizontalViewAngle.png\n\n* The Leap Motion controller scans a region in the shape of an inverted pyramid\n* centered at the device's center and extending upwards. The horizontalViewAngle\n* reports the view angle along the long dimension of the device.\n\n* \\include Device_horizontalViewAngle.txt\n\n* @returns The horizontal angle of view in radians.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    },
+  "title" : "HorizontalViewAngle[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4C5402C2A7005DF95AF4393C440B6010",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapDevice_horizontalViewAngle_task<<<index>>>(\n  io Float32[] result\n, in LeapDevice[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].horizontalViewAngle();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapDevice_horizontalViewAngle_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapDevice_horizontalViewAngle_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

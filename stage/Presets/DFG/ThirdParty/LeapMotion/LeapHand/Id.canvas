@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* A unique ID assigned to this Hand object, whose value remains the same\n* across consecutive frames while the tracked hand remains visible. If\n* tracking is lost (for example, when a hand is occluded by another hand\n* or when it is withdrawn from or reaches the edge of the Leap Motion Controller field of view),\n* the Leap Motion software may assign a new ID when it detects the hand in a future frame.\n\n* Use the ID value with the Frame::hand() function to find this Hand object\n* in future frames:\n\n* \\include Hand_Get_ID.txt\n\n* @returns The ID of this hand.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Id",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "3CAC86882942AA66B30ACB10A32CDA50",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.id();\n}\n"
+  }

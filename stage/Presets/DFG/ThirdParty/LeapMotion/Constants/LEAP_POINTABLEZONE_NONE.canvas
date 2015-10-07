@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_POINTABLEZONE_NONE",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "BA1B5B82AF31296D259EA2CB4E15FB05",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_POINTABLEZONE_NONE;\n}\n"
+  }

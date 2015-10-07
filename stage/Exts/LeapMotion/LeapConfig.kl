@@ -1,0 +1,182 @@
+/*
+ *  Copyright 2010-2014 Fabric Software Inc. All rights reserved.
+ */
+
+/**
+ * The Config class provides access to Leap Motion system configuration information.
+ *
+ * You can get and set gesture configuration parameters using the Config object
+ * obtained from a connected Controller object. The key strings required to
+ * identify a configuration parameter include:
+ *
+ * \table
+ * ====================================  ========== ============= =======
+ * Key string                            Value type Default value Units
+ * ====================================  ========== ============= =======
+ * Gesture.Circle.MinRadius              float      5.0           mm
+ * Gesture.Circle.MinArc                 float      1.5 * pi      radians
+ * Gesture.Swipe.MinLength               float      150           mm
+ * Gesture.Swipe.MinVelocity             float      1000          mm/s
+ * Gesture.KeyTap.MinDownVelocity        float      50            mm/s
+ * Gesture.KeyTap.HistorySeconds         float      0.1           s
+ * Gesture.KeyTap.MinDistance            float      3.0           mm
+ * Gesture.ScreenTap.MinForwardVelocity  float      50            mm/s
+ * Gesture.ScreenTap.HistorySeconds      float      0.1           s
+ * Gesture.ScreenTap.MinDistance         float      5.0           mm
+ * ====================================  ========== ============= =======
+ * \endtable
+ *
+ * After setting a configuration value, you must call the Config::save() method
+ * to commit the changes. You can save after the Controller has connected to
+ * the Leap Motion service/daemon. In other words, after the Controller
+ * has dispatched the serviceConnected or connected events or
+ * Controller::isConnected is true. The configuration value changes are
+ * not persistent; your application needs to set the values every time it runs.
+ *
+ * @see CircleGesture
+ * @see KeyTapGesture
+ * @see ScreenTapGesture
+ * @see SwipeGesture
+ * @since 1.0
+ */
+object LeapConfig {
+  /// \internal
+  Data handle;
+};
+
+/// \internal
+function ~LeapConfig() = "LeapConfig_Destruct";
+
+/// returns true if this controller is valid
+function Boolean LeapConfig.valid() {
+  Data nullData;
+  return this.handle == nullData;
+}
+
+/**
+ * The data type is unknown.
+ * @since 1.0
+ */
+const UInt32 LEAP_VALUETYPE_UNKNOWN = 0;
+/**
+ * A boolean value.
+ * @since 1.0
+ */
+const UInt32 LEAP_VALUETYPE_BOOLEAN = 1;
+/**
+ * A 32-bit integer.
+ * @since 1.0
+ */
+const UInt32 LEAP_VALUETYPE_INT32   = 2;
+/**
+ * A floating-point number.
+ * @since 1.0
+ */
+const UInt32 LEAP_VALUETYPE_FLOAT   = 6;
+/**
+ * A string of characters.
+ * @since 1.0
+ */
+const UInt32 LEAP_VALUETYPE_STRING  = 8;
+
+/**
+ * Reports the natural data type for the value related to the specified key.
+ *
+ * \include Config_type.txt
+ *
+ * @param key The key for the looking up the value in the configuration dictionary.
+ * @returns The native data type of the value, that is, the type that does not
+ * require a data conversion.
+ * @since 1.0
+ */
+function UInt32 LeapConfig.valueType(String key) = "LeapConfig_valueType";
+
+/**
+ * Gets the boolean representation for the specified key.
+ *
+ * \include Config_getBool.txt
+ *
+ * @since 1.0
+ */
+function Boolean LeapConfig.getBool(String key) = "LeapConfig_getBool";
+
+/** Sets the boolean representation for the specified key.
+ *
+ * \include Config_setBool.txt
+ *
+ * @returns true on success, false on failure.
+ * @since 1.0
+ */
+function Boolean LeapConfig.setBool(String key, Boolean value) = "LeapConfig_setBool";
+
+/**
+ * Gets the 32-bit integer representation for the specified key.
+ *
+ * \include Config_getInt32.txt
+ *
+ * @since 1.0
+ */
+function SInt32 LeapConfig.getInt32(String key) = "LeapConfig_getInt32";
+
+/** Sets the 32-bit integer representation for the specified key.
+ *
+ * \include Config_setInt32.txt
+ *
+ * @returns true on success, false on failure.
+ * @since 1.0
+ */
+function Boolean LeapConfig.setInt32(String key, SInt32 value) = "LeapConfig_setInt32";
+
+/**
+ * Gets the floating point representation for the specified key.
+ *
+ * \include Config_getFloat.txt
+ *
+ * @since 1.0
+ */
+function Float32 LeapConfig.getFloat(String key) = "LeapConfig_getFloat";
+
+/** Sets the floating point representation for the specified key.
+ *
+ * \include Config_setFloat.txt
+ *
+ * @returns true on success, false on failure.
+ * @since 1.0
+ */
+function Boolean LeapConfig.setFloat(String key, Float32 value) = "LeapConfig_setFloat";
+
+/**
+ * Gets the string representation for the specified key.
+ *
+ * \include Config_getString.txt
+ *
+ * @since 1.0
+ */
+function String LeapConfig.getString(String key) = "LeapConfig_getString";
+
+/** Sets the string representation for the specified key.
+ *
+ * \include Config_setString.txt
+ *
+ * @returns true on success, false on failure.
+ * @since 1.0
+ */
+function Boolean LeapConfig.setString(String key, String value) = "LeapConfig_setString";
+
+/**
+ * Saves the current state of the config.
+ *
+ * Call ``save()`` after making a set of configuration changes. The
+ * ``save()`` function transfers the configuration changes to the Leap Motion
+ * service. You can save after the Controller has connected to
+ * the Leap Motion service/daemon. In other words, after the Controller
+ * has dispatched the serviceConnected or connected events or
+ * Controller::isConnected is true. The configuration value changes are not persistent; your
+ * application must set the values every time it runs.
+ *
+ * \include Config_save.txt
+ *
+ * @returns true on success, false on failure.
+ * @since 1.0
+ */
+function Boolean LeapConfig.save() = "LeapConfig_save";

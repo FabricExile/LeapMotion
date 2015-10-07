@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "< The pinky or little finger\n* The bone at a given bone index on this finger.\n\n* \\include Bone_iteration.txt\n\n* @param boneIx An index value from the Bone::Type enumeration identifying the\n* bone of interest.\n* @returns The Bone that has the specified bone type.\n* @since 2.0\n\n\n Supported by LeapFinger"
+    },
+  "title" : "Bone",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFinger"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "boneIx",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapBone"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "3DFCFB73ABFFB9EEE97E00218DA27640",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.bone(boneIx);\n}\n"
+  }

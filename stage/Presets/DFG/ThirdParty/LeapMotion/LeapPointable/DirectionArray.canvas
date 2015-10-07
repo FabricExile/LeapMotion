@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The direction in which this finger or tool is pointing.\n\n* \\include Pointable_direction.txt\n\n* The direction is expressed as a unit vector pointing in the same\n* direction as the tip.\n\n* \\image html images/Leap_Finger_Model.png\n\n* @returns The Vector pointing in the same direction as the tip of this\n* Pointable object.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "Direction[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "52DE7A12187BD9F1CF9B688D730A7DA8",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapPointable_direction_task<<<index>>>(\n  io Vec3[] result\n, in LeapPointable[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].direction();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapPointable_direction_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapPointable_direction_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

@@ -1,0 +1,89 @@
+/*
+ *  Copyright 2010-2014 Fabric Software Inc. All rights reserved.
+ */
+
+object LeapInteractionBox {
+  /// \internal
+  Data handle;
+};
+
+/// \internal
+function ~LeapInteractionBox() = "LeapInteractionBox_Destruct";
+
+/// returns true if this controller is valid
+function Boolean LeapInteractionBox.valid() {
+  Data nullData;
+  return this.handle == nullData;
+}
+
+/**
+ * Normalizes the coordinates of a point using the interaction box.
+ *
+ * \include InteractionBox_normalizePoint.txt
+ *
+ * Coordinates from the Leap Motion frame of reference (millimeters) are converted
+ * to a range of [0..1] such that the minimum value of the InteractionBox maps to 0
+ * and the maximum value of the InteractionBox maps to 1.
+ *
+ * @param position The input position in device coordinates.
+ * @param clamp Whether or not to limit the output value to the range [0,1] when the
+ * input position is outside the InteractionBox. Defaults to true.
+ * @returns The normalized position.
+ * @since 1.0
+ */
+function Vec3 LeapInteractionBox.normalizePoint(Vec3 position, Boolean clamp) = "LeapInteractionBox_normalizePoint";
+
+/**
+ * Converts a position defined by normalized InteractionBox coordinates into device
+ * coordinates in millimeters.
+ *
+ * \include InteractionBox_denormalizePoint.txt
+ *
+ * This function performs the inverse of normalizePoint().
+ *
+ * @param normalizedPosition The input position in InteractionBox coordinates.
+ * @returns The corresponding denormalized position in device coordinates.
+ * @since 1.0
+ */
+function Vec3 LeapInteractionBox.denormalizePoint(Vec3 normalizedPosition) = "LeapInteractionBox_denormalizePoint";
+
+/**
+ * The center of the InteractionBox in device coordinates (millimeters). This point
+ * is equidistant from all sides of the box.
+ *
+ * \include InteractionBox_center.txt
+ *
+ * @returns The InteractionBox center in device coordinates.
+ * @since 1.0
+ */
+function Vec3 LeapInteractionBox.center() = "LeapInteractionBox_center";
+
+/**
+ * The width of the InteractionBox in millimeters, measured along the x-axis.
+ *
+ * \include InteractionBox_width.txt
+ *
+ * @returns The InteractionBox width in millimeters.
+ * @since 1.0
+ */
+function Float32 LeapInteractionBox.width() = "LeapInteractionBox_width";
+
+/**
+ * The height of the InteractionBox in millimeters, measured along the y-axis.
+ *
+ * \include InteractionBox_height.txt
+ *
+ * @returns The InteractionBox height in millimeters.
+ * @since 1.0
+ */
+function Float32 LeapInteractionBox.height() = "LeapInteractionBox_height";
+
+/**
+ * The depth of the InteractionBox in millimeters, measured along the z-axis.
+ *
+ * \include InteractionBox_depth.txt
+ *
+ * @returns The InteractionBox depth in millimeters.
+ * @since 1.0
+ */
+function Float32 LeapInteractionBox.depth() = "LeapInteractionBox_depth";

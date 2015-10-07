@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Gets the active policy settings.\n\n* Use this function to determine the current policy state.\n* Keep in mind that setting a policy flag is asynchronous, so changes are\n* not effective immediately after calling setPolicyFlag(). In addition, a\n* policy request can be declined by the user. You should always set the\n* policy flags required by your application at startup and check that the\n* policy change request was successful after an appropriate interval.\n\n* If the controller object is not connected to the Leap Motion software, then the default\n* policy state is returned.\n\n* \\include Controller_policyFlags.txt\n\n* @returns The current policy flags.\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "PolicyFlags[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "1DFF84374741937F43E8EAE8C89A3023",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_policyFlags_task<<<index>>>(\n  io UInt32[] result\n, in LeapController[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].policyFlags();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_policyFlags_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapController_policyFlags_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

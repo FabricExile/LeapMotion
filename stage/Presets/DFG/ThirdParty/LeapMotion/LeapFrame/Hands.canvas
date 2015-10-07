@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The list of Hand objects detected in this frame, given in arbitrary order.\n* The list can be empty if no hands are detected.\n\n* \\include Frame_hands.txt\n\n* @returns The HandList containing all Hand objects detected in this frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Hands",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapHand[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "CA51271341C611A816B5551F166965E1",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.hands();\n}\n"
+  }

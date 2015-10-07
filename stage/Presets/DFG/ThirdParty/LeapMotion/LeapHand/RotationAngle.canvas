@@ -1,0 +1,46 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The angle of rotation around the specified axis derived from the change\n* in orientation of this hand, and any associated fingers,\n* between the current frame and the specified frame.\n\n* \\include Hand_rotationAngle_axis.txt\n\n* The returned angle is expressed in radians measured clockwise around the\n* rotation axis (using the right-hand rule) between the start and end frames.\n* The value is always between -pi and pi radians (-180 and 180 degrees).\n\n* If a corresponding Hand object is not found in sinceFrame, or if either\n* this frame or sinceFrame are invalid Frame objects, then the angle of\n* rotation is zero.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @param axis The axis to measure rotation around.\n* @returns A value representing the heuristically determined rotational\n* change of the hand between the current frame and that specified in the\n* sinceFrame parameter around the specified axis.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "RotationAngle",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "Out",
+      "name" : "axis",
+      "execPortType" : "In",
+      "typeSpec" : "Vec3"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "55C9A2CFA626C61F4FF53DE178B4FAF2",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationAngle(sinceFrame, axis);\n}\n"
+  }

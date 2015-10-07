@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The maximum reliable tracking range from the center of this device.\n\n* The range reports the maximum recommended distance from the device center\n* for which tracking is expected to be reliable. This distance is not a hard limit.\n* Tracking may be still be functional above this distance or begin to degrade slightly\n* before this distance depending on calibration and extreme environmental conditions.\n\n* \\include Device_range.txt\n\n* @returns The recommended maximum range of the device in mm.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    },
+  "title" : "Range",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "5035EDF74F3E99D696124A259F309C36",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.range();\n}\n"
+  }

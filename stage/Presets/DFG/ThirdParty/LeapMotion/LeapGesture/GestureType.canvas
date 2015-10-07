@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The gesture type.\n\n* \\include Gesture_type.txt\n\n* @returns Gesture::Type A value from the Gesture::Type enumeration.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "GestureType",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "59225EE4113E4B16A047B33633DA647A",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.gestureType();\n}\n"
+  }

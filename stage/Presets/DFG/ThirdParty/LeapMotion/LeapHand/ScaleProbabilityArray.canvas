@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The estimated probability that the hand motion between the current\n* frame and the specified frame is intended to be a scaling motion.\n\n* \\include Hand_scaleProbability.txt\n\n* If a corresponding Hand object is not found in sinceFrame, or if either\n* this frame or sinceFrame are invalid Frame objects, then this method\n* returns zero.\n\n* @param sinceFrame The starting frame for computing the relative scaling.\n* @returns A value between 0 and 1 representing the estimated probability\n* that the hand motion between the current frame and the specified frame\n* is intended to be a scaling motion.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "ScaleProbability[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "E5BDB9CC681CFA306F1A22769FA11AD7",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_scaleProbability_task<<<index>>>(\n  io Float32[] result\n, in LeapHand[] this\n, in LeapFrame[] sinceFrame\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].scaleProbability(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( sinceFrame.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_scaleProbability_task(index, result, this, sinceFrame);\n    }\n  } else {\n    LeapMotion_LeapHand_scaleProbability_task<<<task_size>>>(result, this, sinceFrame);\n  }\n}\n"
+  }

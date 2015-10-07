@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "The position of the wrist.\n\n\nNote that the wrist position is not collocated with the end of any bone in\nthe hand. There is a gap of a few centimeters since the carpal bones are\nnot included in the skeleton model.\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    },
+  "title" : "WristPosition",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapArm"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "E9D91D7F34CE8C533415FED5FCA4B17D",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.wristPosition();\n}\n"
+  }

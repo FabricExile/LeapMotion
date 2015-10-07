@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_VALUETYPE_BOOLEAN",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C7D47296BA22ADEEDF2904C59053F4B5",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_VALUETYPE_BOOLEAN;\n}\n"
+  }

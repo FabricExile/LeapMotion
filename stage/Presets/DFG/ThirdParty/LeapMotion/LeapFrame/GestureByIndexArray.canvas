@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "overload to get a gesture by index\n\n Supported by LeapFrame"
+    },
+  "title" : "GestureByIndex[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "index",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapGesture[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "31B73ABAC2A5105FD83D21AE42C62642",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_gestureByIndex_task<<<index>>>(\n  io LeapGesture[] result\n, in LeapFrame[] this\n, in SInt32[] index\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].gestureByIndex(index[index < index.size() ? index : index.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( index.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < index.size()) task_size = index.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_gestureByIndex_task(index, result, this, index);\n    }\n  } else {\n    LeapMotion_LeapFrame_gestureByIndex_task<<<task_size>>>(result, this, index);\n  }\n}\n"
+  }

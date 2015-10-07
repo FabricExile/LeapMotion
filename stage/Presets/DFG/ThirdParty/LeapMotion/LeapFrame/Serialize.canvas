@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Encodes this Frame object as a byte string.\n\n* \\include Frame_serialize.txt\n\n* @returns The serialized string encoding the data for this frame.\n* @since 2.1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Serialize",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "String"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C0F09BE8DFAFE6BFA8D7FE23BA86279E",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.serialize();\n}\n"
+  }

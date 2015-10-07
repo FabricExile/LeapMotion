@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The Finger object with the specified ID in this frame.\n\n* Use the Frame::finger() function to retrieve the Finger object from\n* this frame using an ID value obtained from a previous frame.\n* This function always returns a Finger object, but if no finger\n* with the specified ID is present, an invalid Finger object is returned.\n\n* \\include Frame_finger.txt\n\n* Note that ID values persist across frames, but only until tracking of a\n* particular object is lost. If tracking of a finger is lost and subsequently\n* regained, the new Finger object representing that physical finger may have\n* a different ID than that representing the finger in an earlier frame.\n\n* @param id The ID value of a Finger object from a previous frame.\n* @returns The Finger object with the matching ID if one exists in this frame;\n* otherwise, an invalid Finger object is returned.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Finger[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "SInt32[]" : [
+          0
+          ]
+        },
+      "name" : "id",
+      "execPortType" : "In",
+      "typeSpec" : "SInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapFinger[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "F11B79BE0DDF710FC33E5245253F039F",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_finger_task<<<index>>>(\n  io LeapFinger[] result\n, in LeapFrame[] this\n, in SInt32[] id\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].finger(id[index < id.size() ? index : id.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( id.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < id.size()) task_size = id.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_finger_task(index, result, this, id);\n    }\n  } else {\n    LeapMotion_LeapFrame_finger_task<<<task_size>>>(result, this, id);\n  }\n}\n"
+  }

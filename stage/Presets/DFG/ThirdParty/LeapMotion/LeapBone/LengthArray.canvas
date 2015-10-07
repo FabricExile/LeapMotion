@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The estimated length of the bone in millimeters.\n\n* \\include Bone_length.txt\n\n* @returns The length of the bone in millimeters.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "Length[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "93B214CCBD3ED3E1772DB16635F45580",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_length_task<<<index>>>(\n  io Float32[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].length();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_length_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_length_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

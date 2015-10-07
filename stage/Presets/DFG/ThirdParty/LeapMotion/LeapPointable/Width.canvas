@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The estimated width of the finger or tool in millimeters.\n\n* \\include Pointable_width.txt\n\n* @returns The estimated width of this Pointable object.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "Width",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2DF0DC4159E329E480BCB20C6F9AF641",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.width();\n}\n"
+  }

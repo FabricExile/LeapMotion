@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_GESTURETYPE_CIRCLE",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "64BD7E5EC4B0B064FDF98B00B3C49223",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_GESTURETYPE_CIRCLE;\n}\n"
+  }

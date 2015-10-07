@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The device type.\n\n* Use the device type value in the (rare) circumstances that you\n* have an application feature which relies on a particular type of device.\n* Current types of device include the original Leap Motion peripheral,\n* keyboard-embedded controllers, and laptop-embedded controllers.\n\n* @returns The physical device type as a member of the DeviceType enumeration.\n* @since 1.2\n\n\n Supported by LeapDevice"
+    },
+  "title" : "DeviceType",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C1F41EFE83E57981DB3207425830D667",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.deviceType();\n}\n"
+  }

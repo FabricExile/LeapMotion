@@ -1,0 +1,34 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Decodes a byte string to replace the properties of this Frame.\n\n* A Controller object must be instantiated for this function to succeed, but\n* it does not need to be connected.\n*\n* Any existing data in the frame is\n* destroyed. If you have references to\n* child objects (hands, fingers, etc.), these are preserved as long as the\n* references remain in scope.\n\n* \\include Frame_deserialize.txt\n\n* **Note:** The behavior when calling functions which take\n* another Frame object as a parameter is undefined when either frame has\n* been deserialized. For example, calling ``gestures(sinceFrame)`` on a\n* deserialized frame or with a deserialized frame as parameter (or both)\n* does not necessarily return all gestures that occured between the two\n* frames. Motion functions, like ``scaleFactor(startFrame)``, are more\n* likely to return reasonable results, but could return anomalous values\n* in some cases.\n\n* @since 2.1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Deserialize[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "String[]" : [
+          ""
+          ]
+        },
+      "name" : "str",
+      "execPortType" : "In",
+      "typeSpec" : "String[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "54CF01DE34F5114817481F0124758726",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_deserialize_task<<<index>>>(\n  in LeapFrame[] this\n, in String[] str\n) {\n  this[index < this.size() ? index : this.size() - 1].deserialize(str[index < str.size() ? index : str.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( str.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < str.size()) task_size = str.size();\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_deserialize_task(index, this, str);\n    }\n  } else {\n    LeapMotion_LeapFrame_deserialize_task<<<task_size>>>(this, str);\n  }\n}\n"
+  }

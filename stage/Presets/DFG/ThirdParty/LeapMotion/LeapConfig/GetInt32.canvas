@@ -1,0 +1,36 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Gets the 32-bit integer representation for the specified key.\n\n* \\include Config_getInt32.txt\n\n* @since 1.0\n\n\n Supported by LeapConfig"
+    },
+  "title" : "GetInt32",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapConfig"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "key",
+      "execPortType" : "In",
+      "typeSpec" : "String"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "E712D044A8AF5AC4818FAA24DB00C4FC",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.getInt32(key);\n}\n"
+  }

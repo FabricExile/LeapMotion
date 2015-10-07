@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The direction from the palm position toward the fingers.\n\n* The direction is expressed as a unit vector pointing in the same\n* direction as the directed line from the palm position to the fingers.\n\n* You can use the palm direction vector to compute the pitch and yaw angles of the palm with\n* respect to the horizontal plane:\n\n* \\include Hand_Get_Angles.txt\n\n* @returns The Vector pointing from the palm position toward the fingers.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Direction[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "58761BE768F710A151114D8470183D56",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_direction_task<<<index>>>(\n  io Vec3[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].direction();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_direction_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_direction_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

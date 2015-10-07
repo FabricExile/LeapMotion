@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "< The pinky or little finger\n* The bone at a given bone index on this finger.\n\n* \\include Bone_iteration.txt\n\n* @param boneIx An index value from the Bone::Type enumeration identifying the\n* bone of interest.\n* @returns The Bone that has the specified bone type.\n* @since 2.0\n\n\n Supported by LeapFinger"
+    },
+  "title" : "Bone[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFinger[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "UInt32[]" : [
+          0
+          ]
+        },
+      "name" : "boneIx",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapBone[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "3DFCFB73ABFFB9EEE97E00218DA27640",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFinger_bone_task<<<index>>>(\n  io LeapBone[] result\n, in LeapFinger[] this\n, in UInt32[] boneIx\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].bone(boneIx[index < boneIx.size() ? index : boneIx.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( boneIx.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < boneIx.size()) task_size = boneIx.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFinger_bone_task(index, result, this, boneIx);\n    }\n  } else {\n    LeapMotion_LeapFinger_bone_task<<<task_size>>>(result, this, boneIx);\n  }\n}\n"
+  }

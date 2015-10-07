@@ -1,0 +1,22 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "\n\n Supported by LeapController"
+    },
+  "title" : "LeapController[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapController[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "16F5CBD199B1955DCE8411C1A875B79D",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_LeapController_task<<<index>>>(\n  io LeapController[] result\n) {\n  result[index] = LeapController();\n}\n\ndfgEntry {\n  Size task_size = 0;\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_LeapController_task(index, result);\n    }\n  } else {\n    LeapMotion_LeapController_LeapController_task<<<task_size>>>(result);\n  }\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether this Controller is connected to the Leap Motion service and\n* the Leap Motion hardware is plugged in.\n\n* When you first create a Controller object, isConnected() returns false.\n* After the controller finishes initializing and connects to the Leap Motion\n* software and if the Leap Motion hardware is plugged in, isConnected() returns true.\n\n* You can either handle the onConnect event using a Listener instance or\n* poll the isConnected() function if you need to wait for your\n* application to be connected to the Leap Motion software before performing some other\n* operation.\n\n* \\include Controller_isConnected.txt\n* @returns True, if connected; false otherwise.\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "IsConnected[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "714AC8B7553F949D49439DAF9FD5F419",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_isConnected_task<<<index>>>(\n  io Boolean[] result\n, in LeapController[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isConnected();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_isConnected_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapController_isConnected_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

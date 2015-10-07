@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The duration of time this Pointable has been visible to the Leap Motion Controller.\n\n* \\include Pointable_timeVisible.txt\n\n* @returns The duration (in seconds) that this Pointable has been tracked.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "TimeVisible",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "2124B8F14008EAB96CE8B74B85AC0460",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.timeVisible();\n}\n"
+  }

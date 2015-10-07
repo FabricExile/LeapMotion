@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Whether or not this Pointable is classified as a tool.\n\n* \\include Pointable_Conversion.txt\n\n* @returns True, if this Pointable is classified as a tool.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "IsTool",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "1FFB3A7C10ED5F78FBDC9A64C1FFCDA5",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isTool();\n}\n"
+  }

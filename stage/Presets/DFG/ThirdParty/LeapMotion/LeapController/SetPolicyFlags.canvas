@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Requests a change in policy.\n\n* A request to change a policy is subject to user approval and a policy\n* can be changed by the user at any time (using the Leap Motion settings dialog).\n* The desired policy flags must be set every time an application runs.\n\n* Policy changes are completed asynchronously and, because they are subject\n* to user approval or system compatibility checks, may not complete successfully. Call\n* Controller::policyFlags() after a suitable interval to test whether\n* the change was accepted.\n\n* \\include Controller_setPolicyFlags.txt\n\n* @param flags A PolicyFlag value indicating the policies to request.\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "SetPolicyFlags",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "flags",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4CC0841E30F97296E4354700C49F4AB7",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  this.setPolicyFlags(flags);\n}\n"
+  }

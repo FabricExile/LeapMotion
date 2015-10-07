@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The tip position in millimeters from the Leap Motion origin.\n\n* \\include Pointable_tipPosition.txt\n\n* @returns The Vector containing the coordinates of the tip position.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "TipPosition",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6E7C67CCEE5E015BC34DE121AAAAE0AA",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.tipPosition();\n}\n"
+  }

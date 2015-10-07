@@ -1,0 +1,39 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The change of position derived from the overall linear motion between\n* the current frame and the specified frame.\n\n* The returned translation vector provides the magnitude and direction of\n* the movement in millimeters.\n\n* \\include Frame_translation.txt\n\n* The Leap Motion software derives frame translation from the linear motion of\n* all objects detected in the field of view.\n\n* If either this frame or sinceFrame is an invalid Frame object, then this\n* method returns a zero vector.\n\n* @param sinceFrame The starting frame for computing the relative translation.\n* @returns A Vector representing the heuristically determined change in\n* position of all objects between the current frame and that specified\n* in the sinceFrame parameter.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Translation[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "DA5043DFE4699EB94C5F3218F1A91BEF",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_translation_task<<<index>>>(\n  io Vec3[] result\n, in LeapFrame[] this\n, in LeapFrame[] sinceFrame\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].translation(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( sinceFrame.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_translation_task(index, result, this, sinceFrame);\n    }\n  } else {\n    LeapMotion_LeapFrame_translation_task<<<task_size>>>(result, this, sinceFrame);\n  }\n}\n"
+  }

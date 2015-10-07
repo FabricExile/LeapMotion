@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The angle of view along the x axis of this device.\n\n* \\image html images/Leap_horizontalViewAngle.png\n\n* The Leap Motion controller scans a region in the shape of an inverted pyramid\n* centered at the device's center and extending upwards. The horizontalViewAngle\n* reports the view angle along the long dimension of the device.\n\n* \\include Device_horizontalViewAngle.txt\n\n* @returns The horizontal angle of view in radians.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    },
+  "title" : "HorizontalViewAngle",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapDevice"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4C5402C2A7005DF95AF4393C440B6010",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.horizontalViewAngle();\n}\n"
+  }

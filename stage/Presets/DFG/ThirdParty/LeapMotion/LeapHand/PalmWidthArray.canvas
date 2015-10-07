@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The estimated width of the palm when the hand is in a flat position.\n\n* \\include Hand_palmWidth.txt\n\n* @returns The width of the palm in millimeters\n* @since 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "PalmWidth[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "27E2019428C66FF4395AD6582FFCCC03",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_palmWidth_task<<<index>>>(\n  io Float32[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].palmWidth();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_palmWidth_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_palmWidth_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

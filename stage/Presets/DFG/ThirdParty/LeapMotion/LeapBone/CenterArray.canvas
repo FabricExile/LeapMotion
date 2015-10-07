@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The midpoint of the bone.\n\n* \\include Bone_center.txt\n\n* @returns The midpoint in the center of the bone.\n* @since 2.0\n\n\n Supported by LeapBone"
+    },
+  "title" : "Center[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapBone[]"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "D360DDAADF021D1B3053FE2B732C3583",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_center_task<<<index>>>(\n  io Vec3[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].center();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_center_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_center_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

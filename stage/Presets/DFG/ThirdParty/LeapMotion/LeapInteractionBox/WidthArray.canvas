@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The width of the InteractionBox in millimeters, measured along the x-axis.\n\n* \\include InteractionBox_width.txt\n\n* @returns The InteractionBox width in millimeters.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "Width[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "585C352E1DDA22F373414236A5AE6CCC",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapInteractionBox_width_task<<<index>>>(\n  io Float32[] result\n, in LeapInteractionBox[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].width();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapInteractionBox_width_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapInteractionBox_width_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

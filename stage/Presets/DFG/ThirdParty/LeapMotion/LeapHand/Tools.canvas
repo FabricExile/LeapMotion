@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Tools are not associated with hands in version 2+. This list\n* is always empty.\n\n* @deprecated 2.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "Tools",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapTool[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "C5921773D17336C56D54BFD68B216AD8",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.tools();\n}\n"
+  }

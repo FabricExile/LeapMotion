@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The gesture ID.\n\n* All Gesture objects belonging to the same recognized movement share the\n* same ID value. Use the ID value with the Frame::gesture() method to\n* find updates related to this Gesture object in subsequent frames.\n\n* \\include Gesture_id.txt\n\n* @returns int32_t the ID of this Gesture.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "Id",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "SInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "314DB46622253746D0B2A031486C71F9",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.id();\n}\n"
+  }

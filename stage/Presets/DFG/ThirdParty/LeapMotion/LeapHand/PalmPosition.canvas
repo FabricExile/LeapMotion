@@ -1,0 +1,32 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The center position of the palm in millimeters from the Leap Motion Controller origin.\n\n* \\include Hand_palmPosition.txt\n\n* @returns The Vector representing the coordinates of the palm position.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "PalmPosition",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "4F71D7FC921C5AB2EEA8F75BCB83E375",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.palmPosition();\n}\n"
+  }

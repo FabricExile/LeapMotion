@@ -1,0 +1,19 @@
+// Created by kl2dfg (processConstant)
+{
+  "objectType" : "Func",
+  "title" : "LEAP_BONETYPE_METACARPAL",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "value",
+      "execPortType" : "Out",
+      "typeSpec" : "UInt32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "FB13FB6CEB75C1367914DA43A7317C20",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_BONETYPE_METACARPAL;\n}\n"
+  }

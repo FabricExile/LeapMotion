@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The list of Pointable objects (fingers and tools) detected in this frame,\n* given in arbitrary order. The list can be empty if no fingers or tools are detected.\n\n* Use PointableList::extended() to remove non-extended fingers from the list.\n\n* \\include Frame_pointables.txt\n\n* @returns The PointableList containing all Pointable objects detected in this frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    },
+  "title" : "Pointables",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapPointable[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "CD34DB36A42A01ACFB4AE8B329BE4603",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.pointables();\n}\n"
+  }

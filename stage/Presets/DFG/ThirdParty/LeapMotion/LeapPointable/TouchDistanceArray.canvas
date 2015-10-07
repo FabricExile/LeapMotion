@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* A value proportional to the distance between this Pointable object and the\n* adaptive touch plane.\n\n* \\image html images/Leap_Touch_Plane.png\n\n* The touch distance is a value in the range [-1, 1]. The value 1.0 indicates the\n* Pointable is at the far edge of the hovering zone. The value 0 indicates the\n* Pointable is just entering the touching zone. A value of -1.0 indicates the\n* Pointable is firmly within the touching zone. Values in between are\n* proportional to the distance from the plane. Thus, the touchDistance of 0.5\n* indicates that the Pointable is halfway into the hovering zone.\n\n* \\include Pointable_touchDistance.txt\n\n* You can use the touchDistance value to modulate visual feedback given to the\n* user as their fingers close in on a touch target, such as a button.\n\n* @returns The normalized touch distance of this Pointable object.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    },
+  "title" : "TouchDistance[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapPointable[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "7BA054264A53517057BA428D648B86CC",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapPointable_touchDistance_task<<<index>>>(\n  io Float32[] result\n, in LeapPointable[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].touchDistance();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapPointable_touchDistance_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapPointable_touchDistance_task<<<task_size>>>(result, this);\n  }\n}\n"
+  }

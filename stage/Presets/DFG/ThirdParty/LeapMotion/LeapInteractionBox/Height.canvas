@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The height of the InteractionBox in millimeters, measured along the y-axis.\n\n* \\include InteractionBox_height.txt\n\n* @returns The InteractionBox height in millimeters.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    },
+  "title" : "Height",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapInteractionBox"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Float32"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "61A0C017CC9DF4BA00AEF21B1167BA98",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.height();\n}\n"
+  }

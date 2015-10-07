@@ -1,0 +1,41 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* Reports whether the specified gesture type is enabled.\n\n* \\include Controller_isGestureEnabled.txt\n\n* @param type The type of gesture to check; a member of the UInt32 enumeration.\n* @returns True, if the specified type is enabled; false, otherwise.\n* @see Controller::enableGesture()\n* @since 1.0\n\n\n Supported by LeapController"
+    },
+  "title" : "IsGestureEnabled[]",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapController[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "defaultValues" : {
+        "UInt32[]" : [
+          0
+          ]
+        },
+      "name" : "gesture",
+      "execPortType" : "In",
+      "typeSpec" : "UInt32[]"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Boolean[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "6AC4B47B1D3804A259F02F26975A7CFE",
+  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_isGestureEnabled_task<<<index>>>(\n  io Boolean[] result\n, in LeapController[] this\n, in UInt32[] gesture\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isGestureEnabled(gesture[index < gesture.size() ? index : gesture.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( gesture.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < gesture.size()) task_size = gesture.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_isGestureEnabled_task(index, result, this, gesture);\n    }\n  } else {\n    LeapMotion_LeapController_isGestureEnabled_task<<<task_size>>>(result, this, gesture);\n  }\n}\n"
+  }

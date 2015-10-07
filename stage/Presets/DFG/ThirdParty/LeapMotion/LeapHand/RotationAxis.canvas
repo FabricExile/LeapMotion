@@ -1,0 +1,39 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The axis of rotation derived from the change in orientation of this\n* hand, and any associated fingers, between the current frame\n* and the specified frame.\n\n* \\include Hand_rotationAxis.txt\n\n* The returned direction vector is normalized.\n\n* If a corresponding Hand object is not found in sinceFrame, or if either\n* this frame or sinceFrame are invalid Frame objects, then this method\n* returns a zero vector.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @returns A normalized direction Vector representing the heuristically\n* determined axis of rotational change of the hand between the current\n* frame and that specified in the sinceFrame parameter.\n* @since 1.0\n\n\n Supported by LeapHand"
+    },
+  "title" : "RotationAxis",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapHand"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "sinceFrame",
+      "execPortType" : "In",
+      "typeSpec" : "LeapFrame"
+      },
+    {
+      "objectType" : "Port",
+      "metadata" : {
+        "uiColor" : "{\n  \"r\" : 255,\n  \"g\" : 242,\n  \"b\" : 0\n  }"
+        },
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "Vec3"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "97E08BEEB79AA16BDCD772C8C6C113C9",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationAxis(sinceFrame);\n}\n"
+  }

@@ -1,0 +1,29 @@
+// Created by kl2dfg (processFunction)
+{
+  "objectType" : "Func",
+  "metadata" : {
+    "uiTooltip" : "* The list of fingers and tools associated with this Gesture, if any.\n\n* If no Pointable objects are related to this gesture, the list is empty.\n\n* \\include Gesture_pointables.txt\n\n* @return PointableList the list of related Pointable objects.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    },
+  "title" : "Pointables",
+  "ports" : [
+    {
+      "objectType" : "Port",
+      "nodePortType" : "Out",
+      "name" : "this",
+      "execPortType" : "In",
+      "typeSpec" : "LeapGesture"
+      },
+    {
+      "objectType" : "Port",
+      "nodePortType" : "In",
+      "name" : "result",
+      "execPortType" : "Out",
+      "typeSpec" : "LeapPointable[]"
+      }
+    ],
+  "extDeps" : {
+    "LeapMotion" : "*"
+    },
+  "presetGUID" : "449A043F6B7EDB273DBA572974DF8343",
+  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.pointables();\n}\n"
+  }
