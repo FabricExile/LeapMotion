@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "8E1C6FDC1F542863ADA61B0E1BF11DDC",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_DEVICETYPE_KEYBOARD;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_DEVICETYPE_KEYBOARD;
+}
+"
   }

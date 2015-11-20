@@ -28,5 +28,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "D9605E7DDF0876ED88AA233BBCEA579B",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.sphereCenter();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.sphereCenter();
+}
+"
   }

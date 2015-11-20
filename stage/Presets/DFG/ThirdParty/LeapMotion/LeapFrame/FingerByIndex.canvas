@@ -32,5 +32,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "8F75C1B0D674631309B1A7B2A16E3E6A",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerByIndex(index);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.fingerByIndex(index);
+}
+"
   }

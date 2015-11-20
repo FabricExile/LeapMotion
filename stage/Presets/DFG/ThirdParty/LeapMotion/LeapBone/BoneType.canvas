@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "2FABC89CC7430A2DFEA26A5C8CF02077",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.boneType();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.boneType();
+}
+"
   }

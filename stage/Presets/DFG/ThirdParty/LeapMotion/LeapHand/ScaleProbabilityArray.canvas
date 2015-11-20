@@ -32,5 +32,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "E5BDB9CC681CFA306F1A22769FA11AD7",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_scaleProbability_task<<<index>>>(\n  io Float32[] result\n, in LeapHand[] this\n, in LeapFrame[] sinceFrame\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].scaleProbability(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( sinceFrame.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_scaleProbability_task(index, result, this, sinceFrame);\n    }\n  } else {\n    LeapMotion_LeapHand_scaleProbability_task<<<task_size>>>(result, this, sinceFrame);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapHand_scaleProbability_task<<<index>>>(
+  io Float32[] result
+, in LeapHand[] this
+, in LeapFrame[] sinceFrame
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].scaleProbability(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( sinceFrame.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapHand_scaleProbability_task(index, result, this, sinceFrame);
+    }
+  } else {
+    LeapMotion_LeapHand_scaleProbability_task<<<task_size>>>(result, this, sinceFrame);
+  }
+}
+"
   }

@@ -38,5 +38,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "496726A08CFC03A19574BEBA3F54C3BE",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.pointableXfos(scaleFactor);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.pointableXfos(scaleFactor);
+}
+"
   }

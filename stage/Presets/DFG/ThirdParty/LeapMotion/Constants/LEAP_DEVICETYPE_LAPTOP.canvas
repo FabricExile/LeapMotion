@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "8663486C35217FBB7B70F0AE23CEBB7D",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_DEVICETYPE_LAPTOP;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_DEVICETYPE_LAPTOP;
+}
+"
   }

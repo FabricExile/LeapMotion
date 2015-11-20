@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "64BD7E5EC4B0B064FDF98B00B3C49223",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_GESTURETYPE_CIRCLE;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_GESTURETYPE_CIRCLE;
+}
+"
   }

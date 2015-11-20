@@ -25,5 +25,26 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "6F30B67C37F159D78A01329D98A4084D",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_isValid_task<<<index>>>(\n  io Boolean[] result\n, in LeapFrame[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isValid();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_isValid_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapFrame_isValid_task<<<task_size>>>(result, this);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapFrame_isValid_task<<<index>>>(
+  io Boolean[] result
+, in LeapFrame[] this
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].isValid();
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  Size task_size = this.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapFrame_isValid_task(index, result, this);
+    }
+  } else {
+    LeapMotion_LeapFrame_isValid_task<<<task_size>>>(result, this);
+  }
+}
+"
   }

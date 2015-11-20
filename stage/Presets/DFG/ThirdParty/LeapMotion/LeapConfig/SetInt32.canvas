@@ -39,5 +39,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "9E53DF95BFCB60EBDD25191CACC78FCD",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.setInt32(key, value);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.setInt32(key, value);
+}
+"
   }

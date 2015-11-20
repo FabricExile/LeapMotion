@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "E5AD5731B8E24E68F7853F637475008C",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.touchZone();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.touchZone();
+}
+"
   }

@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "F670EE7ABB71CC7F807461A4B5BF2F33",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.pointables();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.pointables();
+}
+"
   }

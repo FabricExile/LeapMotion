@@ -51,5 +51,32 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "55C9A2CFA626C61F4FF53DE178B4FAF2",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_rotationAngle_task<<<index>>>(\n  io Float32[] result\n, in LeapHand[] this\n, in LeapFrame[] sinceFrame\n, in Vec3[] axis\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].rotationAngle(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1], axis[index < axis.size() ? index : axis.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( sinceFrame.size() == 0) return;\n  if( axis.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();\n  if(task_size < axis.size()) task_size = axis.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_rotationAngle_task(index, result, this, sinceFrame, axis);\n    }\n  } else {\n    LeapMotion_LeapHand_rotationAngle_task<<<task_size>>>(result, this, sinceFrame, axis);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapHand_rotationAngle_task<<<index>>>(
+  io Float32[] result
+, in LeapHand[] this
+, in LeapFrame[] sinceFrame
+, in Vec3[] axis
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].rotationAngle(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1], axis[index < axis.size() ? index : axis.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( sinceFrame.size() == 0) return;
+  if( axis.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();
+  if(task_size < axis.size()) task_size = axis.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapHand_rotationAngle_task(index, result, this, sinceFrame, axis);
+    }
+  } else {
+    LeapMotion_LeapHand_rotationAngle_task<<<task_size>>>(result, this, sinceFrame, axis);
+  }
+}
+"
   }

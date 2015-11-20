@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "FB13FB6CEB75C1367914DA43A7317C20",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_BONETYPE_METACARPAL;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_BONETYPE_METACARPAL;
+}
+"
   }

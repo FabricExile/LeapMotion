@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "0A21FA45E9577A2F200277E584835920",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_GESTURETYPE_SWIPE;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_GESTURETYPE_SWIPE;
+}
+"
   }

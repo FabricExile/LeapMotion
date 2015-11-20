@@ -49,5 +49,32 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "B06F580B3F17CAE8974C7A0490BC5AF7",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapConfig_setFloat_task<<<index>>>(\n  io Boolean[] result\n, in LeapConfig[] this\n, in String[] key\n, in Float32[] value\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].setFloat(key[index < key.size() ? index : key.size() - 1], value[index < value.size() ? index : value.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( key.size() == 0) return;\n  if( value.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < key.size()) task_size = key.size();\n  if(task_size < value.size()) task_size = value.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapConfig_setFloat_task(index, result, this, key, value);\n    }\n  } else {\n    LeapMotion_LeapConfig_setFloat_task<<<task_size>>>(result, this, key, value);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapConfig_setFloat_task<<<index>>>(
+  io Boolean[] result
+, in LeapConfig[] this
+, in String[] key
+, in Float32[] value
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].setFloat(key[index < key.size() ? index : key.size() - 1], value[index < value.size() ? index : value.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( key.size() == 0) return;
+  if( value.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < key.size()) task_size = key.size();
+  if(task_size < value.size()) task_size = value.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapConfig_setFloat_task(index, result, this, key, value);
+    }
+  } else {
+    LeapMotion_LeapConfig_setFloat_task<<<task_size>>>(result, this, key, value);
+  }
+}
+"
   }

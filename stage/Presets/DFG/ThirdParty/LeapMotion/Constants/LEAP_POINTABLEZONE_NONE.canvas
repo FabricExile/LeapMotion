@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "BA1B5B82AF31296D259EA2CB4E15FB05",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_POINTABLEZONE_NONE;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_POINTABLEZONE_NONE;
+}
+"
   }

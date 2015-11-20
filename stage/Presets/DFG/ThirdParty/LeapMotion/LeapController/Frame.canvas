@@ -32,5 +32,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "628FBF375B89AF019EB141C54A2CD8D5",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.frame(history);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.frame(history);
+}
+"
   }

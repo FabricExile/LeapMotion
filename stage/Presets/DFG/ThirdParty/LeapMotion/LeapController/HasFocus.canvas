@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "997EBB4F15A3C06F561BECCD76EB736D",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.hasFocus();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.hasFocus();
+}
+"
   }

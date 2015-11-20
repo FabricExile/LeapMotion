@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "C1F41EFE83E57981DB3207425830D667",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.deviceType();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.deviceType();
+}
+"
   }

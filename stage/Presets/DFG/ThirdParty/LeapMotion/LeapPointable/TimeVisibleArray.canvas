@@ -25,5 +25,26 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "2124B8F14008EAB96CE8B74B85AC0460",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapPointable_timeVisible_task<<<index>>>(\n  io Float32[] result\n, in LeapPointable[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].timeVisible();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapPointable_timeVisible_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapPointable_timeVisible_task<<<task_size>>>(result, this);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapPointable_timeVisible_task<<<index>>>(
+  io Float32[] result
+, in LeapPointable[] this
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].timeVisible();
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  Size task_size = this.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapPointable_timeVisible_task(index, result, this);
+    }
+  } else {
+    LeapMotion_LeapPointable_timeVisible_task<<<task_size>>>(result, this);
+  }
+}
+"
   }

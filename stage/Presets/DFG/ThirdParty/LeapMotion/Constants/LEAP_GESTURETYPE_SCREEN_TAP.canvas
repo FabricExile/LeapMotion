@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "4ECD1A61E06139A4018C9B149C3E9EBA",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_GESTURETYPE_SCREEN_TAP;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_GESTURETYPE_SCREEN_TAP;
+}
+"
   }

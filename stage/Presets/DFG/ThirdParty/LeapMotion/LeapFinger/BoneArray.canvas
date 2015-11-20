@@ -37,5 +37,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "3DFCFB73ABFFB9EEE97E00218DA27640",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFinger_bone_task<<<index>>>(\n  io LeapBone[] result\n, in LeapFinger[] this\n, in UInt32[] boneIx\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].bone(boneIx[index < boneIx.size() ? index : boneIx.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( boneIx.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < boneIx.size()) task_size = boneIx.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFinger_bone_task(index, result, this, boneIx);\n    }\n  } else {\n    LeapMotion_LeapFinger_bone_task<<<task_size>>>(result, this, boneIx);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapFinger_bone_task<<<index>>>(
+  io LeapBone[] result
+, in LeapFinger[] this
+, in UInt32[] boneIx
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].bone(boneIx[index < boneIx.size() ? index : boneIx.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( boneIx.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < boneIx.size()) task_size = boneIx.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapFinger_bone_task(index, result, this, boneIx);
+    }
+  } else {
+    LeapMotion_LeapFinger_bone_task<<<task_size>>>(result, this, boneIx);
+  }
+}
+"
   }

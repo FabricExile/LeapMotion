@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "6605D410EB899668B2276E40AC28A72B",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_BONETYPE_PROXIMAL;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_BONETYPE_PROXIMAL;
+}
+"
   }

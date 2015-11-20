@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "F7E25E9587741734352D78F5B7B1AE0E",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_FINGERTYPE_THUMB;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_FINGERTYPE_THUMB;
+}
+"
   }

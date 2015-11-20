@@ -30,5 +30,27 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "54CF01DE34F5114817481F0124758726",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_deserialize_task<<<index>>>(\n  in LeapFrame[] this\n, in String[] str\n) {\n  this[index < this.size() ? index : this.size() - 1].deserialize(str[index < str.size() ? index : str.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( str.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < str.size()) task_size = str.size();\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_deserialize_task(index, this, str);\n    }\n  } else {\n    LeapMotion_LeapFrame_deserialize_task<<<task_size>>>(this, str);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapFrame_deserialize_task<<<index>>>(
+  in LeapFrame[] this
+, in String[] str
+) {
+  this[index < this.size() ? index : this.size() - 1].deserialize(str[index < str.size() ? index : str.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( str.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < str.size()) task_size = str.size();
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapFrame_deserialize_task(index, this, str);
+    }
+  } else {
+    LeapMotion_LeapFrame_deserialize_task<<<task_size>>>(this, str);
+  }
+}
+"
   }

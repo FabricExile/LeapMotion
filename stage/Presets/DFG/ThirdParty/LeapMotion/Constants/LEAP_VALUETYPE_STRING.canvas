@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "5996DE39264A4B04538364856E102315",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_VALUETYPE_STRING;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_VALUETYPE_STRING;
+}
+"
   }

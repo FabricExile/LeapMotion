@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "C0F09BE8DFAFE6BFA8D7FE23BA86279E",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.serialize();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.serialize();
+}
+"
   }

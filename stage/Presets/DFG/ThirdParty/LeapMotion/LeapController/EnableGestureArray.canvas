@@ -42,5 +42,30 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "549404099032D8D40D3FCC33F7B9801E",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_enableGesture_task<<<index>>>(\n  in LeapController[] this\n, in UInt32[] gesture\n, in Boolean[] enable\n) {\n  this[index < this.size() ? index : this.size() - 1].enableGesture(gesture[index < gesture.size() ? index : gesture.size() - 1], enable[index < enable.size() ? index : enable.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( gesture.size() == 0) return;\n  if( enable.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < gesture.size()) task_size = gesture.size();\n  if(task_size < enable.size()) task_size = enable.size();\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_enableGesture_task(index, this, gesture, enable);\n    }\n  } else {\n    LeapMotion_LeapController_enableGesture_task<<<task_size>>>(this, gesture, enable);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapController_enableGesture_task<<<index>>>(
+  in LeapController[] this
+, in UInt32[] gesture
+, in Boolean[] enable
+) {
+  this[index < this.size() ? index : this.size() - 1].enableGesture(gesture[index < gesture.size() ? index : gesture.size() - 1], enable[index < enable.size() ? index : enable.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( gesture.size() == 0) return;
+  if( enable.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < gesture.size()) task_size = gesture.size();
+  if(task_size < enable.size()) task_size = enable.size();
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapController_enableGesture_task(index, this, gesture, enable);
+    }
+  } else {
+    LeapMotion_LeapController_enableGesture_task<<<task_size>>>(this, gesture, enable);
+  }
+}
+"
   }

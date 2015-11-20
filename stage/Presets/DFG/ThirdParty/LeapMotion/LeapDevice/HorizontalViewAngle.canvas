@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "4C5402C2A7005DF95AF4393C440B6010",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.horizontalViewAngle();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.horizontalViewAngle();
+}
+"
   }

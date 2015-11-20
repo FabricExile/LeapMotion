@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "03311806D5F4FACD00102FCBBF5D8682",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isServiceConnected();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.isServiceConnected();
+}
+"
   }

@@ -15,5 +15,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "86D3C6DA827F9113B60D81EC68D08530",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  value = LEAP_POLICY_DEFAULT;\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  value = LEAP_POLICY_DEFAULT;
+}
+"
   }

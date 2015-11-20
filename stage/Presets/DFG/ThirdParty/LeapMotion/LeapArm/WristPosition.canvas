@@ -28,5 +28,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "E9D91D7F34CE8C533415FED5FCA4B17D",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.wristPosition();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.wristPosition();
+}
+"
   }

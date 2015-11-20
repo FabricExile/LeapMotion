@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "4CC0841E30F97296E4354700C49F4AB7",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  this.setPolicyFlags(flags);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  this.setPolicyFlags(flags);
+}
+"
   }

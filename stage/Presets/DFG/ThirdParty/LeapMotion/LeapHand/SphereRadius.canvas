@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "65352B266B707B116158645C604F08E8",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.sphereRadius();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.sphereRadius();
+}
+"
   }

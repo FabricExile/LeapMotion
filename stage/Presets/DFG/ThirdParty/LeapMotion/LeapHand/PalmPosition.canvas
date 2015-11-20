@@ -28,5 +28,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "4F71D7FC921C5AB2EEA8F75BCB83E375",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.palmPosition();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.palmPosition();
+}
+"
   }

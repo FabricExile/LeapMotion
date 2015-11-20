@@ -28,5 +28,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "C3FCC97B58FE14FC4BF632780542EA08",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.tipVelocity();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.tipVelocity();
+}
+"
   }

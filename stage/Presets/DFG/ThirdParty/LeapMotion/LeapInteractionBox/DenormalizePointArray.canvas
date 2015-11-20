@@ -47,5 +47,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "5F488E535112CC6531F383134858C587",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapInteractionBox_denormalizePoint_task<<<index>>>(\n  io Vec3[] result\n, in LeapInteractionBox[] this\n, in Vec3[] normalizedPosition\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].denormalizePoint(normalizedPosition[index < normalizedPosition.size() ? index : normalizedPosition.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( normalizedPosition.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < normalizedPosition.size()) task_size = normalizedPosition.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapInteractionBox_denormalizePoint_task(index, result, this, normalizedPosition);\n    }\n  } else {\n    LeapMotion_LeapInteractionBox_denormalizePoint_task<<<task_size>>>(result, this, normalizedPosition);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapInteractionBox_denormalizePoint_task<<<index>>>(
+  io Vec3[] result
+, in LeapInteractionBox[] this
+, in Vec3[] normalizedPosition
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].denormalizePoint(normalizedPosition[index < normalizedPosition.size() ? index : normalizedPosition.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( normalizedPosition.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < normalizedPosition.size()) task_size = normalizedPosition.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapInteractionBox_denormalizePoint_task(index, result, this, normalizedPosition);
+    }
+  } else {
+    LeapMotion_LeapInteractionBox_denormalizePoint_task<<<task_size>>>(result, this, normalizedPosition);
+  }
+}
+"
   }

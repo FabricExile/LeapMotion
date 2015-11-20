@@ -28,5 +28,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "6BD11AF412068986C6CE733C8F502E97",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.elbowPosition();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.elbowPosition();
+}
+"
   }

@@ -25,5 +25,26 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "3CAC86882942AA66B30ACB10A32CDA50",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_id_task<<<index>>>(\n  io SInt32[] result\n, in LeapHand[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].id();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_id_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapHand_id_task<<<task_size>>>(result, this);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapHand_id_task<<<index>>>(
+  io SInt32[] result
+, in LeapHand[] this
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].id();
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  Size task_size = this.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapHand_id_task(index, result, this);
+    }
+  } else {
+    LeapMotion_LeapHand_id_task<<<task_size>>>(result, this);
+  }
+}
+"
   }

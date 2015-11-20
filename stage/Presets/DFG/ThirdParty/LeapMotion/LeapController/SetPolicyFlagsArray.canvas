@@ -30,5 +30,27 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "4CC0841E30F97296E4354700C49F4AB7",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapController_setPolicyFlags_task<<<index>>>(\n  in LeapController[] this\n, in UInt32[] flags\n) {\n  this[index < this.size() ? index : this.size() - 1].setPolicyFlags(flags[index < flags.size() ? index : flags.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( flags.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < flags.size()) task_size = flags.size();\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapController_setPolicyFlags_task(index, this, flags);\n    }\n  } else {\n    LeapMotion_LeapController_setPolicyFlags_task<<<task_size>>>(this, flags);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapController_setPolicyFlags_task<<<index>>>(
+  in LeapController[] this
+, in UInt32[] flags
+) {
+  this[index < this.size() ? index : this.size() - 1].setPolicyFlags(flags[index < flags.size() ? index : flags.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( flags.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < flags.size()) task_size = flags.size();
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapController_setPolicyFlags_task(index, this, flags);
+    }
+  } else {
+    LeapMotion_LeapController_setPolicyFlags_task<<<task_size>>>(this, flags);
+  }
+}
+"
   }

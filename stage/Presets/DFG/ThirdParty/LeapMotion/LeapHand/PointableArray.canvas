@@ -37,5 +37,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "FA195BB75E9C747B8C1581FFFB8B2FF8",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapHand_pointable_task<<<index>>>(\n  io LeapPointable[] result\n, in LeapHand[] this\n, in SInt32[] id\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].pointable(id[index < id.size() ? index : id.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( id.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < id.size()) task_size = id.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapHand_pointable_task(index, result, this, id);\n    }\n  } else {\n    LeapMotion_LeapHand_pointable_task<<<task_size>>>(result, this, id);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapHand_pointable_task<<<index>>>(
+  io LeapPointable[] result
+, in LeapHand[] this
+, in SInt32[] id
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].pointable(id[index < id.size() ? index : id.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( id.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < id.size()) task_size = id.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapHand_pointable_task(index, result, this, id);
+    }
+  } else {
+    LeapMotion_LeapHand_pointable_task<<<task_size>>>(result, this, id);
+  }
+}
+"
   }

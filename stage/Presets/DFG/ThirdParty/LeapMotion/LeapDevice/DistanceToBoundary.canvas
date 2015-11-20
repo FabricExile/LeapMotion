@@ -35,5 +35,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "2C606F1D4D1DE4BB4393919E4B21E5C1",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.distanceToBoundary(position);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.distanceToBoundary(position);
+}
+"
   }

@@ -32,5 +32,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "A999868CC5C4867CC3EE47008363D897",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.translationProbability(sinceFrame);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.translationProbability(sinceFrame);
+}
+"
   }

@@ -42,5 +42,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "55C9A2CFA626C61F4FF53DE178B4FAF2",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationAngle(sinceFrame, axis);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.rotationAngle(sinceFrame, axis);
+}
+"
   }

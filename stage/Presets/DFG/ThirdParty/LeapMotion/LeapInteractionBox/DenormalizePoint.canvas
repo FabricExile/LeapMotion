@@ -38,5 +38,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "5F488E535112CC6531F383134858C587",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.denormalizePoint(normalizedPosition);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.denormalizePoint(normalizedPosition);
+}
+"
   }

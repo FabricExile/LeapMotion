@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "591E559A281D12A6A00BBA5D69938227",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.isFlipped();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.isFlipped();
+}
+"
   }

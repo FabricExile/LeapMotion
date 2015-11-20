@@ -35,5 +35,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "DA5043DFE4699EB94C5F3218F1A91BEF",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapFrame_translation_task<<<index>>>(\n  io Vec3[] result\n, in LeapFrame[] this\n, in LeapFrame[] sinceFrame\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].translation(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( sinceFrame.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapFrame_translation_task(index, result, this, sinceFrame);\n    }\n  } else {\n    LeapMotion_LeapFrame_translation_task<<<task_size>>>(result, this, sinceFrame);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapFrame_translation_task<<<index>>>(
+  io Vec3[] result
+, in LeapFrame[] this
+, in LeapFrame[] sinceFrame
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].translation(sinceFrame[index < sinceFrame.size() ? index : sinceFrame.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( sinceFrame.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < sinceFrame.size()) task_size = sinceFrame.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapFrame_translation_task(index, result, this, sinceFrame);
+    }
+  } else {
+    LeapMotion_LeapFrame_translation_task<<<task_size>>>(result, this, sinceFrame);
+  }
+}
+"
   }

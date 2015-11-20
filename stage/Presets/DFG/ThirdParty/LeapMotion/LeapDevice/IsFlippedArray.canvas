@@ -25,5 +25,26 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "591E559A281D12A6A00BBA5D69938227",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapDevice_isFlipped_task<<<index>>>(\n  io Boolean[] result\n, in LeapDevice[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].isFlipped();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapDevice_isFlipped_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapDevice_isFlipped_task<<<task_size>>>(result, this);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapDevice_isFlipped_task<<<index>>>(
+  io Boolean[] result
+, in LeapDevice[] this
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].isFlipped();
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  Size task_size = this.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapDevice_isFlipped_task(index, result, this);
+    }
+  } else {
+    LeapMotion_LeapDevice_isFlipped_task<<<task_size>>>(result, this);
+  }
+}
+"
   }

@@ -38,5 +38,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "6824FF91291538C63B78473ED63E0863",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.fingerTipXfos(scaleFactor);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.fingerTipXfos(scaleFactor);
+}
+"
   }

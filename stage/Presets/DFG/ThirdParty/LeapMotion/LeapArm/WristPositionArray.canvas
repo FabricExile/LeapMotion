@@ -28,5 +28,26 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "E9D91D7F34CE8C533415FED5FCA4B17D",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapArm_wristPosition_task<<<index>>>(\n  io Vec3[] result\n, in LeapArm[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].wristPosition();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapArm_wristPosition_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapArm_wristPosition_task<<<task_size>>>(result, this);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapArm_wristPosition_task<<<index>>>(
+  io Vec3[] result
+, in LeapArm[] this
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].wristPosition();
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  Size task_size = this.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapArm_wristPosition_task(index, result, this);
+    }
+  } else {
+    LeapMotion_LeapArm_wristPosition_task<<<task_size>>>(result, this);
+  }
+}
+"
   }

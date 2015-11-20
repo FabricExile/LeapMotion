@@ -25,5 +25,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "49830DD2006A4115817C0C28F9B453A8",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.width();\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.width();
+}
+"
   }

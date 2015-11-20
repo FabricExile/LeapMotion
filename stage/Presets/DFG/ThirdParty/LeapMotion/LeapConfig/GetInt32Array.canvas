@@ -37,5 +37,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "E712D044A8AF5AC4818FAA24DB00C4FC",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapConfig_getInt32_task<<<index>>>(\n  io SInt32[] result\n, in LeapConfig[] this\n, in String[] key\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].getInt32(key[index < key.size() ? index : key.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( key.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < key.size()) task_size = key.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapConfig_getInt32_task(index, result, this, key);\n    }\n  } else {\n    LeapMotion_LeapConfig_getInt32_task<<<task_size>>>(result, this, key);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapConfig_getInt32_task<<<index>>>(
+  io SInt32[] result
+, in LeapConfig[] this
+, in String[] key
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].getInt32(key[index < key.size() ? index : key.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( key.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < key.size()) task_size = key.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapConfig_getInt32_task(index, result, this, key);
+    }
+  } else {
+    LeapMotion_LeapConfig_getInt32_task<<<task_size>>>(result, this, key);
+  }
+}
+"
   }

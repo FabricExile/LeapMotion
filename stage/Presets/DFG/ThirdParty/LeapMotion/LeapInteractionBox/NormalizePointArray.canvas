@@ -59,5 +59,32 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "BCFEAAD3EA5EEB48409A6F7E32AA4E99",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapInteractionBox_normalizePoint_task<<<index>>>(\n  io Vec3[] result\n, in LeapInteractionBox[] this\n, in Vec3[] position\n, in Boolean[] clamp\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].normalizePoint(position[index < position.size() ? index : position.size() - 1], clamp[index < clamp.size() ? index : clamp.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( position.size() == 0) return;\n  if( clamp.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < position.size()) task_size = position.size();\n  if(task_size < clamp.size()) task_size = clamp.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapInteractionBox_normalizePoint_task(index, result, this, position, clamp);\n    }\n  } else {\n    LeapMotion_LeapInteractionBox_normalizePoint_task<<<task_size>>>(result, this, position, clamp);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapInteractionBox_normalizePoint_task<<<index>>>(
+  io Vec3[] result
+, in LeapInteractionBox[] this
+, in Vec3[] position
+, in Boolean[] clamp
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].normalizePoint(position[index < position.size() ? index : position.size() - 1], clamp[index < clamp.size() ? index : clamp.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( position.size() == 0) return;
+  if( clamp.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < position.size()) task_size = position.size();
+  if(task_size < clamp.size()) task_size = clamp.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapInteractionBox_normalizePoint_task(index, result, this, position, clamp);
+    }
+  } else {
+    LeapMotion_LeapInteractionBox_normalizePoint_task<<<task_size>>>(result, this, position, clamp);
+  }
+}
+"
   }

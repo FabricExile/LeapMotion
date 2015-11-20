@@ -32,5 +32,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "6A4240BBE08F56347365728682CAAA87",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationProbability(sinceFrame);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.rotationProbability(sinceFrame);
+}
+"
   }

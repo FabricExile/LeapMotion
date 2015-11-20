@@ -35,5 +35,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "C537ED326A3D5B72FA80BB2DC8E25DDB",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.rotationMatrix(sinceFrame);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.rotationMatrix(sinceFrame);
+}
+"
   }

@@ -32,5 +32,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "0BA574260E01C1ACD8203764E791C37F",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.scaleFactor(sinceFrame);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.scaleFactor(sinceFrame);
+}
+"
   }

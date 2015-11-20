@@ -28,5 +28,26 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "D360DDAADF021D1B3053FE2B732C3583",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapBone_center_task<<<index>>>(\n  io Vec3[] result\n, in LeapBone[] this\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].center();\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  Size task_size = this.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapBone_center_task(index, result, this);\n    }\n  } else {\n    LeapMotion_LeapBone_center_task<<<task_size>>>(result, this);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapBone_center_task<<<index>>>(
+  io Vec3[] result
+, in LeapBone[] this
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].center();
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  Size task_size = this.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapBone_center_task(index, result, this);
+    }
+  } else {
+    LeapMotion_LeapBone_center_task<<<task_size>>>(result, this);
+  }
+}
+"
   }

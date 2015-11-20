@@ -45,5 +45,10 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "BCFEAAD3EA5EEB48409A6F7E32AA4E99",
-  "code" : "require LeapMotion;\n\ndfgEntry {\n  result = this.normalizePoint(position, clamp);\n}\n"
+  "code" : "require LeapMotion;
+
+dfgEntry {
+  result = this.normalizePoint(position, clamp);
+}
+"
   }

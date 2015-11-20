@@ -37,5 +37,29 @@
     "LeapMotion" : "*"
     },
   "presetGUID" : "887BDFFCFA38CB0B55130536CEBD8F16",
-  "code" : "require LeapMotion;\n\noperator LeapMotion_LeapGesture_pointableByIndex_task<<<index>>>(\n  io LeapPointable[] result\n, in LeapGesture[] this\n, in SInt32[] index\n) {\n  result[index] = this[index < this.size() ? index : this.size() - 1].pointableByIndex(index[index < index.size() ? index : index.size() - 1]);\n}\n\ndfgEntry {\n  if( this.size() == 0) return;\n  if( index.size() == 0) return;\n  Size task_size = this.size();\n  if(task_size < index.size()) task_size = index.size();\n  result.resize(task_size);\n  if(task_size < 10000 /* pex margin */) {\n    for(Size index = 0; index < task_size; index++) {\n      LeapMotion_LeapGesture_pointableByIndex_task(index, result, this, index);\n    }\n  } else {\n    LeapMotion_LeapGesture_pointableByIndex_task<<<task_size>>>(result, this, index);\n  }\n}\n"
+  "code" : "require LeapMotion;
+
+operator LeapMotion_LeapGesture_pointableByIndex_task<<<index>>>(
+  io LeapPointable[] result
+, in LeapGesture[] this
+, in SInt32[] index
+) {
+  result[index] = this[index < this.size() ? index : this.size() - 1].pointableByIndex(index[index < index.size() ? index : index.size() - 1]);
+}
+
+dfgEntry {
+  if( this.size() == 0) return;
+  if( index.size() == 0) return;
+  Size task_size = this.size();
+  if(task_size < index.size()) task_size = index.size();
+  result.resize(task_size);
+  if(task_size < 10000 /* pex margin */) {
+    for(Size index = 0; index < task_size; index++) {
+      LeapMotion_LeapGesture_pointableByIndex_task(index, result, this, index);
+    }
+  } else {
+    LeapMotion_LeapGesture_pointableByIndex_task<<<task_size>>>(result, this, index);
+  }
+}
+"
   }
