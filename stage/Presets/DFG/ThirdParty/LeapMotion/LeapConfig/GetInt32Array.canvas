@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Gets the 32-bit integer representation for the specified key.\n\n* \\include Config_getInt32.txt\n\n* @since 1.0\n\n\n Supported by LeapConfig"
+    "uiTooltip" : "* Gets the 32-bit integer representation for the specified key.\n\n* \\include Config_getInt32.txt\n\n* @since 1.0\n\nSupported types:\n  this: LeapConfig\n  key: String\n  result: SInt32\n"
     },
   "title" : "GetInt32[]",
   "ports" : [

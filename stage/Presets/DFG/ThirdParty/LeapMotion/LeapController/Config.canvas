@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Returns a Config object, which you can use to query the Leap Motion system for\n* configuration information.\n\n* \\include Controller_config.txt\n\n* @returns The Controller's Config object.\n* @since 1.0\n\n\n Supported by LeapController"
+    "uiTooltip" : "* Returns a Config object, which you can use to query the Leap Motion system for\n* configuration information.\n\n* \\include Controller_config.txt\n\n* @returns The Controller's Config object.\n* @since 1.0\n\nSupported types:\n  this: LeapController\n  result: LeapConfig\n"
     },
   "title" : "Config",
   "ports" : [

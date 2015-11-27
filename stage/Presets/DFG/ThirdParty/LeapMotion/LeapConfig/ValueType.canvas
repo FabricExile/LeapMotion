@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Reports the natural data type for the value related to the specified key.\n\n* \\include Config_type.txt\n\n* @param key The key for the looking up the value in the configuration dictionary.\n* @returns The native data type of the value, that is, the type that does not\n* require a data conversion.\n* @since 1.0\n\n\n Supported by LeapConfig"
+    "uiTooltip" : "* Reports the natural data type for the value related to the specified key.\n\n* \\include Config_type.txt\n\n* @param key The key for the looking up the value in the configuration dictionary.\n* @returns The native data type of the value, that is, the type that does not\n* require a data conversion.\n* @since 1.0\n\nSupported types:\n  this: LeapConfig\n  key: String\n  result: UInt32\n"
     },
   "title" : "ValueType",
   "ports" : [

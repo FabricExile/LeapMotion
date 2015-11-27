@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Reports whether this device is streaming data to your application.\n\n* Currently only one controller can provide data at a time.\n* @since 1.2\n\n\n Supported by LeapDevice"
+    "uiTooltip" : "* Reports whether this device is streaming data to your application.\n\n* Currently only one controller can provide data at a time.\n* @since 1.2\n\nSupported types:\n  this: LeapDevice\n  result: Boolean\n"
     },
   "title" : "IsStreaming[]",
   "ports" : [

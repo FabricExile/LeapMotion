@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Requests a change in policy.\n\n* A request to change a policy is subject to user approval and a policy\n* can be changed by the user at any time (using the Leap Motion settings dialog).\n* The desired policy flags must be set every time an application runs.\n\n* Policy changes are completed asynchronously and, because they are subject\n* to user approval or system compatibility checks, may not complete successfully. Call\n* Controller::policyFlags() after a suitable interval to test whether\n* the change was accepted.\n\n* \\include Controller_setPolicyFlags.txt\n\n* @param flags A PolicyFlag value indicating the policies to request.\n* @since 1.0\n\n\n Supported by LeapController"
+    "uiTooltip" : "* Requests a change in policy.\n\n* A request to change a policy is subject to user approval and a policy\n* can be changed by the user at any time (using the Leap Motion settings dialog).\n* The desired policy flags must be set every time an application runs.\n\n* Policy changes are completed asynchronously and, because they are subject\n* to user approval or system compatibility checks, may not complete successfully. Call\n* Controller::policyFlags() after a suitable interval to test whether\n* the change was accepted.\n\n* \\include Controller_setPolicyFlags.txt\n\n* @param flags A PolicyFlag value indicating the policies to request.\n* @since 1.0\n\nSupported types:\n  this: LeapController\n  flags: UInt32\n"
     },
   "title" : "SetPolicyFlags[]",
   "ports" : [

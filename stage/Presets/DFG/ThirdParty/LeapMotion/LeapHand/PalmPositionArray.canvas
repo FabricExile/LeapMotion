@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The center position of the palm in millimeters from the Leap Motion Controller origin.\n\n* \\include Hand_palmPosition.txt\n\n* @returns The Vector representing the coordinates of the palm position.\n* @since 1.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The center position of the palm in millimeters from the Leap Motion Controller origin.\n\n* \\include Hand_palmPosition.txt\n\n* @returns The Vector representing the coordinates of the palm position.\n* @since 1.0\n\nSupported types:\n  this: LeapHand\n  result: Vec3\n"
     },
   "title" : "PalmPosition[]",
   "ports" : [

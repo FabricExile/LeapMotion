@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Identifies whether this Hand is a right hand.\n\n* \\include Hand_isRight.txt\n\n* @returns True if the hand is identified as a right hand.\n* @since 2.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* Identifies whether this Hand is a right hand.\n\n* \\include Hand_isRight.txt\n\n* @returns True if the hand is identified as a right hand.\n* @since 2.0\n\nSupported types:\n  this: LeapHand\n  result: Boolean\n"
     },
   "title" : "IsRight",
   "ports" : [

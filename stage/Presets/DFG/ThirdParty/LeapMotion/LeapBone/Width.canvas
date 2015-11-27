@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The average width of the flesh around the bone in millimeters.\n\n* \\include Bone_width.txt\n\n* @returns The width of the flesh around the bone in millimeters.\n* @since 2.0\n\n\n Supported by LeapBone"
+    "uiTooltip" : "* The average width of the flesh around the bone in millimeters.\n\n* \\include Bone_width.txt\n\n* @returns The width of the flesh around the bone in millimeters.\n* @since 2.0\n\nSupported types:\n  this: LeapBone\n  result: Float32\n"
     },
   "title" : "Width",
   "ports" : [

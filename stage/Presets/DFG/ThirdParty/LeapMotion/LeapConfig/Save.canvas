@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Saves the current state of the config.\n\n* Call ``save()`` after making a set of configuration changes. The\n* ``save()`` function transfers the configuration changes to the Leap Motion\n* service. You can save after the Controller has connected to\n* the Leap Motion service/daemon. In other words, after the Controller\n* has dispatched the serviceConnected or connected events or\n* Controller::isConnected is true. The configuration value changes are not persistent; your\n* application must set the values every time it runs.\n\n* \\include Config_save.txt\n\n* @returns true on success, false on failure.\n* @since 1.0\n\n\n Supported by LeapConfig"
+    "uiTooltip" : "* Saves the current state of the config.\n\n* Call ``save()`` after making a set of configuration changes. The\n* ``save()`` function transfers the configuration changes to the Leap Motion\n* service. You can save after the Controller has connected to\n* the Leap Motion service/daemon. In other words, after the Controller\n* has dispatched the serviceConnected or connected events or\n* Controller::isConnected is true. The configuration value changes are not persistent; your\n* application must set the values every time it runs.\n\n* \\include Config_save.txt\n\n* @returns true on success, false on failure.\n* @since 1.0\n\nSupported types:\n  this: LeapConfig\n  result: Boolean\n"
     },
   "title" : "Save",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "overload to get a hand by index\n\n Supported by LeapFrame"
+    "uiTooltip" : "overload to get a hand by index\n\nSupported types:\n  this: LeapFrame\n  index: SInt32\n  result: LeapPointable\n"
     },
   "title" : "HandByIndex",
   "ports" : [

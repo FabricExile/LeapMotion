@@ -1,247 +1,1183 @@
-[FABRIC:MT] Fabric Engine version 2.1.0-alpha3
+[FABRIC:MT] Fabric Engine version 2.0.1
 [FABRIC:MT] Loading DFG presets from e:\zeuxis\stage\Windows\x86_64\Release\Presets\DFG
+[FABRIC:MT] Loading DFG presets from e:\zeuxis\Test\Canvas\Presets
 [FABRIC:MT] Loading DFG presets from c:\Users\helge\Fabric\Presets
 [FABRIC:MT] Loading DFG presets from e:\exts\Midi\stage\Presets\DFG
 [FABRIC:MT] Loading DFG presets from e:\exts\RazerHydra\stage\Presets\DFG
 [FABRIC:MT] Loading DFG presets from e:\exts\Xbox\stage\Presets\DFG
+[FABRIC:MT] Loading DFG presets from e:\exts\LeapMotion\stage\Presets\DFG
 [FABRIC:MT] Loading DFG presets from e:\exts\Oculus\stage\Presets\DFG
 [FABRIC:MT] Loading DFG presets from e:\exts\OculusRTR\stage\Presets\DFG
-[FABRIC:MT] Loading DFG presets from e:\exts\Xsens\stage\Presets\DFG
-[FABRIC:MT] [AlembicWrapper] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\AlembicWrapper\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [AlembicWrapper] Error(s) encountered, extension disabled
-[FABRIC:MT] [AlembicWrapper] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\AlembicWrapper\AlembicWrapper.fpm.json'
-[FABRIC:MT] [Animation] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Animation\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Animation] Error(s) encountered, extension disabled
-[FABRIC:MT] [Animation] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Animation\Animation.fpm.json'
-[FABRIC:MT] [Characters] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Characters\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Characters] Error(s) encountered, extension disabled
-[FABRIC:MT] [Characters] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Characters\Characters.fpm.json'
-[FABRIC:MT] [Containers] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Containers\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Containers] Error(s) encountered, extension disabled
-[FABRIC:MT] [Containers] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Containers\Containers.fpm.json'
-[FABRIC:MT] [FbxWrapper] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\FbxWrapper\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [FbxWrapper] Error(s) encountered, extension disabled
-[FABRIC:MT] [FbxWrapper] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\FbxWrapper\FbxWrapper.fpm.json'
-[FABRIC:MT] [FileIO] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\FileIO\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [FileIO] Error(s) encountered, extension disabled
-[FABRIC:MT] [FileIO] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\FileIO\FileIO.fpm.json'
-[FABRIC:MT] [Images] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Images\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Images] Error(s) encountered, extension disabled
-[FABRIC:MT] [Images] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Images\Images.fpm.json'
-[FABRIC:MT] [JSON] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\JSON\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [JSON] Error(s) encountered, extension disabled
-[FABRIC:MT] [JSON] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\JSON\JSON.fpm.json'
-[FABRIC:MT] [Math] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Math\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Math] Error(s) encountered, extension disabled
-[FABRIC:MT] [Math] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Math\Math.fpm.json'
-[FABRIC:MT] [FabricOBJ] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\OBJ\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [FabricOBJ] Error(s) encountered, extension disabled
-[FABRIC:MT] [FabricOBJ] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\OBJ\FabricOBJ.fpm.json'
-[FABRIC:MT] [OpenImageIO] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\OpenImageIO\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [OpenImageIO] Error(s) encountered, extension disabled
-[FABRIC:MT] [OpenImageIO] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\OpenImageIO\OpenImageIO.fpm.json'
-[FABRIC:MT] [Parameters] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Parameters\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Parameters] Error(s) encountered, extension disabled
-[FABRIC:MT] [Parameters] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Parameters\Parameters.fpm.json'
-[FABRIC:MT] [Singletons] Error registering extension: unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Singletons\DFG': The system cannot find the path specified. (code 3 [0x3])
-[FABRIC:MT] [Singletons] Error(s) encountered, extension disabled
-[FABRIC:MT] [Singletons] Extension manifest is 'e:\zeuxis\stage\Windows\x86_64\Release\Exts\Builtin\Singletons\Singletons.fpm.json'
+[FABRIC:MT] Loading DFG presets from e:\exts\XsensMvn\stage\Presets\DFG
+[FABRIC:MT] Loading DFG presets from e:\exts\XsensMt\stage\Presets\DFG
+[FABRIC:MT] Loading DFG presets from e:\exts\RhinoFBXConverter\stage\Presets\DFG
 [FABRIC:MT] Registered extensions {Adaptors:1.0.0,Alembic:1.0.0,AlembicToSceneGraph:1.0.0,AlembicWrapper:1.3.0,Animation:1.1.0,Bullet:1.0.1,BulletHelpers:1.0.0,Characters:1.1.0,Containers:1.1.0,DFGHelpers,FabricInterfaces:1.0.1,FabricSynchronization:1.1.0,Fbx:1.1.0,FbxToSceneGraph:1.0.0,FbxWrapper,FileIO:1.2.0,Geometry:1.2.0,Images:1.0.2,Images2:1.0.0,InlineDrawing:1.2.0,JSON:1.0.0,Manipulation:1.1.0,Math:1.2.0,FabricOBJ:1.1.0,OGLWrappers:1.0.0,FabricOGL:1.0.0,OpenImageIO:1.0.2,OSOGL:1.1.0,Parameters:1.0.0,RTR2:1.0.0,SceneAssembly:1.0.0,SceneGraph:1.0.0,SceneGraphForCanvas:1.0.0,SceneGraphToRTR:1.0.0,SceneGraphWrappers:1.0.0,SceneHub:2.0.0,Singletons:1.1.0,FabricStatistics:1.1.0,Strokes:1.0.0,Util:1.1.0,ImageProcessing,RTR,RTRAdaptors} in directory: e:\zeuxis\stage\Windows\x86_64\Release\Exts
-[FABRIC:MT] Registered extensions {BadCode:2.1.0,BadInline:2.1.0,BadPrototype:2.1.0,BadVersion:2.1.0,CircularA:2.1.0,CircularB:2.1.0,FwdDeclare:2.1.0,FwdDeclNoDef:2.1.0,SetupCallback:2.1.0,UnitTest:2.1.0,VersionTest:1.0.0,VersionTest:1.1.1,VersionTest:1.2.1} in directory: e:\zeuxis\stage\Windows\x86_64\Release\Tests\Core\Exts
-[FABRIC:MT] Ignored extension directory 'e:\zeuxis\stage\Windows\x86_64\Release\Tests\Exts': unable to open directory 'e:\zeuxis\stage\Windows\x86_64\Release\Tests\Exts': The system cannot find the path specified. (code 3 [0x3])
+[FABRIC:MT] Registered extensions {BadCode:2.0.1,BadInline:2.0.1,BadPrototype:2.0.1,BadVersion:2.0.1,CircularA:2.0.1,CircularB:2.0.1,FwdDeclare:2.0.1,FwdDeclNoDef:2.0.1,SetupCallback:2.0.1,UnitTest:2.0.1,VersionTest:1.0.0,VersionTest:1.1.1,VersionTest:1.2.1} in directory: e:\zeuxis\stage\Windows\x86_64\Release\Tests\Core\Exts
 [FABRIC:MT] Registered extension {Midi:1.0.0} in directory: e:\exts\Midi\stage\Exts
 [FABRIC:MT] Registered extension {RazerHydra:1.0.0} in directory: e:\exts\RazerHydra\stage\Exts
 [FABRIC:MT] Registered extension {XBox:1.0.0} in directory: e:\exts\Xbox\stage\Exts
+[FABRIC:MT] Registered extension {LeapMotion:1.0.0} in directory: e:\exts\LeapMotion\stage\Exts
 [FABRIC:MT] Registered extension {Oculus:1.0.0} in directory: e:\exts\Oculus\stage\Exts
 [FABRIC:MT] Registered extension {OculusRTR:1.0.0} in directory: e:\exts\OculusRTR\stage\Exts
-[FABRIC:MT] Registered extension {Xsens:1.0.0} in directory: e:\exts\Xsens\stage\Exts
-[FABRIC:MT] Registered extension {RhinoFBXConverter:1.0.0} in directory: e:\exts\RhinoFBXConverter\src
-[FABRIC:MT] Registered extension {LeapMotion:1.0.0} in directory: stage\Exts
+[FABRIC:MT] Registered extension {XsensMvn:1.0.0} in directory: e:\exts\XsensMvn\stage\Exts
+[FABRIC:MT] Registered extension {XsensMt:1.0.0} in directory: e:\exts\XsensMt\stage\Exts
+[FABRIC:MT] Registered extension {RhinoFBXConverter:1.0.0} in directory: e:\exts\RhinoFBXConverter\stage\Exts
+[FABRIC:MT] Ignored extension {LeapMotion:1.0.0} in directory: stage\Exts
 [FABRIC:MT] IRCache: Not pruning since last prune was less than 24 hours ago
-[FABRIC:MT] Loaded extension Math in 127.024ms (cached)
-[FABRIC:MT] Loaded extension LeapMotion in 73.740ms (cached)
-Registered function 'LeapConfig.getBool', 'getBool'.
-Registered function 'LeapConfig.getFloat', 'getFloat'.
-Registered function 'LeapConfig.getInt32', 'getInt32'.
-Registered function 'LeapConfig.getString', 'getString'.
-Registered function 'LeapConfig.save', 'save'.
-Registered function 'LeapConfig.setBool', 'setBool'.
-Registered function 'LeapConfig.setFloat', 'setFloat'.
-Registered function 'LeapConfig.setInt32', 'setInt32'.
-Registered function 'LeapConfig.setString', 'setString'.
-Registered function 'LeapConfig.valid', 'valid'.
-Registered function 'LeapConfig.valueType', 'valueType'.
-Registered function 'LeapInteractionBox.center', 'center'.
-Registered function 'LeapInteractionBox.denormalizePoint', 'denormalizePoint'.
-Registered function 'LeapInteractionBox.depth', 'depth'.
-Registered function 'LeapInteractionBox.height', 'height'.
-Registered function 'LeapInteractionBox.normalizePoint', 'normalizePoint'.
-Registered function 'LeapInteractionBox.valid', 'valid'.
-Registered function 'LeapInteractionBox.width', 'width'.
-Registered function 'LeapPointable.direction', 'direction'.
-Registered function 'LeapPointable.id', 'id'.
-Registered function 'LeapPointable.isExtended', 'isExtended'.
-Registered function 'LeapPointable.isFinger', 'isFinger'.
-Registered function 'LeapPointable.isTool', 'isTool'.
-Registered function 'LeapPointable.length', 'length'.
-Registered function 'LeapPointable.stabilizedTipPosition', 'stabilizedTipPosition'.
-Registered function 'LeapPointable.timeVisible', 'timeVisible'.
-Registered function 'LeapPointable.tipPosition', 'tipPosition'.
-Registered function 'LeapPointable.tipVelocity', 'tipVelocity'.
-Registered function 'LeapPointable.touchDistance', 'touchDistance'.
-Registered function 'LeapPointable.touchZone', 'touchZone'.
-Registered function 'LeapPointable.valid', 'valid'.
-Registered function 'LeapPointable.width', 'width'.
-Registered function 'LeapBone.basis', 'basis'.
-Registered function 'LeapBone.boneType', 'boneType'.
-Registered function 'LeapBone.center', 'center'.
-Registered function 'LeapBone.direction', 'direction'.
-Registered function 'LeapBone.length', 'length'.
-Registered function 'LeapBone.nextJoint', 'nextJoint'.
-Registered function 'LeapBone.prevJoint', 'prevJoint'.
-Registered function 'LeapBone.valid', 'valid'.
-Registered function 'LeapBone.width', 'width'.
-Registered function 'LeapFinger.bone', 'bone'.
-Registered function 'LeapFinger.fingerType', 'fingerType'.
-Registered function 'LeapFinger.valid', 'valid'.
-Registered function 'LeapTool.valid', 'valid'.
-Registered function 'LeapArm.basis', 'basis'.
-Registered function 'LeapArm.center', 'center'.
-Registered function 'LeapArm.direction', 'direction'.
-Registered function 'LeapArm.elbowPosition', 'elbowPosition'.
-Registered function 'LeapArm.valid', 'valid'.
-Registered function 'LeapArm.width', 'width'.
-Registered function 'LeapArm.wristPosition', 'wristPosition'.
-Registered function 'LeapHand.arm', 'arm'.
-Registered function 'LeapHand.basis', 'basis'.
-Registered function 'LeapHand.confidence', 'confidence'.
-Registered function 'LeapHand.direction', 'direction'.
-Registered function 'LeapHand.finger', 'finger'.
-Registered function 'LeapHand.fingerAllXfos', 'fingerAllXfos'.
-Registered function 'LeapHand.fingerTipXfos', 'fingerTipXfos'.
-Registered function 'LeapHand.fingers', 'fingers'.
-Registered function 'LeapHand.grabStrength', 'grabStrength'.
-Registered function 'LeapHand.id', 'id'.
-Registered function 'LeapHand.isLeft', 'isLeft'.
-Registered function 'LeapHand.isRight', 'isRight'.
-Registered function 'LeapHand.palmNormal', 'palmNormal'.
-Registered function 'LeapHand.palmPosition', 'palmPosition'.
-Registered function 'LeapHand.palmVelocity', 'palmVelocity'.
-Registered function 'LeapHand.palmWidth', 'palmWidth'.
-Registered function 'LeapHand.pinchStrength', 'pinchStrength'.
-Registered function 'LeapHand.pointable', 'pointable'.
-Registered function 'LeapHand.pointableByIndex', 'pointableByIndex'.
-Registered function 'LeapHand.pointableXfos', 'pointableXfos'.
-Registered function 'LeapHand.pointables', 'pointables'.
-Registered function 'LeapHand.rotationAngle', 'rotationAngle'.
-Skipped 'function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame )', double declaration, found overload with more parameters.
-Registered function 'LeapHand.rotationAxis', 'rotationAxis'.
-Registered function 'LeapHand.rotationMatrix', 'rotationMatrix'.
-Registered function 'LeapHand.rotationProbability', 'rotationProbability'.
-Registered function 'LeapHand.scaleFactor', 'scaleFactor'.
-Registered function 'LeapHand.scaleProbability', 'scaleProbability'.
-Registered function 'LeapHand.sphereCenter', 'sphereCenter'.
-Registered function 'LeapHand.sphereRadius', 'sphereRadius'.
-Registered function 'LeapHand.stabilizedPalmPosition', 'stabilizedPalmPosition'.
-Registered function 'LeapHand.timeVisible', 'timeVisible'.
-Registered function 'LeapHand.tool', 'tool'.
-Registered function 'LeapHand.tools', 'tools'.
-Registered function 'LeapHand.translation', 'translation'.
-Registered function 'LeapHand.translationProbability', 'translationProbability'.
-Registered function 'LeapHand.valid', 'valid'.
-Registered function 'LeapHand.wristPosition', 'wristPosition'.
-Registered function 'LeapGesture.duration', 'duration'.
-Registered function 'LeapGesture.durationSeconds', 'durationSeconds'.
-Registered function 'LeapGesture.gestureType', 'gestureType'.
-Registered function 'LeapGesture.handByIndex', 'handByIndex'.
-Registered function 'LeapGesture.hands', 'hands'.
-Registered function 'LeapGesture.id', 'id'.
-Registered function 'LeapGesture.pointableByIndex', 'pointableByIndex'.
-Registered function 'LeapGesture.pointableXfos', 'pointableXfos'.
-Registered function 'LeapGesture.pointables', 'pointables'.
-Registered function 'LeapGesture.state', 'state'.
-Registered function 'LeapGesture.valid', 'valid'.
-Registered function 'LeapImage.valid', 'valid'.
-Registered function 'LeapFrame.currentFramesPerSecond', 'currentFramesPerSecond'.
-Registered function 'LeapFrame.deserialize', 'deserialize'.
-Registered function 'LeapFrame.finger', 'finger'.
-Registered function 'LeapFrame.fingerAllXfos', 'fingerAllXfos'.
-Registered function 'LeapFrame.fingerByIndex', 'fingerByIndex'.
-Registered function 'LeapFrame.fingerTipXfos', 'fingerTipXfos'.
-Registered function 'LeapFrame.fingers', 'fingers'.
-Registered function 'LeapFrame.gesture', 'gesture'.
-Registered function 'LeapFrame.gestureByIndex', 'gestureByIndex'.
-Registered function 'LeapFrame.gestures', 'gestures'.
-Skipped 'function LeapGesture[] LeapFrame.gestures?()', double declaration, found overload with more parameters.
-Registered function 'LeapFrame.hand', 'hand'.
-Registered function 'LeapFrame.handByIndex', 'handByIndex'.
-Registered function 'LeapFrame.hands', 'hands'.
-Registered function 'LeapFrame.id', 'id'.
-Registered function 'LeapFrame.imageByIndex', 'imageByIndex'.
-Registered function 'LeapFrame.images', 'images'.
-Registered function 'LeapFrame.interactionBox', 'interactionBox'.
-Registered function 'LeapFrame.isValid', 'isValid'.
-Registered function 'LeapFrame.pointable', 'pointable'.
-Registered function 'LeapFrame.pointableByIndex', 'pointableByIndex'.
-Registered function 'LeapFrame.pointableXfos', 'pointableXfos'.
-Registered function 'LeapFrame.pointables', 'pointables'.
-Registered function 'LeapFrame.rotationAngle', 'rotationAngle'.
-Skipped 'function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame )', double declaration, found overload with more parameters.
-Registered function 'LeapFrame.rotationAxis', 'rotationAxis'.
-Registered function 'LeapFrame.rotationMatrix', 'rotationMatrix'.
-Registered function 'LeapFrame.rotationProbability', 'rotationProbability'.
-Registered function 'LeapFrame.scaleFactor', 'scaleFactor'.
-Registered function 'LeapFrame.scaleProbability', 'scaleProbability'.
-Registered function 'LeapFrame.serialize', 'serialize'.
-Registered function 'LeapFrame.timestamp', 'timestamp'.
-Registered function 'LeapFrame.tool', 'tool'.
-Registered function 'LeapFrame.toolByIndex', 'toolByIndex'.
-Registered function 'LeapFrame.tools', 'tools'.
-Registered function 'LeapFrame.translation', 'translation'.
-Registered function 'LeapFrame.translationProbability', 'translationProbability'.
-Registered function 'LeapFrame.valid', 'valid'.
-Registered function 'LeapDevice.deviceType', 'deviceType'.
-Registered function 'LeapDevice.distanceToBoundary', 'distanceToBoundary'.
-Registered function 'LeapDevice.horizontalViewAngle', 'horizontalViewAngle'.
-Registered function 'LeapDevice.isEmbedded', 'isEmbedded'.
-Registered function 'LeapDevice.isFlipped', 'isFlipped'.
-Registered function 'LeapDevice.isStreaming', 'isStreaming'.
-Registered function 'LeapDevice.range', 'range'.
-Registered function 'LeapDevice.valid', 'valid'.
-Registered function 'LeapDevice.verticalViewAngle', 'verticalViewAngle'.
-Registered function 'LeapController.LeapController', 'LeapController.LeapController'.
-Registered function 'LeapController.config', 'config'.
-Registered function 'LeapController.devices', 'devices'.
-Registered function 'LeapController.enableGesture', 'enableGesture'.
-Registered function 'LeapController.frame', 'frame'.
-Skipped 'function LeapFrame LeapController.frame?()', double declaration, found overload with more parameters.
-Registered function 'LeapController.hasFocus', 'hasFocus'.
-Registered function 'LeapController.isConnected', 'isConnected'.
-Registered function 'LeapController.isGestureEnabled', 'isGestureEnabled'.
-Registered function 'LeapController.isServiceConnected', 'isServiceConnected'.
-Registered function 'LeapController.policyFlags', 'policyFlags'.
-Registered function 'LeapController.setPolicyFlags', 'setPolicyFlags'.
-Registered function 'LeapController.valid', 'valid'.
-Skipped 'function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame )', double declaration, found overload with more parameters.
-Skipped 'function LeapGesture[] LeapFrame.gestures?()', double declaration, found overload with more parameters.
-Skipped 'function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame )', double declaration, found overload with more parameters.
-Skipped 'function LeapFrame LeapController.frame?()', double declaration, found overload with more parameters.
-Skipping array preset for 'function Xfo[] LeapHand.fingerAllXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function Xfo[] LeapHand.fingerTipXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function LeapFinger[] LeapHand.fingers?()', has array return value.
-Skipping array preset for 'function Xfo[] LeapHand.pointableXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function LeapPointable[] LeapHand.pointables?()', has array return value.
-Skipping array preset for 'function LeapTool[] LeapHand.tools?()', has array return value.
-Skipping array preset for 'function LeapHand[] LeapGesture.hands?()', has array return value.
-Skipping array preset for 'function Xfo[] LeapGesture.pointableXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function LeapPointable[] LeapGesture.pointables?()', has array return value.
-Skipping array preset for 'function Xfo[] LeapFrame.fingerAllXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function Xfo[] LeapFrame.fingerTipXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function LeapFinger[] LeapFrame.fingers?()', has array return value.
-Skipping array preset for 'function LeapGesture[] LeapFrame.gestures?( in LeapFrame sinceFrame )', has array return value.
-Skipping array preset for 'function LeapHand[] LeapFrame.hands?()', has array return value.
-Skipping array preset for 'function LeapImage[] LeapFrame.images?()', has array return value.
-Skipping array preset for 'function Xfo[] LeapFrame.pointableXfos?( in Float32 scaleFactor )', has array return value.
-Skipping array preset for 'function LeapPointable[] LeapFrame.pointables?()', has array return value.
-Skipping array preset for 'function LeapTool[] LeapFrame.tools?()', has array return value.
-Skipping array preset for 'function LeapDevice[] LeapController.devices?()', has array return value.
+[FABRIC:MT] Loaded extension Math in 129.150ms (cached)
+[FABRIC:MT] Loaded extension LeapMotion in 847.374ms (first time)
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.getBool?( in String key )'
+  Added to bin[normal][Boolean LeapConfig.getBool]
+registerFunction: thisType='LeapConfig' func='function Float32 LeapConfig.getFloat?( in String key )'
+  Added to bin[normal][Float32 LeapConfig.getFloat]
+registerFunction: thisType='LeapConfig' func='function SInt32 LeapConfig.getInt32?( in String key )'
+  Added to bin[normal][SInt32 LeapConfig.getInt32]
+registerFunction: thisType='LeapConfig' func='function String LeapConfig.getString?( in String key )'
+  Added to bin[normal][String LeapConfig.getString]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.save?()'
+  Added to bin[normal][Boolean LeapConfig.save]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setBool?( in String key, in Boolean value )'
+  Added to bin[normal][Boolean LeapConfig.setBool]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setFloat?( in String key, in Float32 value )'
+  Added to bin[normal][Boolean LeapConfig.setFloat]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setInt32?( in String key, in SInt32 value )'
+  Added to bin[normal][Boolean LeapConfig.setInt32]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setString?( in String key, in String value )'
+  Added to bin[normal][Boolean LeapConfig.setString]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.valid?()'
+  Added to bin[normal][Boolean LeapConfig.valid]
+registerFunction: thisType='LeapConfig' func='function UInt32 LeapConfig.valueType?( in String key )'
+  Added to bin[normal][UInt32 LeapConfig.valueType]
+registerFunction: thisType='LeapInteractionBox' func='function Vec3 LeapInteractionBox.center?()'
+  Added to bin[normal][Vec3 LeapInteractionBox.center]
+registerFunction: thisType='LeapInteractionBox' func='function Vec3 LeapInteractionBox.denormalizePoint?( in Vec3 normalizedPosition )'
+  Added to bin[normal][Vec3 LeapInteractionBox.denormalizePoint]
+registerFunction: thisType='LeapInteractionBox' func='function Float32 LeapInteractionBox.depth?()'
+  Added to bin[normal][Float32 LeapInteractionBox.depth]
+registerFunction: thisType='LeapInteractionBox' func='function Float32 LeapInteractionBox.height?()'
+  Added to bin[normal][Float32 LeapInteractionBox.height]
+registerFunction: thisType='LeapInteractionBox' func='function Vec3 LeapInteractionBox.normalizePoint?( in Vec3 position, in Boolean clamp )'
+  Added to bin[normal][Vec3 LeapInteractionBox.normalizePoint]
+registerFunction: thisType='LeapInteractionBox' func='function Boolean LeapInteractionBox.valid?()'
+  Added to bin[normal][Boolean LeapInteractionBox.valid]
+registerFunction: thisType='LeapInteractionBox' func='function Float32 LeapInteractionBox.width?()'
+  Added to bin[normal][Float32 LeapInteractionBox.width]
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.direction?()'
+  Added to bin[normal][Vec3 LeapPointable.direction]
+registerFunction: thisType='LeapPointable' func='function SInt32 LeapPointable.id?()'
+  Added to bin[normal][SInt32 LeapPointable.id]
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.isExtended?()'
+  Added to bin[normal][Boolean LeapPointable.isExtended]
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.isFinger?()'
+  Added to bin[normal][Boolean LeapPointable.isFinger]
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.isTool?()'
+  Added to bin[normal][Boolean LeapPointable.isTool]
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.length?()'
+  Added to bin[normal][Float32 LeapPointable.length]
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.stabilizedTipPosition?()'
+  Added to bin[normal][Vec3 LeapPointable.stabilizedTipPosition]
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.timeVisible?()'
+  Added to bin[normal][Float32 LeapPointable.timeVisible]
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.tipPosition?()'
+  Added to bin[normal][Vec3 LeapPointable.tipPosition]
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.tipVelocity?()'
+  Added to bin[normal][Vec3 LeapPointable.tipVelocity]
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.touchDistance?()'
+  Added to bin[normal][Float32 LeapPointable.touchDistance]
+registerFunction: thisType='LeapPointable' func='function UInt32 LeapPointable.touchZone?()'
+  Added to bin[normal][UInt32 LeapPointable.touchZone]
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.valid?()'
+  Added to bin[normal][Boolean LeapPointable.valid]
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.width?()'
+  Added to bin[normal][Float32 LeapPointable.width]
+registerFunction: thisType='LeapBone' func='function Mat44 LeapBone.basis?()'
+  Added to bin[normal][Mat44 LeapBone.basis]
+registerFunction: thisType='LeapBone' func='function UInt32 LeapBone.boneType?()'
+  Added to bin[normal][UInt32 LeapBone.boneType]
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.center?()'
+  Added to bin[normal][Vec3 LeapBone.center]
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.direction?()'
+  Added to bin[normal][Vec3 LeapBone.direction]
+registerFunction: thisType='LeapBone' func='function Float32 LeapBone.length?()'
+  Added to bin[normal][Float32 LeapBone.length]
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.nextJoint?()'
+  Added to bin[normal][Vec3 LeapBone.nextJoint]
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.prevJoint?()'
+  Added to bin[normal][Vec3 LeapBone.prevJoint]
+registerFunction: thisType='LeapBone' func='function Boolean LeapBone.valid?()'
+  Added to bin[normal][Boolean LeapBone.valid]
+registerFunction: thisType='LeapBone' func='function Float32 LeapBone.width?()'
+  Added to bin[normal][Float32 LeapBone.width]
+registerFunction: thisType='LeapFinger' func='function LeapBone LeapFinger.bone?( in UInt32 boneIx )'
+  Added to bin[normal][LeapBone LeapFinger.bone]
+registerFunction: thisType='LeapFinger' func='function UInt32 LeapFinger.fingerType?()'
+  Added to bin[normal][UInt32 LeapFinger.fingerType]
+registerFunction: thisType='LeapFinger' func='function Boolean LeapFinger.valid?()'
+  Added to bin[normal][Boolean LeapFinger.valid]
+registerFunction: thisType='LeapTool' func='function Boolean LeapTool.valid?()'
+  Added to bin[normal][Boolean LeapTool.valid]
+registerFunction: thisType='LeapArm' func='function Mat44 LeapArm.basis?()'
+  Added to bin[normal][Mat44 LeapArm.basis]
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.center?()'
+  Added to bin[normal][Vec3 LeapArm.center]
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.direction?()'
+  Added to bin[normal][Vec3 LeapArm.direction]
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.elbowPosition?()'
+  Added to bin[normal][Vec3 LeapArm.elbowPosition]
+registerFunction: thisType='LeapArm' func='function Boolean LeapArm.valid?()'
+  Added to bin[normal][Boolean LeapArm.valid]
+registerFunction: thisType='LeapArm' func='function Float32 LeapArm.width?()'
+  Added to bin[normal][Float32 LeapArm.width]
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.wristPosition?()'
+  Added to bin[normal][Vec3 LeapArm.wristPosition]
+registerFunction: thisType='LeapHand' func='function LeapArm LeapHand.arm?()'
+  Added to bin[normal][LeapArm LeapHand.arm]
+registerFunction: thisType='LeapHand' func='function Mat44 LeapHand.basis?()'
+  Added to bin[normal][Mat44 LeapHand.basis]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.confidence?()'
+  Added to bin[normal][Float32 LeapHand.confidence]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.direction?()'
+  Added to bin[normal][Vec3 LeapHand.direction]
+registerFunction: thisType='LeapHand' func='function LeapFinger LeapHand.finger?( in SInt32 id )'
+  Added to bin[normal][LeapFinger LeapHand.finger]
+registerFunction: thisType='LeapHand' func='function Xfo[] LeapHand.fingerAllXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapHand.fingerAllXfos]
+registerFunction: thisType='LeapHand' func='function Xfo[] LeapHand.fingerTipXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapHand.fingerTipXfos]
+registerFunction: thisType='LeapHand' func='function LeapFinger[] LeapHand.fingers?()'
+  Added to bin[normal][LeapFinger[] LeapHand.fingers]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.grabStrength?()'
+  Added to bin[normal][Float32 LeapHand.grabStrength]
+registerFunction: thisType='LeapHand' func='function SInt32 LeapHand.id?()'
+  Added to bin[normal][SInt32 LeapHand.id]
+registerFunction: thisType='LeapHand' func='function Boolean LeapHand.isLeft?()'
+  Added to bin[normal][Boolean LeapHand.isLeft]
+registerFunction: thisType='LeapHand' func='function Boolean LeapHand.isRight?()'
+  Added to bin[normal][Boolean LeapHand.isRight]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.palmNormal?()'
+  Added to bin[normal][Vec3 LeapHand.palmNormal]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.palmPosition?()'
+  Added to bin[normal][Vec3 LeapHand.palmPosition]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.palmVelocity?()'
+  Added to bin[normal][Vec3 LeapHand.palmVelocity]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.palmWidth?()'
+  Added to bin[normal][Float32 LeapHand.palmWidth]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.pinchStrength?()'
+  Added to bin[normal][Float32 LeapHand.pinchStrength]
+registerFunction: thisType='LeapHand' func='function LeapPointable LeapHand.pointable?( in SInt32 id )'
+  Added to bin[normal][LeapPointable LeapHand.pointable]
+registerFunction: thisType='LeapHand' func='function LeapPointable LeapHand.pointableByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapPointable LeapHand.pointableByIndex]
+registerFunction: thisType='LeapHand' func='function Xfo[] LeapHand.pointableXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapHand.pointableXfos]
+registerFunction: thisType='LeapHand' func='function LeapPointable[] LeapHand.pointables?()'
+  Added to bin[normal][LeapPointable[] LeapHand.pointables]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapHand.rotationAngle]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+  Added to bin[normal][Float32 LeapHand.rotationAngle]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.rotationAxis?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Vec3 LeapHand.rotationAxis]
+registerFunction: thisType='LeapHand' func='function Mat44 LeapHand.rotationMatrix?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Mat44 LeapHand.rotationMatrix]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.rotationProbability?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapHand.rotationProbability]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.scaleFactor?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapHand.scaleFactor]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.scaleProbability?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapHand.scaleProbability]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.sphereCenter?()'
+  Added to bin[normal][Vec3 LeapHand.sphereCenter]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.sphereRadius?()'
+  Added to bin[normal][Float32 LeapHand.sphereRadius]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.stabilizedPalmPosition?()'
+  Added to bin[normal][Vec3 LeapHand.stabilizedPalmPosition]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.timeVisible?()'
+  Added to bin[normal][Float32 LeapHand.timeVisible]
+registerFunction: thisType='LeapHand' func='function LeapTool LeapHand.tool?( in SInt32 id )'
+  Added to bin[normal][LeapTool LeapHand.tool]
+registerFunction: thisType='LeapHand' func='function LeapTool[] LeapHand.tools?()'
+  Added to bin[normal][LeapTool[] LeapHand.tools]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.translation?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Vec3 LeapHand.translation]
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.translationProbability?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapHand.translationProbability]
+registerFunction: thisType='LeapHand' func='function Boolean LeapHand.valid?()'
+  Added to bin[normal][Boolean LeapHand.valid]
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.wristPosition?()'
+  Added to bin[normal][Vec3 LeapHand.wristPosition]
+registerFunction: thisType='LeapGesture' func='function SInt64 LeapGesture.duration?()'
+  Added to bin[normal][SInt64 LeapGesture.duration]
+registerFunction: thisType='LeapGesture' func='function Float32 LeapGesture.durationSeconds?()'
+  Added to bin[normal][Float32 LeapGesture.durationSeconds]
+registerFunction: thisType='LeapGesture' func='function SInt32 LeapGesture.gestureType?()'
+  Added to bin[normal][SInt32 LeapGesture.gestureType]
+registerFunction: thisType='LeapGesture' func='function LeapHand LeapGesture.handByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapHand LeapGesture.handByIndex]
+registerFunction: thisType='LeapGesture' func='function LeapHand[] LeapGesture.hands?()'
+  Added to bin[normal][LeapHand[] LeapGesture.hands]
+registerFunction: thisType='LeapGesture' func='function SInt32 LeapGesture.id?()'
+  Added to bin[normal][SInt32 LeapGesture.id]
+registerFunction: thisType='LeapGesture' func='function LeapPointable LeapGesture.pointableByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapPointable LeapGesture.pointableByIndex]
+registerFunction: thisType='LeapGesture' func='function Xfo[] LeapGesture.pointableXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapGesture.pointableXfos]
+registerFunction: thisType='LeapGesture' func='function LeapPointable[] LeapGesture.pointables?()'
+  Added to bin[normal][LeapPointable[] LeapGesture.pointables]
+registerFunction: thisType='LeapGesture' func='function SInt32 LeapGesture.state?()'
+  Added to bin[normal][SInt32 LeapGesture.state]
+registerFunction: thisType='LeapGesture' func='function Boolean LeapGesture.valid?()'
+  Added to bin[normal][Boolean LeapGesture.valid]
+registerFunction: thisType='LeapImage' func='function Boolean LeapImage.valid?()'
+  Added to bin[normal][Boolean LeapImage.valid]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.currentFramesPerSecond?()'
+  Added to bin[normal][Float32 LeapFrame.currentFramesPerSecond]
+registerFunction: thisType='LeapFrame' func='function LeapFrame.deserialize?( in String str )'
+  Added to bin[normal][LeapFrame.deserialize]
+registerFunction: thisType='LeapFrame' func='function LeapFinger LeapFrame.finger?( in SInt32 id )'
+  Added to bin[normal][LeapFinger LeapFrame.finger]
+registerFunction: thisType='LeapFrame' func='function Xfo[] LeapFrame.fingerAllXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapFrame.fingerAllXfos]
+registerFunction: thisType='LeapFrame' func='function LeapFinger LeapFrame.fingerByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapFinger LeapFrame.fingerByIndex]
+registerFunction: thisType='LeapFrame' func='function Xfo[] LeapFrame.fingerTipXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapFrame.fingerTipXfos]
+registerFunction: thisType='LeapFrame' func='function LeapFinger[] LeapFrame.fingers?()'
+  Added to bin[normal][LeapFinger[] LeapFrame.fingers]
+registerFunction: thisType='LeapFrame' func='function LeapGesture LeapFrame.gesture?( in SInt32 id )'
+  Added to bin[normal][LeapGesture LeapFrame.gesture]
+registerFunction: thisType='LeapFrame' func='function LeapGesture LeapFrame.gestureByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapGesture LeapFrame.gestureByIndex]
+registerFunction: thisType='LeapFrame' func='function LeapGesture[] LeapFrame.gestures?( in LeapFrame sinceFrame )'
+  Added to bin[normal][LeapGesture[] LeapFrame.gestures]
+registerFunction: thisType='LeapFrame' func='function LeapGesture[] LeapFrame.gestures?()'
+  Added to bin[normal][LeapGesture[] LeapFrame.gestures]
+registerFunction: thisType='LeapFrame' func='function LeapHand LeapFrame.hand?( in SInt32 id )'
+  Added to bin[normal][LeapHand LeapFrame.hand]
+registerFunction: thisType='LeapFrame' func='function LeapPointable LeapFrame.handByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapPointable LeapFrame.handByIndex]
+registerFunction: thisType='LeapFrame' func='function LeapHand[] LeapFrame.hands?()'
+  Added to bin[normal][LeapHand[] LeapFrame.hands]
+registerFunction: thisType='LeapFrame' func='function UInt64 LeapFrame.id?()'
+  Added to bin[normal][UInt64 LeapFrame.id]
+registerFunction: thisType='LeapFrame' func='function LeapImage LeapFrame.imageByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapImage LeapFrame.imageByIndex]
+registerFunction: thisType='LeapFrame' func='function LeapImage[] LeapFrame.images?()'
+  Added to bin[normal][LeapImage[] LeapFrame.images]
+registerFunction: thisType='LeapFrame' func='function LeapInteractionBox LeapFrame.interactionBox?()'
+  Added to bin[normal][LeapInteractionBox LeapFrame.interactionBox]
+registerFunction: thisType='LeapFrame' func='function Boolean LeapFrame.isValid?()'
+  Added to bin[normal][Boolean LeapFrame.isValid]
+registerFunction: thisType='LeapFrame' func='function LeapPointable LeapFrame.pointable?( in SInt32 id )'
+  Added to bin[normal][LeapPointable LeapFrame.pointable]
+registerFunction: thisType='LeapFrame' func='function LeapPointable LeapFrame.pointableByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapPointable LeapFrame.pointableByIndex]
+registerFunction: thisType='LeapFrame' func='function Xfo[] LeapFrame.pointableXfos?( in Float32 scaleFactor )'
+  Added to bin[normal][Xfo[] LeapFrame.pointableXfos]
+registerFunction: thisType='LeapFrame' func='function LeapPointable[] LeapFrame.pointables?()'
+  Added to bin[normal][LeapPointable[] LeapFrame.pointables]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapFrame.rotationAngle]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+  Added to bin[normal][Float32 LeapFrame.rotationAngle]
+registerFunction: thisType='LeapFrame' func='function Vec3 LeapFrame.rotationAxis?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Vec3 LeapFrame.rotationAxis]
+registerFunction: thisType='LeapFrame' func='function Mat44 LeapFrame.rotationMatrix?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Mat44 LeapFrame.rotationMatrix]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.rotationProbability?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapFrame.rotationProbability]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.scaleFactor?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapFrame.scaleFactor]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.scaleProbability?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapFrame.scaleProbability]
+registerFunction: thisType='LeapFrame' func='function String LeapFrame.serialize?()'
+  Added to bin[normal][String LeapFrame.serialize]
+registerFunction: thisType='LeapFrame' func='function UInt64 LeapFrame.timestamp?()'
+  Added to bin[normal][UInt64 LeapFrame.timestamp]
+registerFunction: thisType='LeapFrame' func='function LeapTool LeapFrame.tool?( in SInt32 id )'
+  Added to bin[normal][LeapTool LeapFrame.tool]
+registerFunction: thisType='LeapFrame' func='function LeapTool LeapFrame.toolByIndex?( in SInt32 index )'
+  Added to bin[normal][LeapTool LeapFrame.toolByIndex]
+registerFunction: thisType='LeapFrame' func='function LeapTool[] LeapFrame.tools?()'
+  Added to bin[normal][LeapTool[] LeapFrame.tools]
+registerFunction: thisType='LeapFrame' func='function Vec3 LeapFrame.translation?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Vec3 LeapFrame.translation]
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.translationProbability?( in LeapFrame sinceFrame )'
+  Added to bin[normal][Float32 LeapFrame.translationProbability]
+registerFunction: thisType='LeapFrame' func='function Boolean LeapFrame.valid?()'
+  Added to bin[normal][Boolean LeapFrame.valid]
+registerFunction: thisType='LeapDevice' func='function UInt32 LeapDevice.deviceType?()'
+  Added to bin[normal][UInt32 LeapDevice.deviceType]
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.distanceToBoundary?( in Vec3 position )'
+  Added to bin[normal][Float32 LeapDevice.distanceToBoundary]
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.horizontalViewAngle?()'
+  Added to bin[normal][Float32 LeapDevice.horizontalViewAngle]
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.isEmbedded?()'
+  Added to bin[normal][Boolean LeapDevice.isEmbedded]
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.isFlipped?()'
+  Added to bin[normal][Boolean LeapDevice.isFlipped]
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.isStreaming?()'
+  Added to bin[normal][Boolean LeapDevice.isStreaming]
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.range?()'
+  Added to bin[normal][Float32 LeapDevice.range]
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.valid?()'
+  Added to bin[normal][Boolean LeapDevice.valid]
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.verticalViewAngle?()'
+  Added to bin[normal][Float32 LeapDevice.verticalViewAngle]
+registerFunction: thisType='LeapController' func='function LeapController?()'
+  Added to bin[normal][LeapController]
+registerFunction: thisType='LeapController' func='function LeapConfig LeapController.config?()'
+  Added to bin[normal][LeapConfig LeapController.config]
+registerFunction: thisType='LeapController' func='function LeapDevice[] LeapController.devices?()'
+  Added to bin[normal][LeapDevice[] LeapController.devices]
+registerFunction: thisType='LeapController' func='function LeapController.enableGesture?( in UInt32 gesture, in Boolean enable )'
+  Added to bin[normal][LeapController.enableGesture]
+registerFunction: thisType='LeapController' func='function LeapFrame LeapController.frame?( in SInt32 history )'
+  Added to bin[normal][LeapFrame LeapController.frame]
+registerFunction: thisType='LeapController' func='function LeapFrame LeapController.frame?()'
+  Added to bin[normal][LeapFrame LeapController.frame]
+registerFunction: thisType='LeapController' func='function Boolean LeapController.hasFocus?()'
+  Added to bin[normal][Boolean LeapController.hasFocus]
+registerFunction: thisType='LeapController' func='function Boolean LeapController.isConnected?()'
+  Added to bin[normal][Boolean LeapController.isConnected]
+registerFunction: thisType='LeapController' func='function Boolean LeapController.isGestureEnabled?( in UInt32 gesture )'
+  Added to bin[normal][Boolean LeapController.isGestureEnabled]
+registerFunction: thisType='LeapController' func='function Boolean LeapController.isServiceConnected?()'
+  Added to bin[normal][Boolean LeapController.isServiceConnected]
+registerFunction: thisType='LeapController' func='function UInt32 LeapController.policyFlags?()'
+  Added to bin[normal][UInt32 LeapController.policyFlags]
+registerFunction: thisType='LeapController' func='function LeapController.setPolicyFlags?( in UInt32 flags )'
+  Added to bin[normal][LeapController.setPolicyFlags]
+registerFunction: thisType='LeapController' func='function Boolean LeapController.valid?()'
+  Added to bin[normal][Boolean LeapController.valid]
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.valid?()'
+registerFunction: thisType='LeapConfig' func='function UInt32 LeapConfig.valueType?( in String key )'
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.getBool?( in String key )'
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setBool?( in String key, in Boolean value )'
+registerFunction: thisType='LeapConfig' func='function SInt32 LeapConfig.getInt32?( in String key )'
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setInt32?( in String key, in SInt32 value )'
+registerFunction: thisType='LeapConfig' func='function Float32 LeapConfig.getFloat?( in String key )'
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setFloat?( in String key, in Float32 value )'
+registerFunction: thisType='LeapConfig' func='function String LeapConfig.getString?( in String key )'
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.setString?( in String key, in String value )'
+registerFunction: thisType='LeapConfig' func='function Boolean LeapConfig.save?()'
+registerFunction: thisType='LeapInteractionBox' func='function Boolean LeapInteractionBox.valid?()'
+registerFunction: thisType='LeapInteractionBox' func='function Vec3 LeapInteractionBox.normalizePoint?( in Vec3 position, in Boolean clamp )'
+registerFunction: thisType='LeapInteractionBox' func='function Vec3 LeapInteractionBox.denormalizePoint?( in Vec3 normalizedPosition )'
+registerFunction: thisType='LeapInteractionBox' func='function Vec3 LeapInteractionBox.center?()'
+registerFunction: thisType='LeapInteractionBox' func='function Float32 LeapInteractionBox.width?()'
+registerFunction: thisType='LeapInteractionBox' func='function Float32 LeapInteractionBox.height?()'
+registerFunction: thisType='LeapInteractionBox' func='function Float32 LeapInteractionBox.depth?()'
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.valid?()'
+registerFunction: thisType='LeapPointable' func='function SInt32 LeapPointable.id?()'
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.tipPosition?()'
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.tipVelocity?()'
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.direction?()'
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.width?()'
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.length?()'
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.isFinger?()'
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.isTool?()'
+registerFunction: thisType='LeapPointable' func='function Boolean LeapPointable.isExtended?()'
+registerFunction: thisType='LeapPointable' func='function UInt32 LeapPointable.touchZone?()'
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.touchDistance?()'
+registerFunction: thisType='LeapPointable' func='function Vec3 LeapPointable.stabilizedTipPosition?()'
+registerFunction: thisType='LeapPointable' func='function Float32 LeapPointable.timeVisible?()'
+registerFunction: thisType='LeapBone' func='function Boolean LeapBone.valid?()'
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.prevJoint?()'
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.nextJoint?()'
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.center?()'
+registerFunction: thisType='LeapBone' func='function Vec3 LeapBone.direction?()'
+registerFunction: thisType='LeapBone' func='function Float32 LeapBone.length?()'
+registerFunction: thisType='LeapBone' func='function Float32 LeapBone.width?()'
+registerFunction: thisType='LeapBone' func='function UInt32 LeapBone.boneType?()'
+registerFunction: thisType='LeapBone' func='function Mat44 LeapBone.basis?()'
+registerFunction: thisType='LeapFinger' func='function Boolean LeapFinger.valid?()'
+registerFunction: thisType='LeapFinger' func='function LeapBone LeapFinger.bone?( in UInt32 boneIx )'
+registerFunction: thisType='LeapFinger' func='function UInt32 LeapFinger.fingerType?()'
+registerFunction: thisType='LeapTool' func='function Boolean LeapTool.valid?()'
+registerFunction: thisType='LeapArm' func='function Boolean LeapArm.valid?()'
+registerFunction: thisType='LeapArm' func='function Float32 LeapArm.width?()'
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.direction?()'
+registerFunction: thisType='LeapArm' func='function Mat44 LeapArm.basis?()'
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.elbowPosition?()'
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.wristPosition?()'
+registerFunction: thisType='LeapArm' func='function Vec3 LeapArm.center?()'
+registerFunction: thisType='LeapHand' func='function Boolean LeapHand.valid?()'
+registerFunction: thisType='LeapHand' func='function SInt32 LeapHand.id?()'
+registerFunction: thisType='LeapHand' func='function LeapPointable[] LeapHand.pointables?()'
+registerFunction: thisType='LeapHand' func='function Xfo[] LeapHand.pointableXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapHand' func='function LeapPointable LeapHand.pointable?( in SInt32 id )'
+registerFunction: thisType='LeapHand' func='function LeapPointable LeapHand.pointableByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapHand' func='function LeapFinger[] LeapHand.fingers?()'
+registerFunction: thisType='LeapHand' func='function Xfo[] LeapHand.fingerTipXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapHand' func='function Xfo[] LeapHand.fingerAllXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapHand' func='function LeapFinger LeapHand.finger?( in SInt32 id )'
+registerFunction: thisType='LeapHand' func='function LeapTool[] LeapHand.tools?()'
+registerFunction: thisType='LeapHand' func='function LeapTool LeapHand.tool?( in SInt32 id )'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.palmPosition?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.stabilizedPalmPosition?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.palmVelocity?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.palmNormal?()'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.palmWidth?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.direction?()'
+registerFunction: thisType='LeapHand' func='function Mat44 LeapHand.basis?()'
+registerFunction: thisType='LeapHand' func='function LeapArm LeapHand.arm?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.wristPosition?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.sphereCenter?()'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.sphereRadius?()'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.pinchStrength?()'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.grabStrength?()'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.translation?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.translationProbability?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Vec3 LeapHand.rotationAxis?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+registerFunction: thisType='LeapHand' func='function Mat44 LeapHand.rotationMatrix?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.rotationProbability?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.scaleFactor?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.scaleProbability?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.timeVisible?()'
+registerFunction: thisType='LeapHand' func='function Float32 LeapHand.confidence?()'
+registerFunction: thisType='LeapHand' func='function Boolean LeapHand.isLeft?()'
+registerFunction: thisType='LeapHand' func='function Boolean LeapHand.isRight?()'
+registerFunction: thisType='LeapGesture' func='function Boolean LeapGesture.valid?()'
+registerFunction: thisType='LeapGesture' func='function SInt32 LeapGesture.gestureType?()'
+registerFunction: thisType='LeapGesture' func='function SInt32 LeapGesture.state?()'
+registerFunction: thisType='LeapGesture' func='function SInt32 LeapGesture.id?()'
+registerFunction: thisType='LeapGesture' func='function SInt64 LeapGesture.duration?()'
+registerFunction: thisType='LeapGesture' func='function Float32 LeapGesture.durationSeconds?()'
+registerFunction: thisType='LeapGesture' func='function LeapHand[] LeapGesture.hands?()'
+registerFunction: thisType='LeapGesture' func='function LeapHand LeapGesture.handByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapGesture' func='function LeapPointable[] LeapGesture.pointables?()'
+registerFunction: thisType='LeapGesture' func='function LeapPointable LeapGesture.pointableByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapGesture' func='function Xfo[] LeapGesture.pointableXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapImage' func='function Boolean LeapImage.valid?()'
+registerFunction: thisType='LeapFrame' func='function Boolean LeapFrame.valid?()'
+registerFunction: thisType='LeapFrame' func='function UInt64 LeapFrame.id?()'
+registerFunction: thisType='LeapFrame' func='function UInt64 LeapFrame.timestamp?()'
+registerFunction: thisType='LeapFrame' func='function LeapHand[] LeapFrame.hands?()'
+registerFunction: thisType='LeapFrame' func='function LeapHand LeapFrame.hand?( in SInt32 id )'
+registerFunction: thisType='LeapFrame' func='function LeapPointable LeapFrame.handByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapFrame' func='function LeapPointable[] LeapFrame.pointables?()'
+registerFunction: thisType='LeapFrame' func='function Xfo[] LeapFrame.pointableXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapFrame' func='function LeapPointable LeapFrame.pointable?( in SInt32 id )'
+registerFunction: thisType='LeapFrame' func='function LeapPointable LeapFrame.pointableByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapFrame' func='function LeapFinger[] LeapFrame.fingers?()'
+registerFunction: thisType='LeapFrame' func='function Xfo[] LeapFrame.fingerTipXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapFrame' func='function Xfo[] LeapFrame.fingerAllXfos?( in Float32 scaleFactor )'
+registerFunction: thisType='LeapFrame' func='function LeapFinger LeapFrame.finger?( in SInt32 id )'
+registerFunction: thisType='LeapFrame' func='function LeapFinger LeapFrame.fingerByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapFrame' func='function LeapTool[] LeapFrame.tools?()'
+registerFunction: thisType='LeapFrame' func='function LeapTool LeapFrame.tool?( in SInt32 id )'
+registerFunction: thisType='LeapFrame' func='function LeapTool LeapFrame.toolByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapFrame' func='function LeapGesture LeapFrame.gesture?( in SInt32 id )'
+registerFunction: thisType='LeapFrame' func='function LeapGesture[] LeapFrame.gestures?()'
+registerFunction: thisType='LeapFrame' func='function LeapGesture LeapFrame.gestureByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapFrame' func='function LeapGesture[] LeapFrame.gestures?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function LeapImage[] LeapFrame.images?()'
+registerFunction: thisType='LeapFrame' func='function LeapImage LeapFrame.imageByIndex?( in SInt32 index )'
+registerFunction: thisType='LeapFrame' func='function Vec3 LeapFrame.translation?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.translationProbability?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Vec3 LeapFrame.rotationAxis?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+registerFunction: thisType='LeapFrame' func='function Mat44 LeapFrame.rotationMatrix?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.rotationProbability?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.scaleFactor?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.scaleProbability?( in LeapFrame sinceFrame )'
+registerFunction: thisType='LeapFrame' func='function LeapInteractionBox LeapFrame.interactionBox?()'
+registerFunction: thisType='LeapFrame' func='function Float32 LeapFrame.currentFramesPerSecond?()'
+registerFunction: thisType='LeapFrame' func='function Boolean LeapFrame.isValid?()'
+registerFunction: thisType='LeapFrame' func='function String LeapFrame.serialize?()'
+registerFunction: thisType='LeapFrame' func='function LeapFrame.deserialize?( in String str )'
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.valid?()'
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.horizontalViewAngle?()'
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.verticalViewAngle?()'
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.range?()'
+registerFunction: thisType='LeapDevice' func='function Float32 LeapDevice.distanceToBoundary?( in Vec3 position )'
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.isEmbedded?()'
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.isStreaming?()'
+registerFunction: thisType='LeapDevice' func='function Boolean LeapDevice.isFlipped?()'
+registerFunction: thisType='LeapDevice' func='function UInt32 LeapDevice.deviceType?()'
+registerFunction: thisType='LeapController' func='function LeapController?()'
+registerFunction: thisType='LeapController' func='function Boolean LeapController.valid?()'
+registerFunction: thisType='LeapController' func='function Boolean LeapController.isConnected?()'
+registerFunction: thisType='LeapController' func='function Boolean LeapController.isServiceConnected?()'
+registerFunction: thisType='LeapController' func='function Boolean LeapController.hasFocus?()'
+registerFunction: thisType='LeapController' func='function UInt32 LeapController.policyFlags?()'
+registerFunction: thisType='LeapController' func='function LeapController.setPolicyFlags?( in UInt32 flags )'
+registerFunction: thisType='LeapController' func='function LeapFrame LeapController.frame?( in SInt32 history )'
+registerFunction: thisType='LeapController' func='function LeapFrame LeapController.frame?()'
+registerFunction: thisType='LeapController' func='function LeapConfig LeapController.config?()'
+registerFunction: thisType='LeapController' func='function LeapDevice[] LeapController.devices?()'
+registerFunction: thisType='LeapController' func='function LeapController.enableGesture?( in UInt32 gesture, in Boolean enable )'
+registerFunction: thisType='LeapController' func='function Boolean LeapController.isGestureEnabled?( in UInt32 gesture )'
+processFunctions
+  bin[normal][Boolean LeapConfig.getBool][1] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.getBool?( in String key )'
+  bin[normal][Boolean LeapConfig.getBool][1] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.getBool?( in String key )'
+  bin[normal][Float32 LeapConfig.getFloat][1] (asArray=false)
+    thisType='LeapConfig' code='function Float32 LeapConfig.getFloat?( in String key )'
+  bin[normal][Float32 LeapConfig.getFloat][1] (asArray=true)
+    thisType='LeapConfig' code='function Float32 LeapConfig.getFloat?( in String key )'
+  bin[normal][SInt32 LeapConfig.getInt32][1] (asArray=false)
+    thisType='LeapConfig' code='function SInt32 LeapConfig.getInt32?( in String key )'
+  bin[normal][SInt32 LeapConfig.getInt32][1] (asArray=true)
+    thisType='LeapConfig' code='function SInt32 LeapConfig.getInt32?( in String key )'
+  bin[normal][String LeapConfig.getString][1] (asArray=false)
+    thisType='LeapConfig' code='function String LeapConfig.getString?( in String key )'
+  bin[normal][String LeapConfig.getString][1] (asArray=true)
+    thisType='LeapConfig' code='function String LeapConfig.getString?( in String key )'
+  bin[normal][Boolean LeapConfig.save][0] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.save?()'
+  bin[normal][Boolean LeapConfig.save][0] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.save?()'
+  bin[normal][Boolean LeapConfig.setBool][2] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setBool?( in String key, in Boolean value )'
+  bin[normal][Boolean LeapConfig.setBool][2] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setBool?( in String key, in Boolean value )'
+  bin[normal][Boolean LeapConfig.setFloat][2] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setFloat?( in String key, in Float32 value )'
+  bin[normal][Boolean LeapConfig.setFloat][2] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setFloat?( in String key, in Float32 value )'
+  bin[normal][Boolean LeapConfig.setInt32][2] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setInt32?( in String key, in SInt32 value )'
+  bin[normal][Boolean LeapConfig.setInt32][2] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setInt32?( in String key, in SInt32 value )'
+  bin[normal][Boolean LeapConfig.setString][2] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setString?( in String key, in String value )'
+  bin[normal][Boolean LeapConfig.setString][2] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.setString?( in String key, in String value )'
+  bin[normal][Boolean LeapConfig.valid][0] (asArray=false)
+    thisType='LeapConfig' code='function Boolean LeapConfig.valid?()'
+  bin[normal][Boolean LeapConfig.valid][0] (asArray=true)
+    thisType='LeapConfig' code='function Boolean LeapConfig.valid?()'
+  bin[normal][UInt32 LeapConfig.valueType][1] (asArray=false)
+    thisType='LeapConfig' code='function UInt32 LeapConfig.valueType?( in String key )'
+  bin[normal][UInt32 LeapConfig.valueType][1] (asArray=true)
+    thisType='LeapConfig' code='function UInt32 LeapConfig.valueType?( in String key )'
+  bin[normal][Vec3 LeapInteractionBox.center][0] (asArray=false)
+    thisType='LeapInteractionBox' code='function Vec3 LeapInteractionBox.center?()'
+  bin[normal][Vec3 LeapInteractionBox.center][0] (asArray=true)
+    thisType='LeapInteractionBox' code='function Vec3 LeapInteractionBox.center?()'
+  bin[normal][Vec3 LeapInteractionBox.denormalizePoint][1] (asArray=false)
+    thisType='LeapInteractionBox' code='function Vec3 LeapInteractionBox.denormalizePoint?( in Vec3 normalizedPosition )'
+  bin[normal][Vec3 LeapInteractionBox.denormalizePoint][1] (asArray=true)
+    thisType='LeapInteractionBox' code='function Vec3 LeapInteractionBox.denormalizePoint?( in Vec3 normalizedPosition )'
+  bin[normal][Float32 LeapInteractionBox.depth][0] (asArray=false)
+    thisType='LeapInteractionBox' code='function Float32 LeapInteractionBox.depth?()'
+  bin[normal][Float32 LeapInteractionBox.depth][0] (asArray=true)
+    thisType='LeapInteractionBox' code='function Float32 LeapInteractionBox.depth?()'
+  bin[normal][Float32 LeapInteractionBox.height][0] (asArray=false)
+    thisType='LeapInteractionBox' code='function Float32 LeapInteractionBox.height?()'
+  bin[normal][Float32 LeapInteractionBox.height][0] (asArray=true)
+    thisType='LeapInteractionBox' code='function Float32 LeapInteractionBox.height?()'
+  bin[normal][Vec3 LeapInteractionBox.normalizePoint][2] (asArray=false)
+    thisType='LeapInteractionBox' code='function Vec3 LeapInteractionBox.normalizePoint?( in Vec3 position, in Boolean clamp )'
+  bin[normal][Vec3 LeapInteractionBox.normalizePoint][2] (asArray=true)
+    thisType='LeapInteractionBox' code='function Vec3 LeapInteractionBox.normalizePoint?( in Vec3 position, in Boolean clamp )'
+  bin[normal][Boolean LeapInteractionBox.valid][0] (asArray=false)
+    thisType='LeapInteractionBox' code='function Boolean LeapInteractionBox.valid?()'
+  bin[normal][Boolean LeapInteractionBox.valid][0] (asArray=true)
+    thisType='LeapInteractionBox' code='function Boolean LeapInteractionBox.valid?()'
+  bin[normal][Float32 LeapInteractionBox.width][0] (asArray=false)
+    thisType='LeapInteractionBox' code='function Float32 LeapInteractionBox.width?()'
+  bin[normal][Float32 LeapInteractionBox.width][0] (asArray=true)
+    thisType='LeapInteractionBox' code='function Float32 LeapInteractionBox.width?()'
+  bin[normal][Vec3 LeapPointable.direction][0] (asArray=false)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.direction?()'
+  bin[normal][Vec3 LeapPointable.direction][0] (asArray=true)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.direction?()'
+  bin[normal][SInt32 LeapPointable.id][0] (asArray=false)
+    thisType='LeapPointable' code='function SInt32 LeapPointable.id?()'
+  bin[normal][SInt32 LeapPointable.id][0] (asArray=true)
+    thisType='LeapPointable' code='function SInt32 LeapPointable.id?()'
+  bin[normal][Boolean LeapPointable.isExtended][0] (asArray=false)
+    thisType='LeapPointable' code='function Boolean LeapPointable.isExtended?()'
+  bin[normal][Boolean LeapPointable.isExtended][0] (asArray=true)
+    thisType='LeapPointable' code='function Boolean LeapPointable.isExtended?()'
+  bin[normal][Boolean LeapPointable.isFinger][0] (asArray=false)
+    thisType='LeapPointable' code='function Boolean LeapPointable.isFinger?()'
+  bin[normal][Boolean LeapPointable.isFinger][0] (asArray=true)
+    thisType='LeapPointable' code='function Boolean LeapPointable.isFinger?()'
+  bin[normal][Boolean LeapPointable.isTool][0] (asArray=false)
+    thisType='LeapPointable' code='function Boolean LeapPointable.isTool?()'
+  bin[normal][Boolean LeapPointable.isTool][0] (asArray=true)
+    thisType='LeapPointable' code='function Boolean LeapPointable.isTool?()'
+  bin[normal][Float32 LeapPointable.length][0] (asArray=false)
+    thisType='LeapPointable' code='function Float32 LeapPointable.length?()'
+  bin[normal][Float32 LeapPointable.length][0] (asArray=true)
+    thisType='LeapPointable' code='function Float32 LeapPointable.length?()'
+  bin[normal][Vec3 LeapPointable.stabilizedTipPosition][0] (asArray=false)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.stabilizedTipPosition?()'
+  bin[normal][Vec3 LeapPointable.stabilizedTipPosition][0] (asArray=true)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.stabilizedTipPosition?()'
+  bin[normal][Float32 LeapPointable.timeVisible][0] (asArray=false)
+    thisType='LeapPointable' code='function Float32 LeapPointable.timeVisible?()'
+  bin[normal][Float32 LeapPointable.timeVisible][0] (asArray=true)
+    thisType='LeapPointable' code='function Float32 LeapPointable.timeVisible?()'
+  bin[normal][Vec3 LeapPointable.tipPosition][0] (asArray=false)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.tipPosition?()'
+  bin[normal][Vec3 LeapPointable.tipPosition][0] (asArray=true)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.tipPosition?()'
+  bin[normal][Vec3 LeapPointable.tipVelocity][0] (asArray=false)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.tipVelocity?()'
+  bin[normal][Vec3 LeapPointable.tipVelocity][0] (asArray=true)
+    thisType='LeapPointable' code='function Vec3 LeapPointable.tipVelocity?()'
+  bin[normal][Float32 LeapPointable.touchDistance][0] (asArray=false)
+    thisType='LeapPointable' code='function Float32 LeapPointable.touchDistance?()'
+  bin[normal][Float32 LeapPointable.touchDistance][0] (asArray=true)
+    thisType='LeapPointable' code='function Float32 LeapPointable.touchDistance?()'
+  bin[normal][UInt32 LeapPointable.touchZone][0] (asArray=false)
+    thisType='LeapPointable' code='function UInt32 LeapPointable.touchZone?()'
+  bin[normal][UInt32 LeapPointable.touchZone][0] (asArray=true)
+    thisType='LeapPointable' code='function UInt32 LeapPointable.touchZone?()'
+  bin[normal][Boolean LeapPointable.valid][0] (asArray=false)
+    thisType='LeapPointable' code='function Boolean LeapPointable.valid?()'
+  bin[normal][Boolean LeapPointable.valid][0] (asArray=true)
+    thisType='LeapPointable' code='function Boolean LeapPointable.valid?()'
+  bin[normal][Float32 LeapPointable.width][0] (asArray=false)
+    thisType='LeapPointable' code='function Float32 LeapPointable.width?()'
+  bin[normal][Float32 LeapPointable.width][0] (asArray=true)
+    thisType='LeapPointable' code='function Float32 LeapPointable.width?()'
+  bin[normal][Mat44 LeapBone.basis][0] (asArray=false)
+    thisType='LeapBone' code='function Mat44 LeapBone.basis?()'
+  bin[normal][Mat44 LeapBone.basis][0] (asArray=true)
+    thisType='LeapBone' code='function Mat44 LeapBone.basis?()'
+  bin[normal][UInt32 LeapBone.boneType][0] (asArray=false)
+    thisType='LeapBone' code='function UInt32 LeapBone.boneType?()'
+  bin[normal][UInt32 LeapBone.boneType][0] (asArray=true)
+    thisType='LeapBone' code='function UInt32 LeapBone.boneType?()'
+  bin[normal][Vec3 LeapBone.center][0] (asArray=false)
+    thisType='LeapBone' code='function Vec3 LeapBone.center?()'
+  bin[normal][Vec3 LeapBone.center][0] (asArray=true)
+    thisType='LeapBone' code='function Vec3 LeapBone.center?()'
+  bin[normal][Vec3 LeapBone.direction][0] (asArray=false)
+    thisType='LeapBone' code='function Vec3 LeapBone.direction?()'
+  bin[normal][Vec3 LeapBone.direction][0] (asArray=true)
+    thisType='LeapBone' code='function Vec3 LeapBone.direction?()'
+  bin[normal][Float32 LeapBone.length][0] (asArray=false)
+    thisType='LeapBone' code='function Float32 LeapBone.length?()'
+  bin[normal][Float32 LeapBone.length][0] (asArray=true)
+    thisType='LeapBone' code='function Float32 LeapBone.length?()'
+  bin[normal][Vec3 LeapBone.nextJoint][0] (asArray=false)
+    thisType='LeapBone' code='function Vec3 LeapBone.nextJoint?()'
+  bin[normal][Vec3 LeapBone.nextJoint][0] (asArray=true)
+    thisType='LeapBone' code='function Vec3 LeapBone.nextJoint?()'
+  bin[normal][Vec3 LeapBone.prevJoint][0] (asArray=false)
+    thisType='LeapBone' code='function Vec3 LeapBone.prevJoint?()'
+  bin[normal][Vec3 LeapBone.prevJoint][0] (asArray=true)
+    thisType='LeapBone' code='function Vec3 LeapBone.prevJoint?()'
+  bin[normal][Boolean LeapBone.valid][0] (asArray=false)
+    thisType='LeapBone' code='function Boolean LeapBone.valid?()'
+  bin[normal][Boolean LeapBone.valid][0] (asArray=true)
+    thisType='LeapBone' code='function Boolean LeapBone.valid?()'
+  bin[normal][Float32 LeapBone.width][0] (asArray=false)
+    thisType='LeapBone' code='function Float32 LeapBone.width?()'
+  bin[normal][Float32 LeapBone.width][0] (asArray=true)
+    thisType='LeapBone' code='function Float32 LeapBone.width?()'
+  bin[normal][LeapBone LeapFinger.bone][1] (asArray=false)
+    thisType='LeapFinger' code='function LeapBone LeapFinger.bone?( in UInt32 boneIx )'
+  bin[normal][LeapBone LeapFinger.bone][1] (asArray=true)
+    thisType='LeapFinger' code='function LeapBone LeapFinger.bone?( in UInt32 boneIx )'
+  bin[normal][UInt32 LeapFinger.fingerType][0] (asArray=false)
+    thisType='LeapFinger' code='function UInt32 LeapFinger.fingerType?()'
+  bin[normal][UInt32 LeapFinger.fingerType][0] (asArray=true)
+    thisType='LeapFinger' code='function UInt32 LeapFinger.fingerType?()'
+  bin[normal][Boolean LeapFinger.valid][0] (asArray=false)
+    thisType='LeapFinger' code='function Boolean LeapFinger.valid?()'
+  bin[normal][Boolean LeapFinger.valid][0] (asArray=true)
+    thisType='LeapFinger' code='function Boolean LeapFinger.valid?()'
+  bin[normal][Boolean LeapTool.valid][0] (asArray=false)
+    thisType='LeapTool' code='function Boolean LeapTool.valid?()'
+  bin[normal][Boolean LeapTool.valid][0] (asArray=true)
+    thisType='LeapTool' code='function Boolean LeapTool.valid?()'
+  bin[normal][Mat44 LeapArm.basis][0] (asArray=false)
+    thisType='LeapArm' code='function Mat44 LeapArm.basis?()'
+  bin[normal][Mat44 LeapArm.basis][0] (asArray=true)
+    thisType='LeapArm' code='function Mat44 LeapArm.basis?()'
+  bin[normal][Vec3 LeapArm.center][0] (asArray=false)
+    thisType='LeapArm' code='function Vec3 LeapArm.center?()'
+  bin[normal][Vec3 LeapArm.center][0] (asArray=true)
+    thisType='LeapArm' code='function Vec3 LeapArm.center?()'
+  bin[normal][Vec3 LeapArm.direction][0] (asArray=false)
+    thisType='LeapArm' code='function Vec3 LeapArm.direction?()'
+  bin[normal][Vec3 LeapArm.direction][0] (asArray=true)
+    thisType='LeapArm' code='function Vec3 LeapArm.direction?()'
+  bin[normal][Vec3 LeapArm.elbowPosition][0] (asArray=false)
+    thisType='LeapArm' code='function Vec3 LeapArm.elbowPosition?()'
+  bin[normal][Vec3 LeapArm.elbowPosition][0] (asArray=true)
+    thisType='LeapArm' code='function Vec3 LeapArm.elbowPosition?()'
+  bin[normal][Boolean LeapArm.valid][0] (asArray=false)
+    thisType='LeapArm' code='function Boolean LeapArm.valid?()'
+  bin[normal][Boolean LeapArm.valid][0] (asArray=true)
+    thisType='LeapArm' code='function Boolean LeapArm.valid?()'
+  bin[normal][Float32 LeapArm.width][0] (asArray=false)
+    thisType='LeapArm' code='function Float32 LeapArm.width?()'
+  bin[normal][Float32 LeapArm.width][0] (asArray=true)
+    thisType='LeapArm' code='function Float32 LeapArm.width?()'
+  bin[normal][Vec3 LeapArm.wristPosition][0] (asArray=false)
+    thisType='LeapArm' code='function Vec3 LeapArm.wristPosition?()'
+  bin[normal][Vec3 LeapArm.wristPosition][0] (asArray=true)
+    thisType='LeapArm' code='function Vec3 LeapArm.wristPosition?()'
+  bin[normal][LeapArm LeapHand.arm][0] (asArray=false)
+    thisType='LeapHand' code='function LeapArm LeapHand.arm?()'
+  bin[normal][LeapArm LeapHand.arm][0] (asArray=true)
+    thisType='LeapHand' code='function LeapArm LeapHand.arm?()'
+  bin[normal][Mat44 LeapHand.basis][0] (asArray=false)
+    thisType='LeapHand' code='function Mat44 LeapHand.basis?()'
+  bin[normal][Mat44 LeapHand.basis][0] (asArray=true)
+    thisType='LeapHand' code='function Mat44 LeapHand.basis?()'
+  bin[normal][Float32 LeapHand.confidence][0] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.confidence?()'
+  bin[normal][Float32 LeapHand.confidence][0] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.confidence?()'
+  bin[normal][Vec3 LeapHand.direction][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.direction?()'
+  bin[normal][Vec3 LeapHand.direction][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.direction?()'
+  bin[normal][LeapFinger LeapHand.finger][1] (asArray=false)
+    thisType='LeapHand' code='function LeapFinger LeapHand.finger?( in SInt32 id )'
+  bin[normal][LeapFinger LeapHand.finger][1] (asArray=true)
+    thisType='LeapHand' code='function LeapFinger LeapHand.finger?( in SInt32 id )'
+  bin[normal][Xfo[] LeapHand.fingerAllXfos][1] (asArray=false)
+    thisType='LeapHand' code='function Xfo[] LeapHand.fingerAllXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapHand.fingerAllXfos][1] (asArray=true)
+    thisType='LeapHand' code='function Xfo[] LeapHand.fingerAllXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapHand.fingerAllXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapHand.fingerAllXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][Xfo[] LeapHand.fingerTipXfos][1] (asArray=false)
+    thisType='LeapHand' code='function Xfo[] LeapHand.fingerTipXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapHand.fingerTipXfos][1] (asArray=true)
+    thisType='LeapHand' code='function Xfo[] LeapHand.fingerTipXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapHand.fingerTipXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapHand.fingerTipXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][LeapFinger[] LeapHand.fingers][0] (asArray=false)
+    thisType='LeapHand' code='function LeapFinger[] LeapHand.fingers?()'
+  bin[normal][LeapFinger[] LeapHand.fingers][0] (asArray=true)
+    thisType='LeapHand' code='function LeapFinger[] LeapHand.fingers?()'
+    Skipping array preset for 'function LeapFinger[] LeapHand.fingers?()', has array return value.
+  bin[normal][Float32 LeapHand.grabStrength][0] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.grabStrength?()'
+  bin[normal][Float32 LeapHand.grabStrength][0] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.grabStrength?()'
+  bin[normal][SInt32 LeapHand.id][0] (asArray=false)
+    thisType='LeapHand' code='function SInt32 LeapHand.id?()'
+  bin[normal][SInt32 LeapHand.id][0] (asArray=true)
+    thisType='LeapHand' code='function SInt32 LeapHand.id?()'
+  bin[normal][Boolean LeapHand.isLeft][0] (asArray=false)
+    thisType='LeapHand' code='function Boolean LeapHand.isLeft?()'
+  bin[normal][Boolean LeapHand.isLeft][0] (asArray=true)
+    thisType='LeapHand' code='function Boolean LeapHand.isLeft?()'
+  bin[normal][Boolean LeapHand.isRight][0] (asArray=false)
+    thisType='LeapHand' code='function Boolean LeapHand.isRight?()'
+  bin[normal][Boolean LeapHand.isRight][0] (asArray=true)
+    thisType='LeapHand' code='function Boolean LeapHand.isRight?()'
+  bin[normal][Vec3 LeapHand.palmNormal][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.palmNormal?()'
+  bin[normal][Vec3 LeapHand.palmNormal][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.palmNormal?()'
+  bin[normal][Vec3 LeapHand.palmPosition][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.palmPosition?()'
+  bin[normal][Vec3 LeapHand.palmPosition][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.palmPosition?()'
+  bin[normal][Vec3 LeapHand.palmVelocity][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.palmVelocity?()'
+  bin[normal][Vec3 LeapHand.palmVelocity][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.palmVelocity?()'
+  bin[normal][Float32 LeapHand.palmWidth][0] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.palmWidth?()'
+  bin[normal][Float32 LeapHand.palmWidth][0] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.palmWidth?()'
+  bin[normal][Float32 LeapHand.pinchStrength][0] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.pinchStrength?()'
+  bin[normal][Float32 LeapHand.pinchStrength][0] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.pinchStrength?()'
+  bin[normal][LeapPointable LeapHand.pointable][1] (asArray=false)
+    thisType='LeapHand' code='function LeapPointable LeapHand.pointable?( in SInt32 id )'
+  bin[normal][LeapPointable LeapHand.pointable][1] (asArray=true)
+    thisType='LeapHand' code='function LeapPointable LeapHand.pointable?( in SInt32 id )'
+  bin[normal][LeapPointable LeapHand.pointableByIndex][1] (asArray=false)
+    thisType='LeapHand' code='function LeapPointable LeapHand.pointableByIndex?( in SInt32 index )'
+  bin[normal][LeapPointable LeapHand.pointableByIndex][1] (asArray=true)
+    thisType='LeapHand' code='function LeapPointable LeapHand.pointableByIndex?( in SInt32 index )'
+  bin[normal][Xfo[] LeapHand.pointableXfos][1] (asArray=false)
+    thisType='LeapHand' code='function Xfo[] LeapHand.pointableXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapHand.pointableXfos][1] (asArray=true)
+    thisType='LeapHand' code='function Xfo[] LeapHand.pointableXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapHand.pointableXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapHand.pointableXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][LeapPointable[] LeapHand.pointables][0] (asArray=false)
+    thisType='LeapHand' code='function LeapPointable[] LeapHand.pointables?()'
+  bin[normal][LeapPointable[] LeapHand.pointables][0] (asArray=true)
+    thisType='LeapHand' code='function LeapPointable[] LeapHand.pointables?()'
+    Skipping array preset for 'function LeapPointable[] LeapHand.pointables?()', has array return value.
+  bin[normal][Float32 LeapHand.rotationAngle][2] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+  bin[normal][Float32 LeapHand.rotationAngle][2] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+  bin[normal][Vec3 LeapHand.rotationAxis][1] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.rotationAxis?( in LeapFrame sinceFrame )'
+  bin[normal][Vec3 LeapHand.rotationAxis][1] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.rotationAxis?( in LeapFrame sinceFrame )'
+  bin[normal][Mat44 LeapHand.rotationMatrix][1] (asArray=false)
+    thisType='LeapHand' code='function Mat44 LeapHand.rotationMatrix?( in LeapFrame sinceFrame )'
+  bin[normal][Mat44 LeapHand.rotationMatrix][1] (asArray=true)
+    thisType='LeapHand' code='function Mat44 LeapHand.rotationMatrix?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.rotationProbability][1] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.rotationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.rotationProbability][1] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.rotationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.scaleFactor][1] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.scaleFactor?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.scaleFactor][1] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.scaleFactor?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.scaleProbability][1] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.scaleProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.scaleProbability][1] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.scaleProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Vec3 LeapHand.sphereCenter][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.sphereCenter?()'
+  bin[normal][Vec3 LeapHand.sphereCenter][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.sphereCenter?()'
+  bin[normal][Float32 LeapHand.sphereRadius][0] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.sphereRadius?()'
+  bin[normal][Float32 LeapHand.sphereRadius][0] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.sphereRadius?()'
+  bin[normal][Vec3 LeapHand.stabilizedPalmPosition][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.stabilizedPalmPosition?()'
+  bin[normal][Vec3 LeapHand.stabilizedPalmPosition][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.stabilizedPalmPosition?()'
+  bin[normal][Float32 LeapHand.timeVisible][0] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.timeVisible?()'
+  bin[normal][Float32 LeapHand.timeVisible][0] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.timeVisible?()'
+  bin[normal][LeapTool LeapHand.tool][1] (asArray=false)
+    thisType='LeapHand' code='function LeapTool LeapHand.tool?( in SInt32 id )'
+  bin[normal][LeapTool LeapHand.tool][1] (asArray=true)
+    thisType='LeapHand' code='function LeapTool LeapHand.tool?( in SInt32 id )'
+  bin[normal][LeapTool[] LeapHand.tools][0] (asArray=false)
+    thisType='LeapHand' code='function LeapTool[] LeapHand.tools?()'
+  bin[normal][LeapTool[] LeapHand.tools][0] (asArray=true)
+    thisType='LeapHand' code='function LeapTool[] LeapHand.tools?()'
+    Skipping array preset for 'function LeapTool[] LeapHand.tools?()', has array return value.
+  bin[normal][Vec3 LeapHand.translation][1] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.translation?( in LeapFrame sinceFrame )'
+  bin[normal][Vec3 LeapHand.translation][1] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.translation?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.translationProbability][1] (asArray=false)
+    thisType='LeapHand' code='function Float32 LeapHand.translationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapHand.translationProbability][1] (asArray=true)
+    thisType='LeapHand' code='function Float32 LeapHand.translationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Boolean LeapHand.valid][0] (asArray=false)
+    thisType='LeapHand' code='function Boolean LeapHand.valid?()'
+  bin[normal][Boolean LeapHand.valid][0] (asArray=true)
+    thisType='LeapHand' code='function Boolean LeapHand.valid?()'
+  bin[normal][Vec3 LeapHand.wristPosition][0] (asArray=false)
+    thisType='LeapHand' code='function Vec3 LeapHand.wristPosition?()'
+  bin[normal][Vec3 LeapHand.wristPosition][0] (asArray=true)
+    thisType='LeapHand' code='function Vec3 LeapHand.wristPosition?()'
+  bin[normal][SInt64 LeapGesture.duration][0] (asArray=false)
+    thisType='LeapGesture' code='function SInt64 LeapGesture.duration?()'
+  bin[normal][SInt64 LeapGesture.duration][0] (asArray=true)
+    thisType='LeapGesture' code='function SInt64 LeapGesture.duration?()'
+  bin[normal][Float32 LeapGesture.durationSeconds][0] (asArray=false)
+    thisType='LeapGesture' code='function Float32 LeapGesture.durationSeconds?()'
+  bin[normal][Float32 LeapGesture.durationSeconds][0] (asArray=true)
+    thisType='LeapGesture' code='function Float32 LeapGesture.durationSeconds?()'
+  bin[normal][SInt32 LeapGesture.gestureType][0] (asArray=false)
+    thisType='LeapGesture' code='function SInt32 LeapGesture.gestureType?()'
+  bin[normal][SInt32 LeapGesture.gestureType][0] (asArray=true)
+    thisType='LeapGesture' code='function SInt32 LeapGesture.gestureType?()'
+  bin[normal][LeapHand LeapGesture.handByIndex][1] (asArray=false)
+    thisType='LeapGesture' code='function LeapHand LeapGesture.handByIndex?( in SInt32 index )'
+  bin[normal][LeapHand LeapGesture.handByIndex][1] (asArray=true)
+    thisType='LeapGesture' code='function LeapHand LeapGesture.handByIndex?( in SInt32 index )'
+  bin[normal][LeapHand[] LeapGesture.hands][0] (asArray=false)
+    thisType='LeapGesture' code='function LeapHand[] LeapGesture.hands?()'
+  bin[normal][LeapHand[] LeapGesture.hands][0] (asArray=true)
+    thisType='LeapGesture' code='function LeapHand[] LeapGesture.hands?()'
+    Skipping array preset for 'function LeapHand[] LeapGesture.hands?()', has array return value.
+  bin[normal][SInt32 LeapGesture.id][0] (asArray=false)
+    thisType='LeapGesture' code='function SInt32 LeapGesture.id?()'
+  bin[normal][SInt32 LeapGesture.id][0] (asArray=true)
+    thisType='LeapGesture' code='function SInt32 LeapGesture.id?()'
+  bin[normal][LeapPointable LeapGesture.pointableByIndex][1] (asArray=false)
+    thisType='LeapGesture' code='function LeapPointable LeapGesture.pointableByIndex?( in SInt32 index )'
+  bin[normal][LeapPointable LeapGesture.pointableByIndex][1] (asArray=true)
+    thisType='LeapGesture' code='function LeapPointable LeapGesture.pointableByIndex?( in SInt32 index )'
+  bin[normal][Xfo[] LeapGesture.pointableXfos][1] (asArray=false)
+    thisType='LeapGesture' code='function Xfo[] LeapGesture.pointableXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapGesture.pointableXfos][1] (asArray=true)
+    thisType='LeapGesture' code='function Xfo[] LeapGesture.pointableXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapGesture.pointableXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapGesture.pointableXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][LeapPointable[] LeapGesture.pointables][0] (asArray=false)
+    thisType='LeapGesture' code='function LeapPointable[] LeapGesture.pointables?()'
+  bin[normal][LeapPointable[] LeapGesture.pointables][0] (asArray=true)
+    thisType='LeapGesture' code='function LeapPointable[] LeapGesture.pointables?()'
+    Skipping array preset for 'function LeapPointable[] LeapGesture.pointables?()', has array return value.
+  bin[normal][SInt32 LeapGesture.state][0] (asArray=false)
+    thisType='LeapGesture' code='function SInt32 LeapGesture.state?()'
+  bin[normal][SInt32 LeapGesture.state][0] (asArray=true)
+    thisType='LeapGesture' code='function SInt32 LeapGesture.state?()'
+  bin[normal][Boolean LeapGesture.valid][0] (asArray=false)
+    thisType='LeapGesture' code='function Boolean LeapGesture.valid?()'
+  bin[normal][Boolean LeapGesture.valid][0] (asArray=true)
+    thisType='LeapGesture' code='function Boolean LeapGesture.valid?()'
+  bin[normal][Boolean LeapImage.valid][0] (asArray=false)
+    thisType='LeapImage' code='function Boolean LeapImage.valid?()'
+  bin[normal][Boolean LeapImage.valid][0] (asArray=true)
+    thisType='LeapImage' code='function Boolean LeapImage.valid?()'
+  bin[normal][Float32 LeapFrame.currentFramesPerSecond][0] (asArray=false)
+    thisType='LeapFrame' code='function Float32 LeapFrame.currentFramesPerSecond?()'
+  bin[normal][Float32 LeapFrame.currentFramesPerSecond][0] (asArray=true)
+    thisType='LeapFrame' code='function Float32 LeapFrame.currentFramesPerSecond?()'
+  bin[normal][LeapFrame.deserialize][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapFrame.deserialize?( in String str )'
+  bin[normal][LeapFrame.deserialize][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapFrame.deserialize?( in String str )'
+  bin[normal][LeapFinger LeapFrame.finger][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapFinger LeapFrame.finger?( in SInt32 id )'
+  bin[normal][LeapFinger LeapFrame.finger][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapFinger LeapFrame.finger?( in SInt32 id )'
+  bin[normal][Xfo[] LeapFrame.fingerAllXfos][1] (asArray=false)
+    thisType='LeapFrame' code='function Xfo[] LeapFrame.fingerAllXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapFrame.fingerAllXfos][1] (asArray=true)
+    thisType='LeapFrame' code='function Xfo[] LeapFrame.fingerAllXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapFrame.fingerAllXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapFrame.fingerAllXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][LeapFinger LeapFrame.fingerByIndex][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapFinger LeapFrame.fingerByIndex?( in SInt32 index )'
+  bin[normal][LeapFinger LeapFrame.fingerByIndex][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapFinger LeapFrame.fingerByIndex?( in SInt32 index )'
+  bin[normal][Xfo[] LeapFrame.fingerTipXfos][1] (asArray=false)
+    thisType='LeapFrame' code='function Xfo[] LeapFrame.fingerTipXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapFrame.fingerTipXfos][1] (asArray=true)
+    thisType='LeapFrame' code='function Xfo[] LeapFrame.fingerTipXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapFrame.fingerTipXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapFrame.fingerTipXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][LeapFinger[] LeapFrame.fingers][0] (asArray=false)
+    thisType='LeapFrame' code='function LeapFinger[] LeapFrame.fingers?()'
+  bin[normal][LeapFinger[] LeapFrame.fingers][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapFinger[] LeapFrame.fingers?()'
+    Skipping array preset for 'function LeapFinger[] LeapFrame.fingers?()', has array return value.
+  bin[normal][LeapGesture LeapFrame.gesture][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapGesture LeapFrame.gesture?( in SInt32 id )'
+  bin[normal][LeapGesture LeapFrame.gesture][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapGesture LeapFrame.gesture?( in SInt32 id )'
+  bin[normal][LeapGesture LeapFrame.gestureByIndex][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapGesture LeapFrame.gestureByIndex?( in SInt32 index )'
+  bin[normal][LeapGesture LeapFrame.gestureByIndex][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapGesture LeapFrame.gestureByIndex?( in SInt32 index )'
+  bin[normal][LeapGesture[] LeapFrame.gestures][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapGesture[] LeapFrame.gestures?( in LeapFrame sinceFrame )'
+  bin[normal][LeapGesture[] LeapFrame.gestures][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapGesture[] LeapFrame.gestures?( in LeapFrame sinceFrame )'
+    Skipping array preset for 'function LeapGesture[] LeapFrame.gestures?( in LeapFrame sinceFrame )', has array return value.
+  bin[normal][LeapGesture[] LeapFrame.gestures][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapGesture[] LeapFrame.gestures?()'
+    Skipping array preset for 'function LeapGesture[] LeapFrame.gestures?()', has array return value.
+  bin[normal][LeapHand LeapFrame.hand][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapHand LeapFrame.hand?( in SInt32 id )'
+  bin[normal][LeapHand LeapFrame.hand][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapHand LeapFrame.hand?( in SInt32 id )'
+  bin[normal][LeapPointable LeapFrame.handByIndex][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapPointable LeapFrame.handByIndex?( in SInt32 index )'
+  bin[normal][LeapPointable LeapFrame.handByIndex][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapPointable LeapFrame.handByIndex?( in SInt32 index )'
+  bin[normal][LeapHand[] LeapFrame.hands][0] (asArray=false)
+    thisType='LeapFrame' code='function LeapHand[] LeapFrame.hands?()'
+  bin[normal][LeapHand[] LeapFrame.hands][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapHand[] LeapFrame.hands?()'
+    Skipping array preset for 'function LeapHand[] LeapFrame.hands?()', has array return value.
+  bin[normal][UInt64 LeapFrame.id][0] (asArray=false)
+    thisType='LeapFrame' code='function UInt64 LeapFrame.id?()'
+  bin[normal][UInt64 LeapFrame.id][0] (asArray=true)
+    thisType='LeapFrame' code='function UInt64 LeapFrame.id?()'
+  bin[normal][LeapImage LeapFrame.imageByIndex][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapImage LeapFrame.imageByIndex?( in SInt32 index )'
+  bin[normal][LeapImage LeapFrame.imageByIndex][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapImage LeapFrame.imageByIndex?( in SInt32 index )'
+  bin[normal][LeapImage[] LeapFrame.images][0] (asArray=false)
+    thisType='LeapFrame' code='function LeapImage[] LeapFrame.images?()'
+  bin[normal][LeapImage[] LeapFrame.images][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapImage[] LeapFrame.images?()'
+    Skipping array preset for 'function LeapImage[] LeapFrame.images?()', has array return value.
+  bin[normal][LeapInteractionBox LeapFrame.interactionBox][0] (asArray=false)
+    thisType='LeapFrame' code='function LeapInteractionBox LeapFrame.interactionBox?()'
+  bin[normal][LeapInteractionBox LeapFrame.interactionBox][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapInteractionBox LeapFrame.interactionBox?()'
+  bin[normal][Boolean LeapFrame.isValid][0] (asArray=false)
+    thisType='LeapFrame' code='function Boolean LeapFrame.isValid?()'
+  bin[normal][Boolean LeapFrame.isValid][0] (asArray=true)
+    thisType='LeapFrame' code='function Boolean LeapFrame.isValid?()'
+  bin[normal][LeapPointable LeapFrame.pointable][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapPointable LeapFrame.pointable?( in SInt32 id )'
+  bin[normal][LeapPointable LeapFrame.pointable][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapPointable LeapFrame.pointable?( in SInt32 id )'
+  bin[normal][LeapPointable LeapFrame.pointableByIndex][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapPointable LeapFrame.pointableByIndex?( in SInt32 index )'
+  bin[normal][LeapPointable LeapFrame.pointableByIndex][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapPointable LeapFrame.pointableByIndex?( in SInt32 index )'
+  bin[normal][Xfo[] LeapFrame.pointableXfos][1] (asArray=false)
+    thisType='LeapFrame' code='function Xfo[] LeapFrame.pointableXfos?( in Float32 scaleFactor )'
+  bin[normal][Xfo[] LeapFrame.pointableXfos][1] (asArray=true)
+    thisType='LeapFrame' code='function Xfo[] LeapFrame.pointableXfos?( in Float32 scaleFactor )'
+    Skipping array preset for 'function Xfo[] LeapFrame.pointableXfos?( in Float32 scaleFactor )', has array return value.
+  bin[normal][Xfo[] LeapFrame.pointableXfos][0] (asArray=true)
+    Skipping bin: empty
+  bin[normal][LeapPointable[] LeapFrame.pointables][0] (asArray=false)
+    thisType='LeapFrame' code='function LeapPointable[] LeapFrame.pointables?()'
+  bin[normal][LeapPointable[] LeapFrame.pointables][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapPointable[] LeapFrame.pointables?()'
+    Skipping array preset for 'function LeapPointable[] LeapFrame.pointables?()', has array return value.
+  bin[normal][Float32 LeapFrame.rotationAngle][2] (asArray=false)
+    thisType='LeapFrame' code='function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+  bin[normal][Float32 LeapFrame.rotationAngle][2] (asArray=true)
+    thisType='LeapFrame' code='function Float32 LeapFrame.rotationAngle?( in LeapFrame sinceFrame, in Vec3 axis )'
+  bin[normal][Vec3 LeapFrame.rotationAxis][1] (asArray=false)
+    thisType='LeapFrame' code='function Vec3 LeapFrame.rotationAxis?( in LeapFrame sinceFrame )'
+  bin[normal][Vec3 LeapFrame.rotationAxis][1] (asArray=true)
+    thisType='LeapFrame' code='function Vec3 LeapFrame.rotationAxis?( in LeapFrame sinceFrame )'
+  bin[normal][Mat44 LeapFrame.rotationMatrix][1] (asArray=false)
+    thisType='LeapFrame' code='function Mat44 LeapFrame.rotationMatrix?( in LeapFrame sinceFrame )'
+  bin[normal][Mat44 LeapFrame.rotationMatrix][1] (asArray=true)
+    thisType='LeapFrame' code='function Mat44 LeapFrame.rotationMatrix?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.rotationProbability][1] (asArray=false)
+    thisType='LeapFrame' code='function Float32 LeapFrame.rotationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.rotationProbability][1] (asArray=true)
+    thisType='LeapFrame' code='function Float32 LeapFrame.rotationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.scaleFactor][1] (asArray=false)
+    thisType='LeapFrame' code='function Float32 LeapFrame.scaleFactor?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.scaleFactor][1] (asArray=true)
+    thisType='LeapFrame' code='function Float32 LeapFrame.scaleFactor?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.scaleProbability][1] (asArray=false)
+    thisType='LeapFrame' code='function Float32 LeapFrame.scaleProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.scaleProbability][1] (asArray=true)
+    thisType='LeapFrame' code='function Float32 LeapFrame.scaleProbability?( in LeapFrame sinceFrame )'
+  bin[normal][String LeapFrame.serialize][0] (asArray=false)
+    thisType='LeapFrame' code='function String LeapFrame.serialize?()'
+  bin[normal][String LeapFrame.serialize][0] (asArray=true)
+    thisType='LeapFrame' code='function String LeapFrame.serialize?()'
+  bin[normal][UInt64 LeapFrame.timestamp][0] (asArray=false)
+    thisType='LeapFrame' code='function UInt64 LeapFrame.timestamp?()'
+  bin[normal][UInt64 LeapFrame.timestamp][0] (asArray=true)
+    thisType='LeapFrame' code='function UInt64 LeapFrame.timestamp?()'
+  bin[normal][LeapTool LeapFrame.tool][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapTool LeapFrame.tool?( in SInt32 id )'
+  bin[normal][LeapTool LeapFrame.tool][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapTool LeapFrame.tool?( in SInt32 id )'
+  bin[normal][LeapTool LeapFrame.toolByIndex][1] (asArray=false)
+    thisType='LeapFrame' code='function LeapTool LeapFrame.toolByIndex?( in SInt32 index )'
+  bin[normal][LeapTool LeapFrame.toolByIndex][1] (asArray=true)
+    thisType='LeapFrame' code='function LeapTool LeapFrame.toolByIndex?( in SInt32 index )'
+  bin[normal][LeapTool[] LeapFrame.tools][0] (asArray=false)
+    thisType='LeapFrame' code='function LeapTool[] LeapFrame.tools?()'
+  bin[normal][LeapTool[] LeapFrame.tools][0] (asArray=true)
+    thisType='LeapFrame' code='function LeapTool[] LeapFrame.tools?()'
+    Skipping array preset for 'function LeapTool[] LeapFrame.tools?()', has array return value.
+  bin[normal][Vec3 LeapFrame.translation][1] (asArray=false)
+    thisType='LeapFrame' code='function Vec3 LeapFrame.translation?( in LeapFrame sinceFrame )'
+  bin[normal][Vec3 LeapFrame.translation][1] (asArray=true)
+    thisType='LeapFrame' code='function Vec3 LeapFrame.translation?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.translationProbability][1] (asArray=false)
+    thisType='LeapFrame' code='function Float32 LeapFrame.translationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Float32 LeapFrame.translationProbability][1] (asArray=true)
+    thisType='LeapFrame' code='function Float32 LeapFrame.translationProbability?( in LeapFrame sinceFrame )'
+  bin[normal][Boolean LeapFrame.valid][0] (asArray=false)
+    thisType='LeapFrame' code='function Boolean LeapFrame.valid?()'
+  bin[normal][Boolean LeapFrame.valid][0] (asArray=true)
+    thisType='LeapFrame' code='function Boolean LeapFrame.valid?()'
+  bin[normal][UInt32 LeapDevice.deviceType][0] (asArray=false)
+    thisType='LeapDevice' code='function UInt32 LeapDevice.deviceType?()'
+  bin[normal][UInt32 LeapDevice.deviceType][0] (asArray=true)
+    thisType='LeapDevice' code='function UInt32 LeapDevice.deviceType?()'
+  bin[normal][Float32 LeapDevice.distanceToBoundary][1] (asArray=false)
+    thisType='LeapDevice' code='function Float32 LeapDevice.distanceToBoundary?( in Vec3 position )'
+  bin[normal][Float32 LeapDevice.distanceToBoundary][1] (asArray=true)
+    thisType='LeapDevice' code='function Float32 LeapDevice.distanceToBoundary?( in Vec3 position )'
+  bin[normal][Float32 LeapDevice.horizontalViewAngle][0] (asArray=false)
+    thisType='LeapDevice' code='function Float32 LeapDevice.horizontalViewAngle?()'
+  bin[normal][Float32 LeapDevice.horizontalViewAngle][0] (asArray=true)
+    thisType='LeapDevice' code='function Float32 LeapDevice.horizontalViewAngle?()'
+  bin[normal][Boolean LeapDevice.isEmbedded][0] (asArray=false)
+    thisType='LeapDevice' code='function Boolean LeapDevice.isEmbedded?()'
+  bin[normal][Boolean LeapDevice.isEmbedded][0] (asArray=true)
+    thisType='LeapDevice' code='function Boolean LeapDevice.isEmbedded?()'
+  bin[normal][Boolean LeapDevice.isFlipped][0] (asArray=false)
+    thisType='LeapDevice' code='function Boolean LeapDevice.isFlipped?()'
+  bin[normal][Boolean LeapDevice.isFlipped][0] (asArray=true)
+    thisType='LeapDevice' code='function Boolean LeapDevice.isFlipped?()'
+  bin[normal][Boolean LeapDevice.isStreaming][0] (asArray=false)
+    thisType='LeapDevice' code='function Boolean LeapDevice.isStreaming?()'
+  bin[normal][Boolean LeapDevice.isStreaming][0] (asArray=true)
+    thisType='LeapDevice' code='function Boolean LeapDevice.isStreaming?()'
+  bin[normal][Float32 LeapDevice.range][0] (asArray=false)
+    thisType='LeapDevice' code='function Float32 LeapDevice.range?()'
+  bin[normal][Float32 LeapDevice.range][0] (asArray=true)
+    thisType='LeapDevice' code='function Float32 LeapDevice.range?()'
+  bin[normal][Boolean LeapDevice.valid][0] (asArray=false)
+    thisType='LeapDevice' code='function Boolean LeapDevice.valid?()'
+  bin[normal][Boolean LeapDevice.valid][0] (asArray=true)
+    thisType='LeapDevice' code='function Boolean LeapDevice.valid?()'
+  bin[normal][Float32 LeapDevice.verticalViewAngle][0] (asArray=false)
+    thisType='LeapDevice' code='function Float32 LeapDevice.verticalViewAngle?()'
+  bin[normal][Float32 LeapDevice.verticalViewAngle][0] (asArray=true)
+    thisType='LeapDevice' code='function Float32 LeapDevice.verticalViewAngle?()'
+  bin[normal][LeapController][0] (asArray=false)
+    thisType='LeapController' code='function LeapController?()'
+  bin[normal][LeapController][0] (asArray=true)
+    thisType='LeapController' code='function LeapController?()'
+  bin[normal][LeapConfig LeapController.config][0] (asArray=false)
+    thisType='LeapController' code='function LeapConfig LeapController.config?()'
+  bin[normal][LeapConfig LeapController.config][0] (asArray=true)
+    thisType='LeapController' code='function LeapConfig LeapController.config?()'
+  bin[normal][LeapDevice[] LeapController.devices][0] (asArray=false)
+    thisType='LeapController' code='function LeapDevice[] LeapController.devices?()'
+  bin[normal][LeapDevice[] LeapController.devices][0] (asArray=true)
+    thisType='LeapController' code='function LeapDevice[] LeapController.devices?()'
+    Skipping array preset for 'function LeapDevice[] LeapController.devices?()', has array return value.
+  bin[normal][LeapController.enableGesture][2] (asArray=false)
+    thisType='LeapController' code='function LeapController.enableGesture?( in UInt32 gesture, in Boolean enable )'
+  bin[normal][LeapController.enableGesture][2] (asArray=true)
+    thisType='LeapController' code='function LeapController.enableGesture?( in UInt32 gesture, in Boolean enable )'
+  bin[normal][LeapFrame LeapController.frame][1] (asArray=false)
+    thisType='LeapController' code='function LeapFrame LeapController.frame?( in SInt32 history )'
+  bin[normal][LeapFrame LeapController.frame][1] (asArray=true)
+    thisType='LeapController' code='function LeapFrame LeapController.frame?( in SInt32 history )'
+  bin[normal][Boolean LeapController.hasFocus][0] (asArray=false)
+    thisType='LeapController' code='function Boolean LeapController.hasFocus?()'
+  bin[normal][Boolean LeapController.hasFocus][0] (asArray=true)
+    thisType='LeapController' code='function Boolean LeapController.hasFocus?()'
+  bin[normal][Boolean LeapController.isConnected][0] (asArray=false)
+    thisType='LeapController' code='function Boolean LeapController.isConnected?()'
+  bin[normal][Boolean LeapController.isConnected][0] (asArray=true)
+    thisType='LeapController' code='function Boolean LeapController.isConnected?()'
+  bin[normal][Boolean LeapController.isGestureEnabled][1] (asArray=false)
+    thisType='LeapController' code='function Boolean LeapController.isGestureEnabled?( in UInt32 gesture )'
+  bin[normal][Boolean LeapController.isGestureEnabled][1] (asArray=true)
+    thisType='LeapController' code='function Boolean LeapController.isGestureEnabled?( in UInt32 gesture )'
+  bin[normal][Boolean LeapController.isServiceConnected][0] (asArray=false)
+    thisType='LeapController' code='function Boolean LeapController.isServiceConnected?()'
+  bin[normal][Boolean LeapController.isServiceConnected][0] (asArray=true)
+    thisType='LeapController' code='function Boolean LeapController.isServiceConnected?()'
+  bin[normal][UInt32 LeapController.policyFlags][0] (asArray=false)
+    thisType='LeapController' code='function UInt32 LeapController.policyFlags?()'
+  bin[normal][UInt32 LeapController.policyFlags][0] (asArray=true)
+    thisType='LeapController' code='function UInt32 LeapController.policyFlags?()'
+  bin[normal][LeapController.setPolicyFlags][1] (asArray=false)
+    thisType='LeapController' code='function LeapController.setPolicyFlags?( in UInt32 flags )'
+  bin[normal][LeapController.setPolicyFlags][1] (asArray=true)
+    thisType='LeapController' code='function LeapController.setPolicyFlags?( in UInt32 flags )'
+  bin[normal][Boolean LeapController.valid][0] (asArray=false)
+    thisType='LeapController' code='function Boolean LeapController.valid?()'
+  bin[normal][Boolean LeapController.valid][0] (asArray=true)
+    thisType='LeapController' code='function Boolean LeapController.valid?()'

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Enables or disables reporting of a specified gesture type.\n\n* By default, all gesture types are disabled. When disabled, gestures of the\n* disabled type are never reported and will not appear in the frame\n* gesture list.\n\n* \\include Controller_enableGesture.txt\n\n* As a performance optimization, only enable recognition for the types\n* of movements that you use in your application.\n\n* @param type The type of gesture to enable or disable. Must be a\n* member of the Gesture::Type enumeration.\n* @param enable True, to enable the specified gesture type; False,\n* to disable.\n* @see Controller::isGestureEnabled()\n* @since 1.0\n\n\n Supported by LeapController"
+    "uiTooltip" : "* Enables or disables reporting of a specified gesture type.\n\n* By default, all gesture types are disabled. When disabled, gestures of the\n* disabled type are never reported and will not appear in the frame\n* gesture list.\n\n* \\include Controller_enableGesture.txt\n\n* As a performance optimization, only enable recognition for the types\n* of movements that you use in your application.\n\n* @param type The type of gesture to enable or disable. Must be a\n* member of the Gesture::Type enumeration.\n* @param enable True, to enable the specified gesture type; False,\n* to disable.\n* @see Controller::isGestureEnabled()\n* @since 1.0\n\nSupported types:\n  this: LeapController\n  gesture: UInt32\n  enable: Boolean\n"
     },
   "title" : "EnableGesture[]",
   "ports" : [

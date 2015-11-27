@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The end of the bone, closest to the finger tip.\n\n* In anatomical terms, this is the distal end of the bone.\n\n* \\include Bone_nextJoint.txt\n\n* @returns The Vector containing the coordinates of the next joint position.\n* @since 2.0\n\n\n Supported by LeapBone"
+    "uiTooltip" : "* The end of the bone, closest to the finger tip.\n\n* In anatomical terms, this is the distal end of the bone.\n\n* \\include Bone_nextJoint.txt\n\n* @returns The Vector containing the coordinates of the next joint position.\n* @since 2.0\n\nSupported types:\n  this: LeapBone\n  result: Vec3\n"
     },
   "title" : "NextJoint",
   "ports" : [

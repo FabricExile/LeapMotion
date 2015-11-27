@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "returns true if this controller is valid\n\n Supported by LeapBone"
+    "uiTooltip" : "returns true if this controller is valid\n\nSupported types:\n  this: LeapBone\n  result: Boolean\n"
     },
   "title" : "Valid[]",
   "ports" : [

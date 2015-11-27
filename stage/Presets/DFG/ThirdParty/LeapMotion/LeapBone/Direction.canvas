@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The normalized direction of the bone from base to tip.\n\n* \\include Bone_direction.txt\n\n* @returns The normalized direction of the bone from base to tip.\n* @since 2.0\n\n\n Supported by LeapBone"
+    "uiTooltip" : "* The normalized direction of the bone from base to tip.\n\n* \\include Bone_direction.txt\n\n* @returns The normalized direction of the bone from base to tip.\n* @since 2.0\n\nSupported types:\n  this: LeapBone\n  result: Vec3\n"
     },
   "title" : "Direction",
   "ports" : [

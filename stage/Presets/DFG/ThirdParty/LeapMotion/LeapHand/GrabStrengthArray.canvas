@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The strength of a grab hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a grabbing hand\n* pose is recognized.\n\n* \\include Hand_grabStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pose.\n* @since 2.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The strength of a grab hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a grabbing hand\n* pose is recognized.\n\n* \\include Hand_grabStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pose.\n* @since 2.0\n\nSupported types:\n  this: LeapHand\n  result: Float32\n"
     },
   "title" : "GrabStrength[]",
   "ports" : [

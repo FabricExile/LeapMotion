@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The radius of a sphere fit to the curvature of this hand.\n\n* This sphere is placed roughly as if the hand were holding a ball. Thus the\n* size of the sphere decreases as the fingers are curled into a fist.\n\n* \\include Hand_sphereRadius.txt\n\n* @returns The radius of the sphere in millimeters.\n* @since 1.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The radius of a sphere fit to the curvature of this hand.\n\n* This sphere is placed roughly as if the hand were holding a ball. Thus the\n* size of the sphere decreases as the fingers are curled into a fist.\n\n* \\include Hand_sphereRadius.txt\n\n* @returns The radius of the sphere in millimeters.\n* @since 1.0\n\nSupported types:\n  this: LeapHand\n  result: Float32\n"
     },
   "title" : "SphereRadius",
   "ports" : [

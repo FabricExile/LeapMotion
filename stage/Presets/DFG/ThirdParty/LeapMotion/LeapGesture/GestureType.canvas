@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The gesture type.\n\n* \\include Gesture_type.txt\n\n* @returns Gesture::Type A value from the Gesture::Type enumeration.\n* @since 1.0\n\n\n Supported by LeapGesture"
+    "uiTooltip" : "* The gesture type.\n\n* \\include Gesture_type.txt\n\n* @returns Gesture::Type A value from the Gesture::Type enumeration.\n* @since 1.0\n\nSupported types:\n  this: LeapGesture\n  result: SInt32\n"
     },
   "title" : "GestureType",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "The position of the elbow.\n\n\nIf not in view, the elbow position is estimated based on typical human\nanatomical proportions.\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    "uiTooltip" : "The position of the elbow.\n\n\nIf not in view, the elbow position is estimated based on typical human\nanatomical proportions.\n\n@since 2.0.3\n\nSupported types:\n  this: LeapArm\n  result: Vec3\n"
     },
   "title" : "ElbowPosition[]",
   "ports" : [

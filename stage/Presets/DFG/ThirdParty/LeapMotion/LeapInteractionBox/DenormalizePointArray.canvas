@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Converts a position defined by normalized InteractionBox coordinates into device\n* coordinates in millimeters.\n\n* \\include InteractionBox_denormalizePoint.txt\n\n* This function performs the inverse of normalizePoint().\n\n* @param normalizedPosition The input position in InteractionBox coordinates.\n* @returns The corresponding denormalized position in device coordinates.\n* @since 1.0\n\n\n Supported by LeapInteractionBox"
+    "uiTooltip" : "* Converts a position defined by normalized InteractionBox coordinates into device\n* coordinates in millimeters.\n\n* \\include InteractionBox_denormalizePoint.txt\n\n* This function performs the inverse of normalizePoint().\n\n* @param normalizedPosition The input position in InteractionBox coordinates.\n* @returns The corresponding denormalized position in device coordinates.\n* @since 1.0\n\nSupported types:\n  this: LeapInteractionBox\n  normalizedPosition: Vec3\n  result: Vec3\n"
     },
   "title" : "DenormalizePoint[]",
   "ports" : [

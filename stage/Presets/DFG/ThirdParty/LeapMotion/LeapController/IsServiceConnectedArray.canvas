@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Reports whether your application has a connection to the Leap Motion\n* daemon/service. Can be true even if the Leap Motion hardware is not available.\n* @since 1.2\n\n\n Supported by LeapController"
+    "uiTooltip" : "* Reports whether your application has a connection to the Leap Motion\n* daemon/service. Can be true even if the Leap Motion hardware is not available.\n* @since 1.2\n\nSupported types:\n  this: LeapController\n  result: Boolean\n"
     },
   "title" : "IsServiceConnected[]",
   "ports" : [

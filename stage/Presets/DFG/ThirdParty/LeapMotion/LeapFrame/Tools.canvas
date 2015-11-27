@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The list of Tool objects detected in this frame, given in arbitrary order.\n* The list can be empty if no tools are detected.\n\n* \\include Frame_tools.txt\n\n* @returns The ToolList containing all Tool objects detected in this frame.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    "uiTooltip" : "* The list of Tool objects detected in this frame, given in arbitrary order.\n* The list can be empty if no tools are detected.\n\n* \\include Frame_tools.txt\n\n* @returns The ToolList containing all Tool objects detected in this frame.\n* @since 1.0\n\nSupported types:\n  this: LeapFrame\n  result: LeapTool[]\n"
     },
   "title" : "Tools",
   "ports" : [

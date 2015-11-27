@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The estimated length of the bone in millimeters.\n\n* \\include Bone_length.txt\n\n* @returns The length of the bone in millimeters.\n* @since 2.0\n\n\n Supported by LeapBone"
+    "uiTooltip" : "* The estimated length of the bone in millimeters.\n\n* \\include Bone_length.txt\n\n* @returns The length of the bone in millimeters.\n* @since 2.0\n\nSupported types:\n  this: LeapBone\n  result: Float32\n"
     },
   "title" : "Length[]",
   "ports" : [

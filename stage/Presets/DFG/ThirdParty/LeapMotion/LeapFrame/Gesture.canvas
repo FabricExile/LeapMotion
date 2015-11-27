@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The Gesture object with the specified ID in this frame.\n\n* Use the Frame::gesture() function to return a Gesture object in this\n* frame using an ID obtained in an earlier frame. The function always\n* returns a Gesture object, but if there was no update for the gesture in\n* this frame, then an invalid Gesture object is returned.\n\n* \\include Frame_gesture.txt\n\n* All Gesture objects representing the same recognized movement share the\n* same ID.\n* @param id The ID of an Gesture object from a previous frame.\n* @returns The Gesture object in the frame with the specified ID if one\n* exists; Otherwise, an Invalid Gesture object.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    "uiTooltip" : "* The Gesture object with the specified ID in this frame.\n\n* Use the Frame::gesture() function to return a Gesture object in this\n* frame using an ID obtained in an earlier frame. The function always\n* returns a Gesture object, but if there was no update for the gesture in\n* this frame, then an invalid Gesture object is returned.\n\n* \\include Frame_gesture.txt\n\n* All Gesture objects representing the same recognized movement share the\n* same ID.\n* @param id The ID of an Gesture object from a previous frame.\n* @returns The Gesture object in the frame with the specified ID if one\n* exists; Otherwise, an Invalid Gesture object.\n* @since 1.0\n\nSupported types:\n  this: LeapFrame\n  id: SInt32\n  result: LeapGesture\n"
     },
   "title" : "Gesture",
   "ports" : [

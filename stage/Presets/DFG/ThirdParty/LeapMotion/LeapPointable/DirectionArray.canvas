@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The direction in which this finger or tool is pointing.\n\n* \\include Pointable_direction.txt\n\n* The direction is expressed as a unit vector pointing in the same\n* direction as the tip.\n\n* \\image html images/Leap_Finger_Model.png\n\n* @returns The Vector pointing in the same direction as the tip of this\n* Pointable object.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    "uiTooltip" : "* The direction in which this finger or tool is pointing.\n\n* \\include Pointable_direction.txt\n\n* The direction is expressed as a unit vector pointing in the same\n* direction as the tip.\n\n* \\image html images/Leap_Finger_Model.png\n\n* @returns The Vector pointing in the same direction as the tip of this\n* Pointable object.\n* @since 1.0\n\nSupported types:\n  this: LeapPointable\n  result: Vec3\n"
     },
   "title" : "Direction[]",
   "ports" : [

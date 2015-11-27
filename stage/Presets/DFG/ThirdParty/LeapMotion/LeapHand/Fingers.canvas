@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The list of Finger objects detected in this frame that are attached to\n* this hand, given in order from thumb to pinky.  The list cannot be empty.\n\n* Use PointableList::extended() to remove non-extended fingers from the list.\n\n* \\include Hand_Get_Fingers.txt\n\n* @returns The FingerList containing all Finger objects attached to this hand.\n* @since 1.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The list of Finger objects detected in this frame that are attached to\n* this hand, given in order from thumb to pinky.  The list cannot be empty.\n\n* Use PointableList::extended() to remove non-extended fingers from the list.\n\n* \\include Hand_Get_Fingers.txt\n\n* @returns The FingerList containing all Finger objects attached to this hand.\n* @since 1.0\n\nSupported types:\n  this: LeapHand\n  result: LeapFinger[]\n"
     },
   "title" : "Fingers",
   "ports" : [

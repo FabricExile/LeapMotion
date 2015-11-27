@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* A unique ID assigned to this Pointable object, whose value remains the\n* same across consecutive frames while the tracked finger or tool remains\n* visible. If tracking is lost (for example, when a finger is occluded by\n* another finger or when it is withdrawn from the Leap Motion Controller field of view), the\n* Leap Motion software may assign a new ID when it detects the entity in a future frame.\n\n* \\include Pointable_id.txt\n\n* Use the ID value with the Frame::pointable() function to find this\n* Pointable object in future frames.\n\n* IDs should be from 1 to 100 (inclusive). If more than 100 objects are tracked\n* an IDs of -1 will be used until an ID in the defined range is available.\n\n* @returns The ID assigned to this Pointable object.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    "uiTooltip" : "* A unique ID assigned to this Pointable object, whose value remains the\n* same across consecutive frames while the tracked finger or tool remains\n* visible. If tracking is lost (for example, when a finger is occluded by\n* another finger or when it is withdrawn from the Leap Motion Controller field of view), the\n* Leap Motion software may assign a new ID when it detects the entity in a future frame.\n\n* \\include Pointable_id.txt\n\n* Use the ID value with the Frame::pointable() function to find this\n* Pointable object in future frames.\n\n* IDs should be from 1 to 100 (inclusive). If more than 100 objects are tracked\n* an IDs of -1 will be used until an ID in the defined range is available.\n\n* @returns The ID assigned to this Pointable object.\n* @since 1.0\n\nSupported types:\n  this: LeapPointable\n  result: SInt32\n"
     },
   "title" : "Id",
   "ports" : [

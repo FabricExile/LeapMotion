@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "The normalized direction in which the arm is pointing (from elbow to wrist).\n\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    "uiTooltip" : "The normalized direction in which the arm is pointing (from elbow to wrist).\n\n\n@since 2.0.3\n\nSupported types:\n  this: LeapArm\n  result: Vec3\n"
     },
   "title" : "Direction",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "overload to get a finger by index\n\n Supported by LeapFrame"
+    "uiTooltip" : "overload to get a finger by index\n\nSupported types:\n  this: LeapFrame\n  index: SInt32\n  result: LeapFinger\n"
     },
   "title" : "FingerByIndex",
   "ports" : [

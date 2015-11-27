@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "overload to get the finger tip transforms of the available fingers\n\n Supported by LeapHand"
+    "uiTooltip" : "overload to get the finger tip transforms of the available fingers\n\nSupported types:\n  this: LeapHand\n  scaleFactor: Float32\n  result: Xfo[]\n"
     },
   "title" : "FingerTipXfos",
   "ports" : [

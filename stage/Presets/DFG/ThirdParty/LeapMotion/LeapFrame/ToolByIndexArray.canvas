@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "overload to get a tool by index\n\n Supported by LeapFrame"
+    "uiTooltip" : "overload to get a tool by index\n\nSupported types:\n  this: LeapFrame\n  index: SInt32\n  result: LeapTool\n"
     },
   "title" : "ToolByIndex[]",
   "ports" : [

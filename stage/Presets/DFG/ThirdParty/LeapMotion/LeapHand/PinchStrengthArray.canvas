@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The holding strength of a pinch hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a pinching\n* hand pose is recognized. Pinching can be done between the thumb\n* and any other finger of the same hand.\n\n* \\include Hand_pinchStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pinch pose.\n* @since 2.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The holding strength of a pinch hand pose.\n\n* The strength is zero for an open hand, and blends to 1.0 when a pinching\n* hand pose is recognized. Pinching can be done between the thumb\n* and any other finger of the same hand.\n\n* \\include Hand_pinchStrength.txt\n\n* @returns A float value in the [0..1] range representing the holding strength\n* of the pinch pose.\n* @since 2.0\n\nSupported types:\n  this: LeapHand\n  result: Float32\n"
     },
   "title" : "PinchStrength[]",
   "ports" : [

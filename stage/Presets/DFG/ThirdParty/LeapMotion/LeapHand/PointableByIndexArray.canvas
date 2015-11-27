@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "overload to get a pointable by index\n\n Supported by LeapHand"
+    "uiTooltip" : "overload to get a pointable by index\n\nSupported types:\n  this: LeapHand\n  index: SInt32\n  result: LeapPointable\n"
     },
   "title" : "PointableByIndex[]",
   "ports" : [

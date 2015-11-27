@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Gets the active policy settings.\n\n* Use this function to determine the current policy state.\n* Keep in mind that setting a policy flag is asynchronous, so changes are\n* not effective immediately after calling setPolicyFlag(). In addition, a\n* policy request can be declined by the user. You should always set the\n* policy flags required by your application at startup and check that the\n* policy change request was successful after an appropriate interval.\n\n* If the controller object is not connected to the Leap Motion software, then the default\n* policy state is returned.\n\n* \\include Controller_policyFlags.txt\n\n* @returns The current policy flags.\n* @since 1.0\n\n\n Supported by LeapController"
+    "uiTooltip" : "* Gets the active policy settings.\n\n* Use this function to determine the current policy state.\n* Keep in mind that setting a policy flag is asynchronous, so changes are\n* not effective immediately after calling setPolicyFlag(). In addition, a\n* policy request can be declined by the user. You should always set the\n* policy flags required by your application at startup and check that the\n* policy change request was successful after an appropriate interval.\n\n* If the controller object is not connected to the Leap Motion software, then the default\n* policy state is returned.\n\n* \\include Controller_policyFlags.txt\n\n* @returns The current policy flags.\n* @since 1.0\n\nSupported types:\n  this: LeapController\n  result: UInt32\n"
     },
   "title" : "PolicyFlags",
   "ports" : [

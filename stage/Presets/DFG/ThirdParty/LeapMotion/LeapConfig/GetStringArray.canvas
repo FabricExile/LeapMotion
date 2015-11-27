@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Gets the string representation for the specified key.\n\n* \\include Config_getString.txt\n\n* @since 1.0\n\n\n Supported by LeapConfig"
+    "uiTooltip" : "* Gets the string representation for the specified key.\n\n* \\include Config_getString.txt\n\n* @since 1.0\n\nSupported types:\n  this: LeapConfig\n  key: String\n  result: String\n"
     },
   "title" : "GetString[]",
   "ports" : [

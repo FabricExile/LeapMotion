@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "The position of the wrist.\n\n\nNote that the wrist position is not collocated with the end of any bone in\nthe hand. There is a gap of a few centimeters since the carpal bones are\nnot included in the skeleton model.\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    "uiTooltip" : "The position of the wrist.\n\n\nNote that the wrist position is not collocated with the end of any bone in\nthe hand. There is a gap of a few centimeters since the carpal bones are\nnot included in the skeleton model.\n\n@since 2.0.3\n\nSupported types:\n  this: LeapArm\n  result: Vec3\n"
     },
   "title" : "WristPosition[]",
   "ports" : [

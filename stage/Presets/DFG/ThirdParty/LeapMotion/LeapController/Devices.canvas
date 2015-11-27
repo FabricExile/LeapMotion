@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The list of currently attached and recognized Leap Motion controller devices.\n\n* The Device objects in the list describe information such as the range and\n* tracking volume.\n\n* \\include Controller_devices.txt\n\n* Currently, the Leap Motion Controller only allows a single active device at a time,\n* however there may be multiple devices physically attached and listed here.  Any active\n* device(s) are guaranteed to be listed first, however order is not determined beyond that.\n\n* @returns The list of Leap Motion controllers.\n* @since 1.0\n\n\n Supported by LeapController"
+    "uiTooltip" : "* The list of currently attached and recognized Leap Motion controller devices.\n\n* The Device objects in the list describe information such as the range and\n* tracking volume.\n\n* \\include Controller_devices.txt\n\n* Currently, the Leap Motion Controller only allows a single active device at a time,\n* however there may be multiple devices physically attached and listed here.  Any active\n* device(s) are guaranteed to be listed first, however order is not determined beyond that.\n\n* @returns The list of Leap Motion controllers.\n* @since 1.0\n\nSupported types:\n  this: LeapController\n  result: LeapDevice[]\n"
     },
   "title" : "Devices",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The name of this finger.\n\n* \\include Finger_type.txt\n\n* @returns The anatomical type of this finger as a member of the Finger::Type\n* enumeration.\n* @since 2.0\n\n\n Supported by LeapFinger"
+    "uiTooltip" : "* The name of this finger.\n\n* \\include Finger_type.txt\n\n* @returns The anatomical type of this finger as a member of the Finger::Type\n* enumeration.\n* @since 2.0\n\nSupported types:\n  this: LeapFinger\n  result: UInt32\n"
     },
   "title" : "FingerType",
   "ports" : [

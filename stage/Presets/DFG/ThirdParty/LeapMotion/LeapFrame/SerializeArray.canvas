@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Encodes this Frame object as a byte string.\n\n* \\include Frame_serialize.txt\n\n* @returns The serialized string encoding the data for this frame.\n* @since 2.1.0\n\n\n Supported by LeapFrame"
+    "uiTooltip" : "* Encodes this Frame object as a byte string.\n\n* \\include Frame_serialize.txt\n\n* @returns The serialized string encoding the data for this frame.\n* @since 2.1.0\n\nSupported types:\n  this: LeapFrame\n  result: String\n"
     },
   "title" : "Serialize[]",
   "ports" : [

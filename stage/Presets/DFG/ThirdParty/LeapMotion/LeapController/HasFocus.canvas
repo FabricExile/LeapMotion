@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* Reports whether this application is the focused, foreground application.\n\n* By default, your application only receives tracking information from\n* the Leap Motion controller when it has the operating system input focus.\n* To receive tracking data when your application is in the background,\n* the background frames policy flag must be set.\n\n* \\include Controller_hasFocus.txt\n\n* @returns True, if application has focus; false otherwise.\n\n* @see Controller::setPolicyFlags()\n* @since 1.0\n\n\n Supported by LeapController"
+    "uiTooltip" : "* Reports whether this application is the focused, foreground application.\n\n* By default, your application only receives tracking information from\n* the Leap Motion controller when it has the operating system input focus.\n* To receive tracking data when your application is in the background,\n* the background frames policy flag must be set.\n\n* \\include Controller_hasFocus.txt\n\n* @returns True, if application has focus; false otherwise.\n\n* @see Controller::setPolicyFlags()\n* @since 1.0\n\nSupported types:\n  this: LeapController\n  result: Boolean\n"
     },
   "title" : "HasFocus",
   "ports" : [

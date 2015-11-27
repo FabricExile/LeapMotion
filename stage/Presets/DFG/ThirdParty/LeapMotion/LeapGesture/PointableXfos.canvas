@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "overload to get all transforms of the available pointables\n\n Supported by LeapGesture"
+    "uiTooltip" : "overload to get all transforms of the available pointables\n\nSupported types:\n  this: LeapGesture\n  scaleFactor: Float32\n  result: Xfo[]\n"
     },
   "title" : "PointableXfos",
   "ports" : [

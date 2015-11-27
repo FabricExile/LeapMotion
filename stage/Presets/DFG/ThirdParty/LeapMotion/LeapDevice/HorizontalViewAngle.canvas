@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The angle of view along the x axis of this device.\n\n* \\image html images/Leap_horizontalViewAngle.png\n\n* The Leap Motion controller scans a region in the shape of an inverted pyramid\n* centered at the device's center and extending upwards. The horizontalViewAngle\n* reports the view angle along the long dimension of the device.\n\n* \\include Device_horizontalViewAngle.txt\n\n* @returns The horizontal angle of view in radians.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    "uiTooltip" : "* The angle of view along the x axis of this device.\n\n* \\image html images/Leap_horizontalViewAngle.png\n\n* The Leap Motion controller scans a region in the shape of an inverted pyramid\n* centered at the device's center and extending upwards. The horizontalViewAngle\n* reports the view angle along the long dimension of the device.\n\n* \\include Device_horizontalViewAngle.txt\n\n* @returns The horizontal angle of view in radians.\n* @since 1.0\n\nSupported types:\n  this: LeapDevice\n  result: Float32\n"
     },
   "title" : "HorizontalViewAngle",
   "ports" : [

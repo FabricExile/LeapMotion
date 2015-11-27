@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The normal vector to the palm. If your hand is flat, this vector will\n* point downward, or \"out\" of the front surface of your palm.\n\n* \\image html images/Leap_Palm_Vectors.png\n\n* The direction is expressed as a unit vector pointing in the same\n* direction as the palm normal (that is, a vector orthogonal to the palm).\n\n* You can use the palm normal vector to compute the roll angle of the palm with\n* respect to the horizontal plane:\n\n* \\include Hand_Get_Angles.txt\n\n* @returns The Vector normal to the plane formed by the palm.\n* @since 1.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The normal vector to the palm. If your hand is flat, this vector will\n* point downward, or \"out\" of the front surface of your palm.\n\n* \\image html images/Leap_Palm_Vectors.png\n\n* The direction is expressed as a unit vector pointing in the same\n* direction as the palm normal (that is, a vector orthogonal to the palm).\n\n* You can use the palm normal vector to compute the roll angle of the palm with\n* respect to the horizontal plane:\n\n* \\include Hand_Get_Angles.txt\n\n* @returns The Vector normal to the plane formed by the palm.\n* @since 1.0\n\nSupported types:\n  this: LeapHand\n  result: Vec3\n"
     },
   "title" : "PalmNormal[]",
   "ports" : [

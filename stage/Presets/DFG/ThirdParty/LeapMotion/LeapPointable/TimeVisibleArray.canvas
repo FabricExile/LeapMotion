@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The duration of time this Pointable has been visible to the Leap Motion Controller.\n\n* \\include Pointable_timeVisible.txt\n\n* @returns The duration (in seconds) that this Pointable has been tracked.\n* @since 1.0\n\n\n Supported by LeapPointable"
+    "uiTooltip" : "* The duration of time this Pointable has been visible to the Leap Motion Controller.\n\n* \\include Pointable_timeVisible.txt\n\n* @returns The duration (in seconds) that this Pointable has been tracked.\n* @since 1.0\n\nSupported types:\n  this: LeapPointable\n  result: Float32\n"
     },
   "title" : "TimeVisible[]",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The estimated width of the palm when the hand is in a flat position.\n\n* \\include Hand_palmWidth.txt\n\n* @returns The width of the palm in millimeters\n* @since 2.0\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The estimated width of the palm when the hand is in a flat position.\n\n* \\include Hand_palmWidth.txt\n\n* @returns The width of the palm in millimeters\n* @since 2.0\n\nSupported types:\n  this: LeapHand\n  result: Float32\n"
     },
   "title" : "PalmWidth[]",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "< Bone at the tip of the finger\n* The base of the bone, closest to the wrist.\n\n* In anatomical terms, this is the proximal end of the bone.\n\n* \\include Bone_prevJoint.txt\n\n* @returns The Vector containing the coordinates of the previous joint position.\n* @since 2.0\n\n\n Supported by LeapBone"
+    "uiTooltip" : "< Bone at the tip of the finger\n* The base of the bone, closest to the wrist.\n\n* In anatomical terms, this is the proximal end of the bone.\n\n* \\include Bone_prevJoint.txt\n\n* @returns The Vector containing the coordinates of the previous joint position.\n* @since 2.0\n\nSupported types:\n  this: LeapBone\n  result: Vec3\n"
     },
   "title" : "PrevJoint",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The position of the wrist of this hand.\n\n* @returns A vector containing the coordinates of the wrist position in millimeters.\n* @since 2.0.3\n\n\n Supported by LeapHand"
+    "uiTooltip" : "* The position of the wrist of this hand.\n\n* @returns A vector containing the coordinates of the wrist position in millimeters.\n* @since 2.0.3\n\nSupported types:\n  this: LeapHand\n  result: Vec3\n"
     },
   "title" : "WristPosition[]",
   "ports" : [

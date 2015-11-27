@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The distance to the nearest edge of the Leap Motion controller's view volume.\n\n* The view volume is an axis-aligned, inverted pyramid centered on the device origin\n* and extending upward to the range limit. The walls of the pyramid are described\n* by the horizontalViewAngle and verticalViewAngle and the roof by the range.\n* This function estimates the distance between the specified input position and the\n* nearest wall or roof of the view volume.\n\n* \\include Device_distanceToBoundary.txt\n\n* @param position The point to use for the distance calculation.\n* @returns The distance in millimeters from the input position to the nearest boundary.\n* @since 1.0\n\n\n Supported by LeapDevice"
+    "uiTooltip" : "* The distance to the nearest edge of the Leap Motion controller's view volume.\n\n* The view volume is an axis-aligned, inverted pyramid centered on the device origin\n* and extending upward to the range limit. The walls of the pyramid are described\n* by the horizontalViewAngle and verticalViewAngle and the roof by the range.\n* This function estimates the distance between the specified input position and the\n* nearest wall or roof of the view volume.\n\n* \\include Device_distanceToBoundary.txt\n\n* @param position The point to use for the distance calculation.\n* @returns The distance in millimeters from the input position to the nearest boundary.\n* @since 1.0\n\nSupported types:\n  this: LeapDevice\n  position: Vec3\n  result: Float32\n"
     },
   "title" : "DistanceToBoundary[]",
   "ports" : [

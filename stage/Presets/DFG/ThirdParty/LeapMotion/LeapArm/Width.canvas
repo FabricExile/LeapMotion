@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "The average width of the arm.\n\n\n@since 2.0.3\n\n\n Supported by LeapArm"
+    "uiTooltip" : "The average width of the arm.\n\n\n@since 2.0.3\n\nSupported types:\n  this: LeapArm\n  result: Float32\n"
     },
   "title" : "Width",
   "ports" : [

@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "*  The list of images from the Leap Motion cameras.\n*\n*  @return An ImageList object containing the camera images analyzed to create this Frame.\n*  @since 2.1\n\n\n Supported by LeapFrame"
+    "uiTooltip" : "*  The list of images from the Leap Motion cameras.\n*\n*  @return An ImageList object containing the camera images analyzed to create this Frame.\n*  @since 2.1\n\nSupported types:\n  this: LeapFrame\n  result: LeapImage[]\n"
     },
   "title" : "Images",
   "ports" : [

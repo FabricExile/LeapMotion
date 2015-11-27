@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The axis of rotation derived from the overall rotational motion between\n* the current frame and the specified frame.\n\n* The returned direction vector is normalized.\n\n* \\include Frame_rotationAxis.txt\n\n* The Leap Motion software derives frame rotation from the relative change in position and\n* orientation of all objects detected in the field of view.\n\n* If either this frame or sinceFrame is an invalid Frame object, or if no\n* rotation is detected between the two frames, a zero vector is returned.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @returns A normalized direction Vector representing the axis of the\n* heuristically determined rotational change between the current frame\n* and that specified in the sinceFrame parameter.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    "uiTooltip" : "* The axis of rotation derived from the overall rotational motion between\n* the current frame and the specified frame.\n\n* The returned direction vector is normalized.\n\n* \\include Frame_rotationAxis.txt\n\n* The Leap Motion software derives frame rotation from the relative change in position and\n* orientation of all objects detected in the field of view.\n\n* If either this frame or sinceFrame is an invalid Frame object, or if no\n* rotation is detected between the two frames, a zero vector is returned.\n\n* @param sinceFrame The starting frame for computing the relative rotation.\n* @returns A normalized direction Vector representing the axis of the\n* heuristically determined rotational change between the current frame\n* and that specified in the sinceFrame parameter.\n* @since 1.0\n\nSupported types:\n  this: LeapFrame\n  sinceFrame: LeapFrame\n  result: Vec3\n"
     },
   "title" : "RotationAxis[]",
   "ports" : [
@@ -16,6 +16,11 @@
     {
       "objectType" : "Port",
       "nodePortType" : "Out",
+      "defaultValues" : {
+        "LeapFrame[]" : [
+          null
+          ]
+        },
       "name" : "sinceFrame",
       "execPortType" : "In",
       "typeSpec" : "LeapFrame[]"

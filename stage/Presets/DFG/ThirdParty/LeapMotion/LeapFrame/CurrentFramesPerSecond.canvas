@@ -2,7 +2,7 @@
 {
   "objectType" : "Func",
   "metadata" : {
-    "uiTooltip" : "* The instantaneous framerate.\n\n* The rate at which the Leap Motion software is providing frames of data\n* (in frames per second). The framerate can fluctuate depending on available computing\n* resources, activity within the device field of view, software tracking settings,\n* and other factors.\n\n* \\include Frame_currentFramesPerSecond.txt\n\n* @returns An estimate of frames per second of the Leap Motion Controller.\n* @since 1.0\n\n\n Supported by LeapFrame"
+    "uiTooltip" : "* The instantaneous framerate.\n\n* The rate at which the Leap Motion software is providing frames of data\n* (in frames per second). The framerate can fluctuate depending on available computing\n* resources, activity within the device field of view, software tracking settings,\n* and other factors.\n\n* \\include Frame_currentFramesPerSecond.txt\n\n* @returns An estimate of frames per second of the Leap Motion Controller.\n* @since 1.0\n\nSupported types:\n  this: LeapFrame\n  result: Float32\n"
     },
   "title" : "CurrentFramesPerSecond",
   "ports" : [
